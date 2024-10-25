@@ -12,7 +12,7 @@ if ($host === 'localhost') {
         'password' => 'root',
         'charset' => 'utf8',
     ];
-} elseif ($host === 'delta.doubledeals.co.ke') {
+} elseif ($host === 'beneficiary.doubledeals.co.ke') {
     // Production environment for doubledeals.co.ke
     return [
         'class' => 'yii\db\Connection',

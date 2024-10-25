@@ -4,38 +4,38 @@ on:
   workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
-  # Deploy to delta.doubledeals.co.ke
-  deploy-to-delta:
-    name: 🎉 Deploy to Delta DoubleDeals
+  # Deploy to beneficiary.doubledeals.co.ke
+  deploy-to-beneficiary:
+    name: 🎉 Deploy to beneficiary DoubleDeals
     runs-on: ubuntu-latest
 
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      - name: 📂 Sync files to Delta DoubleDeals
+      - name: 📂 Sync files to beneficiary DoubleDeals
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          # server: ${{ secrets.FTP_SERVER }}
-          # username: ${{ secrets.FTP_USERNAME }}
-          # password: ${{ secrets.FTP_PASSWORD }}
+          server: ftp.doubledeals.co.ke
+          username: beneficiary@beneficiary.doubledeals.co.ke
+          password: m@+K{tgWhP][
           server-dir: /  # The directory on the server to deploy files to
 
   # Deploy to InfinityFree
-  deploy-to-infinityfree:
-    name: 🎉 Deploy to InfinityFree
-    runs-on: ubuntu-latest
+  # deploy-to-infinityfree:
+  #   name: 🎉 Deploy to InfinityFree
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: 🚚 Get latest code
+  #       uses: actions/checkout@v4
 
-      - name: 📂 Sync files to InfinityFree
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          # server: ftpupload.net
-          # username: if0_37114096
-          # password: QcIDYuIrKJ # Store sensitive data in GitHub Secrets
-          # server-dir: htdocs/
-          # retries: 3                 # Retry the connection up to 3 times in case of timeout
-          # retryDelay: 10             # Wait 10 seconds before retrying after a failure
+  #     - name: 📂 Sync files to InfinityFree
+  #       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+  #       with:
+  #         server: ftpupload.net
+  #         username: if0_37114096
+  #         password: QcIDYuIrKJ # Store sensitive data in GitHub Secrets
+  #         server-dir: htdocs/
+  #         retries: 3                 # Retry the connection up to 3 times in case of timeout
+  #         retryDelay: 10             # Wait 10 seconds before retrying after a failure
