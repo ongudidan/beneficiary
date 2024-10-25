@@ -20,6 +20,8 @@ jobs:
           username: beneficiary@beneficiary.doubledeals.co.ke
           password: m@+K{tgWhP][
           server-dir: /  # The directory on the server to deploy files to
+          retries: 3                 # Retry the connection up to 3 times in case of timeout
+          retryDelay: 10             # Wait 10 seconds before retrying after a failure
 
   # Deploy to InfinityFree
   # deploy-to-infinityfree:
