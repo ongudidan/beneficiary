@@ -6,6 +6,7 @@ use app\components\IdGenerator;
 use app\modules\dashboard\models\Beneficiary;
 use app\modules\dashboard\models\BeneficiarySearch;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -25,6 +26,17 @@ class BeneficiaryController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'only' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                    'rules' => [
+                        [
+                            'actions' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
@@ -34,6 +46,7 @@ class BeneficiaryController extends Controller
             ]
         );
     }
+
 
     /**
      * Lists all Beneficiary models.

@@ -7,6 +7,7 @@ use app\components\AuthItemGenerator;
 use app\modules\dashboard\models\AuthItem;
 use app\modules\dashboard\models\AuthItemSearch;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -26,15 +27,27 @@ class AuthItemController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'only' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                    'rules' => [
+                        [
+                            'actions' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
-                        'delete' => ['POST'],
+                        // 'delete' => ['POST'],
                     ],
                 ],
             ]
         );
     }
+
 
     /**
      * Lists all AuthItem models.

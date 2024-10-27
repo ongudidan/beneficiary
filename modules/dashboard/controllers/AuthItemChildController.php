@@ -4,6 +4,7 @@ namespace app\modules\dashboard\controllers;
 
 use app\modules\dashboard\models\AuthItemChild;
 use app\modules\dashboard\models\AuthItemChildSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -23,15 +24,27 @@ class AuthItemChildController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'only' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                    'rules' => [
+                        [
+                            'actions' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
-                        'delete' => ['POST'],
+                        // 'delete' => ['POST'],
                     ],
                 ],
             ]
         );
     }
+
 
     /**
      * Lists all AuthItemChild models.

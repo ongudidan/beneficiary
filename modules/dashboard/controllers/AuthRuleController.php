@@ -6,6 +6,7 @@ use app\models\RoleForm;
 use app\modules\dashboard\models\AuthRule;
 use app\modules\dashboard\models\AuthRuleSearch;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -26,15 +27,27 @@ class AuthRuleController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'only' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                    'rules' => [
+                        [
+                            'actions' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
-                        'delete' => ['POST'],
+                        // 'delete' => ['POST'],
                     ],
                 ],
             ]
         );
     }
+
 
     /**
      * Lists all AuthRule models.

@@ -7,6 +7,7 @@ use app\models\User;
 use app\modules\dashboard\models\Ambassador;
 use app\modules\dashboard\models\AmbassadorSearch;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -26,6 +27,17 @@ class AmbassadorController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'only' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                    'rules' => [
+                        [
+                            'actions' => ['logout', 'update', 'delete', 'create', 'view', 'index'],
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
@@ -35,6 +47,7 @@ class AmbassadorController extends Controller
             ]
         );
     }
+
 
     /**
      * Lists all Ambassador models.
