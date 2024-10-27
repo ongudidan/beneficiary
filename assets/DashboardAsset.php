@@ -31,7 +31,13 @@ class DashboardAsset extends AssetBundle
         "/web/css/datatables.min.css",
         "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css",
 
-        "/web/css/toatr.css"
+        "/web/css/toatr.css",
+
+        "/web/remos/css/animate.min.css",
+        "/web/remos/css/animation.css",
+        // "/web/remos/css/bootstrap.css",
+        "/web/remos/css/bootstrap-select.min.css",
+        // "/web/remos/css/style.css",
 
 
     ];

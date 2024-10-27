@@ -59,7 +59,7 @@ class Beneficiary extends \yii\db\ActiveRecord
     {
         return [
             [['id', 'name', 'contact', 'sub_location', 'village', 'stove_no', 'lat', 'long'], 'required'],
-            [['status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
+            [['status', 'created_at', 'updated_at'], 'integer'],
             [['id', 'name', 'national_id', 'contact', 'sub_location', 'village', 'stove_no', 'issue_date', 'lat', 'long'], 'string', 'max' => 255],
             [['id'], 'unique'],
         ];

@@ -60,6 +60,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/' => '/dashboard/default/index',
             ],
         ],
         'authManager' => [

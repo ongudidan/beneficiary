@@ -107,16 +107,24 @@ class BeneficiaryController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Beneficiary updated successfully.');
-
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post())) {
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Beneficiary updated successfully.');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    // Capture model errors and set a flash message
+                    $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($model->getErrors(), 0));
+                    Yii::$app->session->setFlash('error', 'Failed to update the beneficiary. Errors: <br>' . $errors);
+                }
+            }
         }
 
-        return $this->render('view', [
+        return $this->render('update', [
             'model' => $model,
         ]);
     }
+
 
     /**
      * Deletes an existing Beneficiary model.

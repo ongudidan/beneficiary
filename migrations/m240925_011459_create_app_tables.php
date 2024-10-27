@@ -167,6 +167,7 @@ class m240925_011459_create_app_tables extends Migration
     {
         // Drop RBAC tables
         $this->dropTable('{{%auth_item_child}}');
+        $this->dropTable('{{%permission}}');
         $this->dropTable('{{%auth_rule}}');
         $this->dropTable('{{%auth_item}}');
         $this->dropTable('{{%auth_assignment}}');

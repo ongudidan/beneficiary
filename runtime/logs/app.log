@@ -70593,3 +70593,3520 @@ $_SERVER = [
     'PROD_DB_USERNAME' => 'dandeal_danny'
     'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
 ]
+2024-10-27 20:37:45 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/remos/css/style2.css". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/remos/css/s...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:37:45 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/'
+    'HTTP_SEC_FETCH_DEST' => 'style'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '57108'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/remos/css/style2.css'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730050665.1451
+    'REQUEST_TIME' => 1730050665
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:37:45 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/remos/css/style2.css". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/remos/css/s...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:37:45 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/'
+    'HTTP_SEC_FETCH_DEST' => 'style'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '57108'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/remos/css/style2.css'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730050665.9447
+    'REQUEST_TIME' => 1730050665
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:37:46 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/remos/css/style2.css". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/remos/css/s...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:37:46 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/'
+    'HTTP_SEC_FETCH_DEST' => 'style'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '57108'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/remos/css/style2.css'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730050666.2684
+    'REQUEST_TIME' => 1730050666
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:37:52 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/remos/css/style2.css". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/remos/css/s...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:37:52 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/'
+    'HTTP_SEC_FETCH_DEST' => 'style'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '57108'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/remos/css/style2.css'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730050672.9585
+    'REQUEST_TIME' => 1730050672
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:37:53 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/remos/css/style2.css". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/remos/css/s...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:37:53 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/'
+    'HTTP_SEC_FETCH_DEST' => 'style'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '57108'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/remos/css/style2.css'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730050673.2504
+    'REQUEST_TIME' => 1730050673
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:37:53 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/remos/css/style2.css". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/remos/css/s...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:37:53 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/'
+    'HTTP_SEC_FETCH_DEST' => 'style'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '57108'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/remos/css/style2.css'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730050673.5056
+    'REQUEST_TIME' => 1730050673
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:38:00 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/remos/css/style2.css". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/remos/css/s...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:38:00 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/'
+    'HTTP_SEC_FETCH_DEST' => 'style'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '57114'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/remos/css/style2.css'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730050680.4662
+    'REQUEST_TIME' => 1730050680
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:38:01 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/remos/css/style2.css". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/remos/css/s...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:38:01 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/'
+    'HTTP_SEC_FETCH_DEST' => 'style'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '57114'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/remos/css/style2.css'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730050681.1869
+    'REQUEST_TIME' => 1730050681
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:46:57 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/bootstrap.bundle.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/bootstra...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:46:57 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '45084'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/bootstrap.bundle.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051217.7637
+    'REQUEST_TIME' => 1730051217
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:46:57 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/feather.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/feather....', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:46:57 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '45072'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/feather.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051217.7687
+    'REQUEST_TIME' => 1730051217
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:46:57 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/css/bootstrap.min.css.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/css/bootstr...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:46:57 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '45084'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/css/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051217.9385
+    'REQUEST_TIME' => 1730051217
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:49:20 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/bootstrap.bundle.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/bootstra...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:49:20 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44508'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/bootstrap.bundle.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051360.3679
+    'REQUEST_TIME' => 1730051360
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:49:20 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/feather.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/feather....', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:49:20 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44500'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/feather.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051360.3732
+    'REQUEST_TIME' => 1730051360
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:49:20 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/css/bootstrap.min.css.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/css/bootstr...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:49:20 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44500'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/css/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051360.4348
+    'REQUEST_TIME' => 1730051360
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:23 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/css/bootstrap.min.css.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/css/bootstr...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:23 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44500'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/css/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051423.522
+    'REQUEST_TIME' => 1730051423
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:23 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/bootstrap.bundle.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/bootstra...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:23 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44508'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/bootstrap.bundle.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051423.8133
+    'REQUEST_TIME' => 1730051423
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:23 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/feather.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/feather....', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:23 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44508'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/feather.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051423.828
+    'REQUEST_TIME' => 1730051423
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:24 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/css/bootstrap.min.css.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/css/bootstr...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:24 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44508'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/css/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051424.747
+    'REQUEST_TIME' => 1730051424
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:25 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/css/bootstrap.min.css.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/css/bootstr...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:25 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '56386'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/css/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051425.0747
+    'REQUEST_TIME' => 1730051425
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:25 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/bootstrap.bundle.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/bootstra...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:25 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44508'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/bootstrap.bundle.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051425.289
+    'REQUEST_TIME' => 1730051425
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:25 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/feather.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/feather....', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:25 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44508'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/feather.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051425.4655
+    'REQUEST_TIME' => 1730051425
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:36 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/bootstrap.bundle.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/bootstra...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:36 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44508'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/bootstrap.bundle.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051436.1084
+    'REQUEST_TIME' => 1730051436
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:36 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/feather.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/feather....', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:36 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '56386'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/feather.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051436.1097
+    'REQUEST_TIME' => 1730051436
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:50:36 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/css/bootstrap.min.css.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/css/bootstr...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:50:36 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '56386'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/css/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051436.215
+    'REQUEST_TIME' => 1730051436
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:53:46 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/feather.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/feather....', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:53:46 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44110'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/feather.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051626.434
+    'REQUEST_TIME' => 1730051626
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:53:46 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/js/bootstrap.bundle.min.js.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/js/bootstra...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:53:46 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44114'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/js/bootstrap.bundle.min.js.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051626.4329
+    'REQUEST_TIME' => 1730051626
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 20:53:46 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "web/css/bootstrap.min.css.map". in /var/www/html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('web/css/bootstr...', Array)
+#1 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/index.php(18): yii\base\Application->run()
+#2 {main}
+2024-10-27 20:53:46 [172.18.0.1][-][e1abbe906a0e653415cf7d0937d04f01][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'e1abbe906a0e653415cf7d0937d04f01'
+    '_csrf' => '57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=e1abbe906a0e653415cf7d0937d04f01; _csrf=57f7bc5d26ccfc530b748d7dd0c6d50f09bb9b422cf3a924521ae345f75bcf55a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MC4lvQ40LzwK7Bv8Zp8bC8bTvnWcUvav%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '44114'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/web/css/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730051626.4956
+    'REQUEST_TIME' => 1730051626
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 21:30:22 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: /var/www/html/modules/dashboard/views/auth-rule/create-role.php in /var/www/html/vendor/yiisoft/yii2/base/View.php:234
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/base/View.php(157): yii\base\View->renderFile('/var/www/html/m...', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#1 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(407): yii\base\View->render('create-role', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#2 /var/www/html/modules/dashboard/controllers/AuthRuleController.php(122): yii\base\Controller->render('create-role', Array)
+#3 [internal function]: app\modules\dashboard\controllers\AuthRuleController->actionCreate()
+#4 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#6 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('create', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('dashboard/auth-...', Array)
+#8 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/index.php(18): yii\base\Application->run()
+#10 {main}
+2024-10-27 21:30:22 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'aba8d8b83526d9db02c435b574ee3c06'
+    '_csrf' => '88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=aba8d8b83526d9db02c435b574ee3c06; _csrf=88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/dashboard/auth-rule/index'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '39490'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/dashboard/auth-rule/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730053822.082
+    'REQUEST_TIME' => 1730053822
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 21:31:13 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\RoleForm::data in /var/www/html/vendor/yiisoft/yii2/base/Component.php:154
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/helpers/BaseHtml.php(2291): yii\base\Component->__get('data')
+#1 /var/www/html/vendor/yiisoft/yii2/helpers/BaseHtml.php(1567): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\RoleForm), 'data')
+#2 /var/www/html/vendor/yiisoft/yii2/widgets/ActiveField.php(516): yii\helpers\BaseHtml::activeTextarea(Object(app\models\RoleForm), 'data', Array)
+#3 /var/www/html/modules/dashboard/views/auth-rule/_form.php(17): yii\widgets\ActiveField->textarea(Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/View.php(348): require('/var/www/html/m...')
+#5 /var/www/html/vendor/yiisoft/yii2/base/View.php(258): yii\base\View->renderPhpFile('/var/www/html/m...', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/base/View.php(157): yii\base\View->renderFile('/var/www/html/m...', Array, NULL)
+#7 /var/www/html/modules/dashboard/views/auth-rule/create.php(16): yii\base\View->render('_form', Array)
+#8 /var/www/html/vendor/yiisoft/yii2/base/View.php(348): require('/var/www/html/m...')
+#9 /var/www/html/vendor/yiisoft/yii2/base/View.php(258): yii\base\View->renderPhpFile('/var/www/html/m...', Array)
+#10 /var/www/html/vendor/yiisoft/yii2/base/View.php(157): yii\base\View->renderFile('/var/www/html/m...', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#11 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(407): yii\base\View->render('create', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#12 /var/www/html/modules/dashboard/controllers/AuthRuleController.php(122): yii\base\Controller->render('create', Array)
+#13 [internal function]: app\modules\dashboard\controllers\AuthRuleController->actionCreate()
+#14 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('create', Array)
+#17 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('dashboard/auth-...', Array)
+#18 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /var/www/html/index.php(18): yii\base\Application->run()
+#20 {main}
+2024-10-27 21:31:13 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'aba8d8b83526d9db02c435b574ee3c06'
+    '_csrf' => '88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=aba8d8b83526d9db02c435b574ee3c06; _csrf=88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/dashboard/auth-rule/index'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '39490'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/dashboard/auth-rule/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730053873.757
+    'REQUEST_TIME' => 1730053873
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 21:31:16 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\RoleForm::data in /var/www/html/vendor/yiisoft/yii2/base/Component.php:154
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/helpers/BaseHtml.php(2291): yii\base\Component->__get('data')
+#1 /var/www/html/vendor/yiisoft/yii2/helpers/BaseHtml.php(1567): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\RoleForm), 'data')
+#2 /var/www/html/vendor/yiisoft/yii2/widgets/ActiveField.php(516): yii\helpers\BaseHtml::activeTextarea(Object(app\models\RoleForm), 'data', Array)
+#3 /var/www/html/modules/dashboard/views/auth-rule/_form.php(17): yii\widgets\ActiveField->textarea(Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/View.php(348): require('/var/www/html/m...')
+#5 /var/www/html/vendor/yiisoft/yii2/base/View.php(258): yii\base\View->renderPhpFile('/var/www/html/m...', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/base/View.php(157): yii\base\View->renderFile('/var/www/html/m...', Array, NULL)
+#7 /var/www/html/modules/dashboard/views/auth-rule/create.php(16): yii\base\View->render('_form', Array)
+#8 /var/www/html/vendor/yiisoft/yii2/base/View.php(348): require('/var/www/html/m...')
+#9 /var/www/html/vendor/yiisoft/yii2/base/View.php(258): yii\base\View->renderPhpFile('/var/www/html/m...', Array)
+#10 /var/www/html/vendor/yiisoft/yii2/base/View.php(157): yii\base\View->renderFile('/var/www/html/m...', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#11 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(407): yii\base\View->render('create', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#12 /var/www/html/modules/dashboard/controllers/AuthRuleController.php(122): yii\base\Controller->render('create', Array)
+#13 [internal function]: app\modules\dashboard\controllers\AuthRuleController->actionCreate()
+#14 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('create', Array)
+#17 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('dashboard/auth-...', Array)
+#18 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /var/www/html/index.php(18): yii\base\Application->run()
+#20 {main}
+2024-10-27 21:31:16 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'aba8d8b83526d9db02c435b574ee3c06'
+    '_csrf' => '88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=aba8d8b83526d9db02c435b574ee3c06; _csrf=88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/dashboard/auth-rule/index'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '39490'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/dashboard/auth-rule/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730053876.7585
+    'REQUEST_TIME' => 1730053876
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 21:31:17 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\RoleForm::data in /var/www/html/vendor/yiisoft/yii2/base/Component.php:154
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/helpers/BaseHtml.php(2291): yii\base\Component->__get('data')
+#1 /var/www/html/vendor/yiisoft/yii2/helpers/BaseHtml.php(1567): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\RoleForm), 'data')
+#2 /var/www/html/vendor/yiisoft/yii2/widgets/ActiveField.php(516): yii\helpers\BaseHtml::activeTextarea(Object(app\models\RoleForm), 'data', Array)
+#3 /var/www/html/modules/dashboard/views/auth-rule/_form.php(17): yii\widgets\ActiveField->textarea(Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/View.php(348): require('/var/www/html/m...')
+#5 /var/www/html/vendor/yiisoft/yii2/base/View.php(258): yii\base\View->renderPhpFile('/var/www/html/m...', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/base/View.php(157): yii\base\View->renderFile('/var/www/html/m...', Array, NULL)
+#7 /var/www/html/modules/dashboard/views/auth-rule/create.php(16): yii\base\View->render('_form', Array)
+#8 /var/www/html/vendor/yiisoft/yii2/base/View.php(348): require('/var/www/html/m...')
+#9 /var/www/html/vendor/yiisoft/yii2/base/View.php(258): yii\base\View->renderPhpFile('/var/www/html/m...', Array)
+#10 /var/www/html/vendor/yiisoft/yii2/base/View.php(157): yii\base\View->renderFile('/var/www/html/m...', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#11 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(407): yii\base\View->render('create', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#12 /var/www/html/modules/dashboard/controllers/AuthRuleController.php(122): yii\base\Controller->render('create', Array)
+#13 [internal function]: app\modules\dashboard\controllers\AuthRuleController->actionCreate()
+#14 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('create', Array)
+#17 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('dashboard/auth-...', Array)
+#18 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /var/www/html/index.php(18): yii\base\Application->run()
+#20 {main}
+2024-10-27 21:31:17 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'aba8d8b83526d9db02c435b574ee3c06'
+    '_csrf' => '88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=aba8d8b83526d9db02c435b574ee3c06; _csrf=88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/dashboard/auth-rule/index'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '39490'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/dashboard/auth-rule/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730053877.3284
+    'REQUEST_TIME' => 1730053877
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]
+2024-10-27 21:31:17 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\RoleForm::data in /var/www/html/vendor/yiisoft/yii2/base/Component.php:154
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/helpers/BaseHtml.php(2291): yii\base\Component->__get('data')
+#1 /var/www/html/vendor/yiisoft/yii2/helpers/BaseHtml.php(1567): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\RoleForm), 'data')
+#2 /var/www/html/vendor/yiisoft/yii2/widgets/ActiveField.php(516): yii\helpers\BaseHtml::activeTextarea(Object(app\models\RoleForm), 'data', Array)
+#3 /var/www/html/modules/dashboard/views/auth-rule/_form.php(17): yii\widgets\ActiveField->textarea(Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/View.php(348): require('/var/www/html/m...')
+#5 /var/www/html/vendor/yiisoft/yii2/base/View.php(258): yii\base\View->renderPhpFile('/var/www/html/m...', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/base/View.php(157): yii\base\View->renderFile('/var/www/html/m...', Array, NULL)
+#7 /var/www/html/modules/dashboard/views/auth-rule/create.php(16): yii\base\View->render('_form', Array)
+#8 /var/www/html/vendor/yiisoft/yii2/base/View.php(348): require('/var/www/html/m...')
+#9 /var/www/html/vendor/yiisoft/yii2/base/View.php(258): yii\base\View->renderPhpFile('/var/www/html/m...', Array)
+#10 /var/www/html/vendor/yiisoft/yii2/base/View.php(157): yii\base\View->renderFile('/var/www/html/m...', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#11 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(407): yii\base\View->render('create', Array, Object(app\modules\dashboard\controllers\AuthRuleController))
+#12 /var/www/html/modules/dashboard/controllers/AuthRuleController.php(122): yii\base\Controller->render('create', Array)
+#13 [internal function]: app\modules\dashboard\controllers\AuthRuleController->actionCreate()
+#14 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 /var/www/html/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('create', Array)
+#17 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('dashboard/auth-...', Array)
+#18 /var/www/html/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /var/www/html/index.php(18): yii\base\Application->run()
+#20 {main}
+2024-10-27 21:31:17 [172.18.0.1][-][aba8d8b83526d9db02c435b574ee3c06][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__stripe_mid' => '2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21'
+    'pma_lang' => 'en'
+    'pmaUser-1' => 'yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es+eGA0OpFziemyA17t1/VIfrZE='
+    'PHPSESSID' => 'aba8d8b83526d9db02c435b574ee3c06'
+    '_csrf' => '88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PHP_UPLOAD_MAX_FILESIZE' => '32M'
+    'HOSTNAME' => '3c6edf95cc2e'
+    'PHP_VERSION' => '8.2.13'
+    'PHP_INI_DIR' => '/usr/local/etc/php'
+    'GPG_KEYS' => '39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC'
+    'PHP_TIME_ZONE' => 'UTC'
+    'PHP_LDFLAGS' => '-Wl,-O1 -pie'
+    'PWD' => '/var/www/html'
+    'PKG_RELEASE' => '1'
+    'ADMIN_EMAIL' => 'admin@crackit.co.ke'
+    'HOME' => '/home/www-data'
+    'PHP_MEMORY_LIMIT' => '256M'
+    'PHP_POST_MAX_SIZE' => '32M'
+    'PHP_SHA256' => '2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
+    'PHPIZE_DEPS' => 'autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c'
+    'PHP_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz'
+    'SHLVL' => '1'
+    'PHP_CFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'NGINX_VERSION' => '1.22.1'
+    'PHP_ASC_URL' => 'https://www.php.net/distributions/php-8.2.13.tar.xz.asc'
+    'PHP_CPPFLAGS' => '-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64'
+    '_' => '/usr/local/sbin/php-fpm'
+    'USER' => 'www-data'
+    'HTTP_COOKIE' => '__stripe_mid=2df0f5a8-10cd-43f8-8a52-ad6a5396675d86dd21; pma_lang=en; pmaUser-1=yFL8ybsvn9gpK22PD9h98VY2oUzY9tm3es%2BeGA0OpFziemyA17t1%2FVIfrZE%3D; PHPSESSID=aba8d8b83526d9db02c435b574ee3c06; _csrf=88fd7ea986fd614afba602885335322b33bf5f607b528a30e8e05de4bd6efa0aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22BYBW7yOCtoM6I0Z9Ifmqe_h9AGXy0HWs%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-KE,en-GB;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:200/dashboard/auth-rule/index'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Linux\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:200'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '172.18.0.14'
+    'REMOTE_PORT' => '39490'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'SERVER_SOFTWARE' => 'nginx/1.22.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/dashboard/auth-rule/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'PATH_INFO' => ''
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1730053877.7759
+    'REQUEST_TIME' => 1730053877
+    'argv' => []
+    'argc' => 0
+    'ENVIRONMENT' => 'dev'
+    'APP_VERSION' => 'v1'
+    'APP_CODE' => 'omnibase'
+    'APP_NAME' => 'Delta Cosmetics'
+    'APP_DEVELOPER' => 'DoubleDeals Technologies'
+    'DEV_DB_DRIVER' => 'mysql'
+    'DEV_DB_HOST' => 'mariadb'
+    'DEV_DB_PORT' => '3306'
+    'DEV_DATABASE' => 'delta'
+    'DEV_DB_USERNAME' => 'root'
+    'DEV_DB_PASSWORD' => 'root'
+    'PROD_DB_HOST' => 'localhost'
+    'PROD_DATABASE' => 'dandeal_beneficiary'
+    'PROD_DB_USERNAME' => 'dandeal_danny'
+    'PROD_DB_PASSWORD' => 'I4QG&5C02mj['
+]

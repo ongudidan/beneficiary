@@ -134,14 +134,72 @@ $sidebarMenus = [
             ],
         ]
     ],
-    // [
-    //     'label' => 'Settings',
-    //     'url' => Url::to(['/dashboard/setting/index']),
-    //     'icon' => 'fas fa-cog',  // Dashboard icon
-    //     'module' => 'dashboard',
-    //     'controller' => 'setting',
-    //     'action' => 'index',
-    // ],
+    [
+        'label' => 'Auth Rules',
+        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'submenu' => true,
+        'active' => $module === 'dashboard' && $controller === 'auth-rule',
+        'items' => [
+            [
+                'label' => 'auth-rule List',
+                'url' => Url::to(['/dashboard/auth-rule/index']),
+                'module' => 'dashboard',
+                'controller' => 'auth-rule',
+                'action' => 'index',
+            ],
+            [
+                'label' => 'Create auth-rule',
+                'url' => Url::to(['/dashboard/auth-rule/create']),
+                'module' => 'dashboard',
+                'controller' => 'auth-rule',
+                'action' => 'create',
+            ],
+        ]
+    ],
+    [
+        'label' => 'Auth Item',
+        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'submenu' => true,
+        'active' => $module === 'dashboard' && $controller === 'auth-item',
+        'items' => [
+            [
+                'label' => 'auth-item List',
+                'url' => Url::to(['/dashboard/auth-item/index']),
+                'module' => 'dashboard',
+                'controller' => 'auth-item',
+                'action' => 'index',
+            ],
+            [
+                'label' => 'Create auth-item',
+                'url' => Url::to(['/dashboard/auth-item/create']),
+                'module' => 'dashboard',
+                'controller' => 'auth-item',
+                'action' => 'create',
+            ],
+        ]
+    ],
+    [
+        'label' => 'Auth Item Child',
+        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'submenu' => true,
+        'active' => $module === 'dashboard' && $controller === 'auth-item-child',
+        'items' => [
+            [
+                'label' => 'auth-item-child List',
+                'url' => Url::to(['/dashboard/auth-item-child/index']),
+                'module' => 'dashboard',
+                'controller' => 'auth-item-child',
+                'action' => 'index',
+            ],
+            [
+                'label' => 'Create auth-item-child',
+                'url' => Url::to(['/dashboard/auth-item-child/create']),
+                'module' => 'dashboard',
+                'controller' => 'auth-item-child',
+                'action' => 'create',
+            ],
+        ]
+    ],
 ];
 
 ?>
