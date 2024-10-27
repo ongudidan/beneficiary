@@ -8,6 +8,7 @@ use yii\helpers\FileHelper;
 class AuthItemGenerator
 {
     const TYPE_PERMISSION = 2; // Value for permissions in Yii2 RBAC.
+    const TYPE_PARENT = 1; // Assuming 1 is the value for parent items (you may adjust this based on your implementation)
 
     public function generateAuthItems()
     {
@@ -42,12 +43,22 @@ class AuthItemGenerator
             $modelName = pathinfo($file, PATHINFO_FILENAME);
             $actions = ['create', 'view', 'update', 'delete'];
 
+            // Create a parent auth item for the model
+            $this->addParentAuthItem($modelName);
+
             foreach ($actions as $action) {
-                $itemName = "{$modelName}.{$action}";
+                $itemName = "{$modelName}-{$action}";
                 $description = ucfirst($action) . " permission for {$modelName}";
                 $this->addAuthItem($itemName, $description, self::TYPE_PERMISSION);
             }
         }
+    }
+
+    protected function addParentAuthItem($modelName)
+    {
+        $parentName = "{$modelName}-parent"; // Naming convention for parent item
+        $description = "Parent permission for {$modelName}";
+        $this->addAuthItem($parentName, $description, self::TYPE_PARENT);
     }
 
     protected function addAuthItem($name, $description, $type)
