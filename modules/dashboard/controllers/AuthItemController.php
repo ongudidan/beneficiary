@@ -2,6 +2,7 @@
 
 namespace app\modules\dashboard\controllers;
 
+use app\components\AuthItemChildGenerator;
 use app\components\AuthItemGenerator;
 use app\modules\dashboard\models\AuthItem;
 use app\modules\dashboard\models\AuthItemSearch;
@@ -42,21 +43,23 @@ class AuthItemController extends Controller
      */
     public function actionIndex()
     {
-        // Create an instance of the AuthItemGenerator model
-        $authItemGenerator = new AuthItemGenerator();
-
-        // Automatically generate auth items when the index action is loaded
-        $authItemGenerator->generateAuthItems();
-
-        // Proceed with the normal index functionality
         $searchModel = new AuthItemSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
+
+        // Generate auth items if they don't exist
+        $authItemGenerator = new AuthItemGenerator();
+        $authItemGenerator->generateAuthItems();
+
+        // Generate auth item children
+        $authItemChildGenerator = new AuthItemChildGenerator();
+        $authItemChildGenerator->generateAuthItemChildren();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
+
 
     /**
      * Displays a single AuthItem model.
