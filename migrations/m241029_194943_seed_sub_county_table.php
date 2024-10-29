@@ -208,16 +208,21 @@ class m241029_194943_seed_sub_county_table extends Migration
             ['id' => '03004', 'name' => 'Mochongoi', 'county_id' => '030'],
 
             // Laikipia County (031)
-            ['id' => '03101', 'name' => 'Laikipia West',
+            [
+                'id' => '03101',
+                'name' => 'Laikipia West',
                 'county_id' => '031'
             ],
-            ['id' => '03102', 'name' => 'Laikipia East',
+            [
+                'id' => '03102',
+                'name' => 'Laikipia East',
                 'county_id' => '031'
             ],
             ['id' => '03103', 'name' => 'Nanyuki', 'county_id' => '031'],
 
             // Nakuru County (032)
-            ['id' => '03201',
+            [
+                'id' => '03201',
                 'name' => 'Nakuru Town East',
                 'county_id' => '032'
             ],
@@ -226,10 +231,14 @@ class m241029_194943_seed_sub_county_table extends Migration
             ['id' => '03204', 'name' => 'Gilgil', 'county_id' => '032'],
             ['id' => '03205', 'name' => 'Molo', 'county_id' => '032'],
             ['id' => '03206', 'name' => 'Rongai', 'county_id' => '032'],
-            ['id' => '03207', 'name' => 'Kuresoi North',
+            [
+                'id' => '03207',
+                'name' => 'Kuresoi North',
                 'county_id' => '032'
             ],
-            ['id' => '03208', 'name' => 'Kuresoi South',
+            [
+                'id' => '03208',
+                'name' => 'Kuresoi South',
                 'county_id' => '032'
             ],
 
@@ -240,12 +249,16 @@ class m241029_194943_seed_sub_county_table extends Migration
             ['id' => '03304', 'name' => 'Transmara West', 'county_id' => '033'],
 
             // Kajiado County (034)
-            ['id' => '03401', 'name' => 'Kajiado North',
+            [
+                'id' => '03401',
+                'name' => 'Kajiado North',
                 'county_id' => '034'
             ],
             ['id' => '03402', 'name' => 'Kajiado East', 'county_id' => '034'],
             ['id' => '03403', 'name' => 'Kajiado West', 'county_id' => '034'],
-            ['id' => '03404', 'name' => 'Kajiado South',
+            [
+                'id' => '03404',
+                'name' => 'Kajiado South',
                 'county_id' => '034'
             ],
 
@@ -256,7 +269,9 @@ class m241029_194943_seed_sub_county_table extends Migration
             ['id' => '03504', 'name' => 'Kapsoit', 'county_id' => '035'],
 
             // Bomet County (036)
-            ['id' => '03601', 'name' => 'Bomet Central',
+            [
+                'id' => '03601',
+                'name' => 'Bomet Central',
                 'county_id' => '036'
             ],
             ['id' => '03602', 'name' => 'Bomet East', 'county_id' => '036'],
@@ -270,7 +285,8 @@ class m241029_194943_seed_sub_county_table extends Migration
             ['id' => '03705', 'name' => 'Malava', 'county_id' => '037'],
 
             // Vihiga County (038)
-            ['id' => '03801',
+            [
+                'id' => '03801',
                 'name' => 'Vihiga',
                 'county_id' => '038'
             ],
@@ -301,7 +317,8 @@ class m241029_194943_seed_sub_county_table extends Migration
             ['id' => '04105', 'name' => 'Bondo', 'county_id' => '041'],
 
             // Kisumu County (042)
-            ['id' => '04201',
+            [
+                'id' => '04201',
                 'name' => 'Kisumu Central',
                 'county_id' => '042'
             ],
@@ -311,7 +328,9 @@ class m241029_194943_seed_sub_county_table extends Migration
             ['id' => '04205', 'name' => 'Nyando', 'county_id' => '042'],
 
             // Homa Bay County (043)
-            ['id' => '04301', 'name' => 'Homa Bay Town',
+            [
+                'id' => '04301',
+                'name' => 'Homa Bay Town',
                 'county_id' => '043'
             ],
             ['id' => '04302', 'name' => 'Mbita', 'county_id' => '043'],
@@ -321,7 +340,8 @@ class m241029_194943_seed_sub_county_table extends Migration
             ['id' => '04306', 'name' => 'Rachuonyo South', 'county_id' => '043'],
 
             // Migori County (044)
-            ['id' => '04401',
+            [
+                'id' => '04401',
                 'name' => 'Migori',
                 'county_id' => '044'
             ],
@@ -340,19 +360,27 @@ class m241029_194943_seed_sub_county_table extends Migration
             // Nyamira County (046)
             ['id' => '04601', 'name' => 'Nyamira', 'county_id' => '046'],
             ['id' => '04602', 'name' => 'Borabu', 'county_id' => '046'],
-            ['id' => '04603', 'name' => 'Nyamira North',
+            [
+                'id' => '04603',
+                'name' => 'Nyamira North',
                 'county_id' => '046'
             ],
-            ['id' => '04604', 'name' => 'Nyamira South',
+            [
+                'id' => '04604',
+                'name' => 'Nyamira South',
                 'county_id' => '046'
             ],
 
             // Nairobi County (047)
             ['id' => '04701', 'name' => 'Nairobi Central', 'county_id' => '047'],
-            ['id' => '04702', 'name' => 'Embakasi East',
+            [
+                'id' => '04702',
+                'name' => 'Embakasi East',
                 'county_id' => '047'
             ],
-            ['id' => '04703', 'name' => 'Embakasi West',
+            [
+                'id' => '04703',
+                'name' => 'Embakasi West',
                 'county_id' => '047'
             ],
             ['id' => '04704', 'name' => 'Lang\'ata', 'county_id' => '047'],
