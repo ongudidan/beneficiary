@@ -18,7 +18,7 @@ use yii\helpers\Url;
             <i class="fas fa-bars"></i>
         </a>
     </div>
-<!-- 
+    <!-- 
     <div class="top-nav-search">
         <form>
             <input type="text" class="form-control" placeholder="Search here">
@@ -56,6 +56,11 @@ use yii\helpers\Url;
                         <p class="text-muted mb-0">Administrator</p>
                     </div>
                 </div>
+                <a class="dropdown-item" href="<?= Url::to(['/ambassador/default/index']) ?>">Ambassador Dashboard</a>
+                <a class="dropdown-item" href="<?= Url::to(['/officer/default/index']) ?>">Officer Dashboard</a>
+                <a class="dropdown-item" href="<?= Url::to(['/coordinator/default/index']) ?>">Coordinator Dasboard</a>
+                <a class="dropdown-item" href="<?= Url::to(['/dashboard/default/index']) ?>">Admin Dashboard</a>
+                
                 <a class="dropdown-item" href="#">My Profile</a>
                 <!-- <a class="dropdown-item" href="inbox.html">Inbox</a> -->
                 <a class="dropdown-item" href="<?= Url::to('/site/logout') ?>">Logout</a>

@@ -12,17 +12,59 @@ class m240925_011459_create_app_tables extends Migration
      */
     public function safeUp()
     {
+        $this->createTable('{{%county}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'name' => $this->string()->defaultValue(null),
+        ]);
+
+        $this->createTable('{{%sub_county}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'name' => $this->string()->defaultValue(null),
+            'county_id' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[county_id]]) REFERENCES {{%county}} ([[id]])' .
+                $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+        ]);
+
+        $this->createTable('{{%word}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'name' => $this->string()->defaultValue(null),
+            'sub_county_id' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[sub_county_id]]) REFERENCES {{%sub_county}} ([[id]])' .
+                $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+        ]);
+
+        $this->createTable('{{%location}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'name' => $this->string()->defaultValue(null),
+            'word_id' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[word_id]]) REFERENCES {{%word}} ([[id]])' .
+                $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+        ]);
+
+        $this->createTable('{{%sub_location}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'name' => $this->string()->defaultValue(null),
+            'location_id' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[location_id]]) REFERENCES {{%location}} ([[id]])' .
+                $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+        ]);
+
+        $this->createTable('{{%village}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'name' => $this->string()->defaultValue(null),
+            'sub_location_id' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[sub_location_id]]) REFERENCES {{%sub_location}} ([[id]])' .
+                $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+        ]);
 
         $this->createTable('{{%user}}', [
             'id' => $this->string()->notNull()->unique(), // Custom string ID
             'username' => $this->string()->notNull()->unique(),
             'verification_token' => $this->string()->defaultValue(null),
-
             'auth_key' => $this->string(32)->notNull(),
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->unique(),
             'email' => $this->string()->notNull()->unique(),
-
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
@@ -32,6 +74,8 @@ class m240925_011459_create_app_tables extends Migration
 
         $this->createTable('{{%beneficiary}}', [
             'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'sub_location_id' => $this->string()->defaultValue(null),
+            'village_id' => $this->string()->defaultValue(null),
             'name' => $this->string()->notNull(),
             'national_id' => $this->string()->defaultValue(null),
             'contact' => $this->string()->notNull(),
@@ -41,7 +85,6 @@ class m240925_011459_create_app_tables extends Migration
             'issue_date' => $this->string(),
             'lat' => $this->string()->notNull(),
             'long' => $this->string()->notNull(),
-
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
@@ -53,11 +96,26 @@ class m240925_011459_create_app_tables extends Migration
             'id' => $this->string()->notNull()->unique(), // Custom string ID
             'name' => $this->string()->notNull(),
             'reference_no' => $this->string()->notNull(),
-            'date' => $this->string()->notNull(),
+            'start_date' => $this->string()->notNull(),
+            'end_date' => $this->string()->notNull(),
             'description' => $this->string()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'created_by' => $this->string()->defaultValue(null),
+            'updated_by' => $this->string()->defaultValue(null),
+        ]);
+
+        $this->createTable('{{%activity_report}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'activity_id' => $this->string()->defaultValue(null),
+            'beneficiary_id' => $this->string()->defaultValue(null),
+            'usage' => $this->string()->defaultValue(null),
+            'condition' => $this->string()->defaultValue(null),
+            'recommendation' => $this->string()->defaultValue(null),
+            'remarks' => $this->string()->defaultValue(null),
+            'created_at' => $this->integer()->defaultValue(null),
+            'updated_at' => $this->integer()->defaultValue(null),
             'created_by' => $this->string()->defaultValue(null),
             'updated_by' => $this->string()->defaultValue(null),
         ]);
@@ -79,6 +137,16 @@ class m240925_011459_create_app_tables extends Migration
 
         ]);
 
+        $this->createTable('{{%coordinator_sub_county}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'coordinator_id' => $this->string()->defaultValue(null),
+            'sub_county_id' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[coordinator_id]]) REFERENCES {{%coordinator}} ([[id]])' .
+                $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+            'FOREIGN KEY ([[sub_county_id]]) REFERENCES {{%sub_county}} ([[id]])' .
+                $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+        ]);
+
         $this->createTable('{{%field_officer}}', [
             'id' => $this->string()->notNull()->unique(), // Custom string ID
             'name' => $this->string()->notNull(),
@@ -97,6 +165,16 @@ class m240925_011459_create_app_tables extends Migration
 
         ]);
 
+        $this->createTable('{{%officer_sub_location}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'officer_id' => $this->string()->defaultValue(null),
+            'sub_location_id' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[officer_id]]) REFERENCES {{%field_officer}} ([[id]])' .
+            $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+            'FOREIGN KEY ([[sub_location_id]]) REFERENCES {{%sub_location}} ([[id]])' .
+            $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+        ]);
+
         $this->createTable('{{%ambassador}}', [
             'id' => $this->string()->notNull()->unique(), // Custom string ID
             'name' => $this->string()->notNull(),
@@ -113,6 +191,16 @@ class m240925_011459_create_app_tables extends Migration
             'FOREIGN KEY ([[user_id]]) REFERENCES {{%user}} ([[id]])' .
                 $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
 
+        ]);
+
+        $this->createTable('{{%ambassador_village}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'ambassador_id' => $this->string()->defaultValue(null),
+            'village_id' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[ambassador_id]]) REFERENCES {{%coordinator}} ([[id]])' .
+            $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+            'FOREIGN KEY ([[village_id]]) REFERENCES {{%village}} ([[id]])' .
+            $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
         ]);
 
         // Create RBAC tables in correct order
@@ -177,6 +265,13 @@ class m240925_011459_create_app_tables extends Migration
         $this->dropTable('{{%activity}}');
         $this->dropTable('{{%beneficiary}}');
         $this->dropTable('{{%user}}');
+        $this->dropTable('{{%village}}');
+        $this->dropTable('{{%sub_location}}');
+        $this->dropTable('{{%location}}');
+        $this->dropTable('{{%word}}');
+        $this->dropTable('{{%sub_county}}');
+        $this->dropTable('{{%county}}');
+
     }
 
     protected function buildFkClause($delete = '', $update = '')

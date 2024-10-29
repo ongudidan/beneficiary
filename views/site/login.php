@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <div class="login-right">
                         <div class="login-right-wrap">
-                            <h1>Kaa Chonjo Dashboard</h1>
+                            <!-- <h1>Kaa Chonjo Dashboard</h1> -->
                             <h2>Sign in</h2>
 
                             <?php $form = ActiveForm::begin([
@@ -37,8 +37,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             <form action="index.html">
                                 <div class="form-group">
-                                    <label>Username <span class="login-danger">*</span></label>
-                                    <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                                    <label>Email <span class="login-danger">*</span></label>
+                                    <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
                                     <span class="profile-views"><i class="fas fa-user-circle"></i></span>
                                 </div>
                                 <div class="form-group">

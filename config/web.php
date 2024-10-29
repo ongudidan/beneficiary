@@ -15,6 +15,15 @@ $config = [
         'dashboard' => [
             'class' => 'app\modules\dashboard\dashboard',
         ],
+        'coordinator' => [
+            'class' => 'app\modules\coordinator\coordinator',
+        ],
+        'officer' => [
+            'class' => 'app\modules\officer\officer',
+        ],
+        'ambassador' => [
+            'class' => 'app\modules\ambassador\ambassador',
+        ],
     ],
     'components' => [
         'request' => [

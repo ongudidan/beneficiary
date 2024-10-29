@@ -22,7 +22,7 @@ class DashboardAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         // 'css/site.css',
-        "/web/css/bootstrap.min.css",
+        // "/web/css/bootstrap.min.css",
         "/web/css/feather.css",
         "/web/css/flags.css",
         "/web/css/fontawesome.min.css",
@@ -33,11 +33,11 @@ class DashboardAsset extends AssetBundle
 
         "/web/css/toatr.css",
 
-        "/web/remos/css/animate.min.css",
-        "/web/remos/css/animation.css",
-        // "/web/remos/css/bootstrap.css",
-        "/web/remos/css/bootstrap-select.min.css",
-        // "/web/remos/css/style.css",
+        // "/web/remos/css/animate.min.css",
+        // "/web/remos/css/animation.css",
+        // // "/web/remos/css/bootstrap.css",
+        // "/web/remos/css/bootstrap-select.min.css",
+        // // "/web/remos/css/style.css",
 
 
     ];
