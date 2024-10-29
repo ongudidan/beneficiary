@@ -22,7 +22,12 @@ class m241024_055916_seed_beneficiary_table extends Migration
         $sheet = $spreadsheet->getActiveSheet();
         $data = $sheet->toArray();
 
-        // Iterate through the rows and insert them into the beneficiarys table
+        // Create an array to keep track of already inserted sublocations
+        $insertedSubLocations = [];
+        $insertedVillages = [];
+
+
+        // Iterate through the rows and insert them into the beneficiary table
         foreach ($data as $index => $row) {
             // Skip rows before row 5 (index 4)
             if ($index < 4) {
@@ -33,6 +38,7 @@ class m241024_055916_seed_beneficiary_table extends Migration
 
             $created_by = User::find()->where(['username' => 'admin'])->one()->id;
             $updated_by = User::find()->where(['username' => 'admin'])->one()->id;
+
             // Set beneficiary values
             $name = $row[1] ?? 'Undefined ';
             $nationalId = $row[2] ?? 'Undefined ';
@@ -42,10 +48,8 @@ class m241024_055916_seed_beneficiary_table extends Migration
             $stoveNo = $row[6] ?? 'Undefined ';
 
             $issueDate = null;
-
             if (isset($row[7]) && $row[7] !== 'Undefined') {
                 $dateTime = DateTime::createFromFormat('d/m/Y', $row[7]);
-
                 if ($dateTime) {
                     $issueDate = $dateTime->getTimestamp();
                 }
@@ -53,6 +57,9 @@ class m241024_055916_seed_beneficiary_table extends Migration
 
             $lat = $row[8] ?? 'Undefined ';
             $long = $row[9] ?? 'Undefined ';
+            $ambassador = $row[12] ?? 'Undefined ';
+            $fieldOfficer = $row[13] ?? 'Undefined ';
+            $coordinator = $row[14] ?? 'Undefined ';
 
 
             // Insert the beneficiary into the beneficiary table
@@ -61,18 +68,41 @@ class m241024_055916_seed_beneficiary_table extends Migration
                 'name' => $name,
                 'national_id' => $nationalId,
                 'contact' => $contact,
-                'sub_location' => $subLocation, // Save the price without commas
+                'sub_location' => $subLocation,
                 'village' => $village,
                 'stove_no' => $stoveNo,
                 'issue_date' => $issueDate,
                 'lat' => $lat,
                 'long' => $long,
-
-                'created_at' => time(), // Current timestamp
-                'updated_at' => time(), // Current timestamp
+                'created_at' => time(),
+                'updated_at' => time(),
                 'created_by' => $created_by,
                 'updated_by' => $updated_by,
             ]);
+
+            // Check if the sublocation has already been inserted
+            if (!in_array($subLocation, $insertedSubLocations)) {
+                // Insert into sub_location table if it's not a duplicate
+                $this->insert('{{%sub_location}}', [
+                    'id' => IdGenerator::generateUniqueId(),
+                    'name' => $subLocation,
+                ]);
+                // Add the sublocation to the array to track it
+                $insertedSubLocations[] = $subLocation;
+            }
+
+            // Check if the village has already been inserted
+            if (!in_array($village, $insertedVillages)) {
+                // Insert into sub_location table if it's not a duplicate
+                $this->insert('{{%village}}', [
+                    'id' => IdGenerator::generateUniqueId(),
+                    'name' => $village,
+                    'sub_location_id' => $village,
+
+                ]);
+                // Add the village to the array to track it
+                $insertedVillages[] = $village;
+            }
         }
     }
 

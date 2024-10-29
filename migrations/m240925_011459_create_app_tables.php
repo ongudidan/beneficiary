@@ -25,7 +25,7 @@ class m240925_011459_create_app_tables extends Migration
                 $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
         ]);
 
-        $this->createTable('{{%word}}', [
+        $this->createTable('{{%ward}}', [
             'id' => $this->string()->notNull()->unique(), // Custom string ID
             'name' => $this->string()->defaultValue(null),
             'sub_county_id' => $this->string()->defaultValue(null),
@@ -36,8 +36,8 @@ class m240925_011459_create_app_tables extends Migration
         $this->createTable('{{%location}}', [
             'id' => $this->string()->notNull()->unique(), // Custom string ID
             'name' => $this->string()->defaultValue(null),
-            'word_id' => $this->string()->defaultValue(null),
-            'FOREIGN KEY ([[word_id]]) REFERENCES {{%word}} ([[id]])' .
+            'ward_id' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[ward_id]]) REFERENCES {{%ward}} ([[id]])' .
                 $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
         ]);
 
