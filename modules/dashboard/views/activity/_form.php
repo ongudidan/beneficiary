@@ -45,8 +45,26 @@ $formAction = Yii::$app->controller->action->id === 'update'
                     <div class="col-12 col-sm-12">
                         <div class="form-group local-forms">
 
-                            <?= $form->field($model, 'date')->widget(DateTimePicker::classname(), [
-                                'options' => ['placeholder' => 'Enter date of activity...'],
+                            <?= $form->field($model, 'start_date')->widget(DateTimePicker::classname(), [
+                                'options' => ['placeholder' => 'Enter start date of activity...'],
+                                'value' => date('d-M-Y H:i'), // Set current date and time as default in the correct format
+                                'pluginOptions' => [
+                                    'autoclose' => true,
+                                    'format' => 'dd-M-yyyy hh:ii', // Set the date format to 'dd-M-yyyy' and include time
+                                    'todayHighlight' => true, // Highlight today's date
+                                    'todayBtn' => true, // Add a button to quickly select today's date and time
+                                    'minuteStep' => 1, // Optional: set minute interval for time picker
+                                ]
+                            ]);
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12">
+                        <div class="form-group local-forms">
+
+                            <?= $form->field($model, 'end_date')->widget(DateTimePicker::classname(), [
+                                'options' => ['placeholder' => 'Enter end date of activity...'],
                                 'value' => date('d-M-Y H:i'), // Set current date and time as default in the correct format
                                 'pluginOptions' => [
                                     'autoclose' => true,

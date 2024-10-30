@@ -4,12 +4,12 @@ namespace app\modules\dashboard\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\dashboard\models\Activity;
+use app\modules\dashboard\models\ActivityReport;
 
 /**
- * ActivitySearch represents the model behind the search form of `app\modules\dashboard\models\Activity`.
+ * ActivityReportSearch represents the model behind the search form of `app\modules\dashboard\models\ActivityReport`.
  */
-class ActivitySearch extends Activity
+class ActivityReportSearch extends ActivityReport
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class ActivitySearch extends Activity
     public function rules()
     {
         return [
-            [['id', 'name', 'reference_no', 'start_date','end_date',  'description', 'created_by', 'updated_by'], 'safe'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'activity_id', 'beneficiary_id', 'usage', 'condition', 'recommendation', 'remarks', 'created_by', 'updated_by'], 'safe'],
+            [['created_at', 'updated_at'], 'integer'],
         ];
     }
 
@@ -40,7 +40,7 @@ class ActivitySearch extends Activity
      */
     public function search($params)
     {
-        $query = Activity::find();
+        $query = ActivityReport::find();
 
         // add conditions that should always apply here
 
@@ -58,18 +58,17 @@ class ActivitySearch extends Activity
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'id', $this->id])
-            ->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'reference_no', $this->reference_no])
-            ->andFilterWhere(['like', 'start_date', $this->start_date])
-            ->andFilterWhere(['like', 'end_date', $this->end_date])
-
-            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'activity_id', $this->activity_id])
+            ->andFilterWhere(['like', 'beneficiary_id', $this->beneficiary_id])
+            ->andFilterWhere(['like', 'usage', $this->usage])
+            ->andFilterWhere(['like', 'condition', $this->condition])
+            ->andFilterWhere(['like', 'recommendation', $this->recommendation])
+            ->andFilterWhere(['like', 'remarks', $this->remarks])
             ->andFilterWhere(['like', 'created_by', $this->created_by])
             ->andFilterWhere(['like', 'updated_by', $this->updated_by]);
 

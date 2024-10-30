@@ -1,6 +1,6 @@
 <?php
 
-use app\modules\dashboard\models\Activity;
+use app\modules\dashboard\models\ActivityReport;
 use yii\bootstrap5\LinkPager;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -8,33 +8,30 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var app\modules\dashboard\models\ActivitySearch $searchModel */
+/** @var app\modules\dashboard\models\ActivityReportSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Activities';
+$this->title = 'Activity Reports';
 $this->params['breadcrumbs'][] = $this->title;
-?>
-<div class="activity-index">
 
+$activityId = Yii::$app->request->get('id');
+
+?>
+<div class="activity-report-index">
 
     <div class="product-group-form">
         <div class="row">
-            <form method="get" action="<?= Url::to(['/dashboard/activity/index']) ?>">
+            <form method="get" action="<?= Url::to(['/dashboard/activityReport/index']) ?>">
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-5 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="ActivitySearch[name]" class="form-control" placeholder="Search by activity title ..." value="<?= Html::encode($searchModel->name) ?>">
+                            <input type="text" name="ActivityReportSearch[activity_id]" class="form-control" placeholder="Search by activityReport activity_id ..." value="<?= Html::encode($searchModel->activity_id) ?>">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-5 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="ActivitySearch[reference_no]" class="form-control" placeholder="Search by reference no ..." value="<?= Html::encode($searchModel->reference_no) ?>">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="form-group">
-                            <input type="text" name="ActivitySearch[start_date]" class="form-control" placeholder="Search by  start_date ..." value="<?= Html::encode($searchModel->start_date) ?>">
+                            <input type="text" name="ActivityReportSearch[created_by]" class="form-control" placeholder="Search by creator ..." value="<?= Html::encode($searchModel->created_by) ?>">
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -54,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="page-header">
                         <div class="row align-items-center">
                             <div class="col-auto text-end float-end ms-auto download-grp">
-                                <a href="<?= Url::to('/dashboard/activity/create') ?>" class="btn btn-primary"><i
+                                <a href="<?= Url::to(['/dashboard/activity-report/create', 'activity_id' => $activityId]) ?>" class="btn btn-primary"><i
                                         class="fas fa-plus"></i></a>
                             </div>
                         </div>
@@ -65,42 +62,41 @@ $this->params['breadcrumbs'][] = $this->title;
                             <thead class="student-thread">
                                 <tr>
                                     <th>#</th>
-                                    <th>Reference No</th>
-                                    <th>Name</th>
-                                    <th>Date</th>
+                                    <th>Activity No</th>
+                                    <th>Beneficiary</th>
+                                    <th>Usage</th>
+                                    <th>Condition</th>
+                                    <th>recommendation</th>
+                                    <th>Remarks</th>
                                     <th>Created At</th>
-                                    <th>Status</th>
+                                    <!-- <th>Status</th> -->
                                     <th class="text-end">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php if ($dataProvider->getCount() > 0): // Check if there are any models 
                                 ?>
-                                    <?php foreach ($dataProvider->getModels() as $index => $activity): ?>
+                                    <?php foreach ($dataProvider->getModels() as $index => $activityReport): ?>
                                         <tr>
                                             <td><?= $dataProvider->pagination->page * $dataProvider->pagination->pageSize + $index + 1 ?></td>
-                                            <td><?= $activity->reference_no ?></td>
-                                            <td><?= $activity->name ?></td>
-                                            <td><?= $activity->start_date ?></td>
-                                            <td><?= Yii::$app->formatter->asDatetime($activity->created_at) ?></td>
-                                            <?php if ($activity->status == 10) { ?>
-                                                <td>
-                                                    <span class="badge badge-success">Active</span>
-                                                </td>
-                                            <?php } else { ?>
-                                                <td>
-                                                    <span class="badge badge-warning">Closed</span>
-                                                </td>
-                                            <?php } ?>
+                                            <td><?= $activityReport->activity->reference_no ?? '' ?></td>
+                                            <td><?= $activityReport->beneficiary->name ?? '' ?></td>
+                                            <td><?= $activityReport->usage ?></td>
+                                            <td><?= $activityReport->condition ?></td>
+                                            <td><?= $activityReport->recommendation ?></td>
+                                            <td><?= $activityReport->remarks ?></td>
+
+                                            <td><?= Yii::$app->formatter->asDatetime($activityReport->created_at) ?></td>
+
                                             <td class="text-end">
                                                 <div class="actions ">
-                                                    <a href="<?= Url::to(['/dashboard/activity/view', 'id' => $activity->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
+                                                    <a href="<?= Url::to(['/dashboard/activity-report/view', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
                                                         <i class="feather-eye"></i>
                                                     </a>
-                                                    <a href="<?= Url::to(['/dashboard/activity/update', 'id' => $activity->id]) ?>" class="btn btn-sm bg-danger-light">
+                                                    <a href="<?= Url::to(['/dashboard/activity-report/update', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-danger-light">
                                                         <i class="feather-edit"></i>
                                                     </a>
-                                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity/delete', 'id' => $activity->id]) ?>">
+                                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity-report/delete', 'id' => $activityReport->id]) ?>">
                                                         <i class="feather-trash"></i>
                                                     </a>
                                                 </div>
@@ -138,6 +134,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+
 
 
 </div>

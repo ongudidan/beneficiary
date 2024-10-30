@@ -22,27 +22,32 @@ $this->params['breadcrumbs'][] = $this->title;
             <form method="get" action="<?= Url::to(['/dashboard/beneficiary/index']) ?>">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-2 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="BeneficiarySearch[name]" class="form-control" placeholder="Search by Beneficiary Name ..." value="<?= Html::encode($searchModel->name) ?>">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="form-group">
-                            <input type="text" name="BeneficiarySearch[national_id]" class="form-control" placeholder="Search by national ID ..." value="<?= Html::encode($searchModel->national_id) ?>">
+                            <input type="text" name="BeneficiarySearch[name]" class="form-control" placeholder="Beneficiary Name ..." value="<?= Html::encode($searchModel->name) ?>">
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="BeneficiarySearch[contact]" class="form-control" placeholder="Search by  Contact ..." value="<?= Html::encode($searchModel->contact) ?>">
+                            <input type="text" name="BeneficiarySearch[national_id]" class="form-control" placeholder="national ID ..." value="<?= Html::encode($searchModel->national_id) ?>">
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="BeneficiarySearch[stove_no]" class="form-control" placeholder="Search by Stove Number ..." value="<?= Html::encode($searchModel->stove_no) ?>">
+                            <input type="text" name="BeneficiarySearch[contact]" class="form-control" placeholder=" Contact ..." value="<?= Html::encode($searchModel->contact) ?>">
                         </div>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="BeneficiarySearch[sub_location]" class="form-control" placeholder="Sub-Location ..." value="<?= Html::encode($searchModel->sub_location) ?>">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="BeneficiarySearch[village]" class="form-control" placeholder="Village ..." value="<?= Html::encode($searchModel->village) ?>">
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
                         <div class="search-student-btn">
                             <button type="submit" class="btn btn-primary">Search</button>
                         </div>
@@ -74,73 +79,77 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <th>National ID</th>
                                     <th>Contact</th>
                                     <th>Stove No</th>
+                                    <th>Sub-location</th>
+                                    <th>Village</th>
                                     <th>Created At</th>
                                     <th>Status</th>
                                     <th class="text-end">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if ($dataProvider->getCount() > 0): // Check if there are any models 
-                                ?>
+                                <?php if ($dataProvider->getCount() > 0): ?>
                                     <?php foreach ($dataProvider->getModels() as $index => $beneficiary): ?>
                                         <tr>
                                             <td><?= $dataProvider->pagination->page * $dataProvider->pagination->pageSize + $index + 1 ?></td>
-                                            <td><?= $beneficiary->name ?></td>
-                                            <td><?= $beneficiary->national_id ?></td>
-                                            <td><?= $beneficiary->contact ?></td>
-                                            <td><?= $beneficiary->stove_no ?></td>
+                                            <td><?= Html::encode($beneficiary->name) ?></td>
+                                            <td><?= Html::encode($beneficiary->national_id) ?></td>
+                                            <td><?= Html::encode($beneficiary->contact) ?></td>
+                                            <td><?= Html::encode($beneficiary->stove_no) ?></td>
+                                            <td><?= Html::encode($beneficiary->sub_location) ?></td>
+                                            <td><?= Html::encode($beneficiary->village) ?></td>
                                             <td><?= Yii::$app->formatter->asDatetime($beneficiary->created_at) ?></td>
-                                            <?php if ($beneficiary->status == 10) { ?>
-                                                <td>
-                                                    <span class="badge badge-success">Active</span>
-                                                </td>
-                                            <?php } else { ?>
-                                                <td>
-                                                    <span class="badge badge-warning">Inactive</span>
-                                                </td>
-                                            <?php } ?>
+                                            <td>
+                                                <span class="badge <?= $beneficiary->status == 10 ? 'badge-success' : 'badge-warning' ?>">
+                                                    <?= $beneficiary->status == 10 ? 'Active' : 'Inactive' ?>
+                                                </span>
+                                            </td>
                                             <td class="text-end">
-                                                <div class="actions ">
-                                                    <a href="<?= Url::to(['/dashboard/beneficiary/view', 'id' => $beneficiary->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
-                                                        <i class="feather-eye"></i>
-                                                    </a>
-                                                    <a href="<?= Url::to(['/dashboard/beneficiary/update', 'id' => $beneficiary->id]) ?>" class="btn btn-sm bg-danger-light">
-                                                        <i class="feather-edit"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/beneficiary/delete', 'id' => $beneficiary->id]) ?>">
-                                                        <i class="feather-trash"></i>
-                                                    </a>
+                                                <div class="dropdown d-inline">
+                                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Action
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/beneficiary/view', 'id' => $beneficiary->id]) ?>">
+                                                            <i class="feather-eye"></i> View
+                                                        </a>
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/beneficiary/update', 'id' => $beneficiary->id]) ?>">
+                                                            <i class="feather-edit"></i> Update
+                                                        </a>
+                                                        <a class="dropdown-item has-icon delete-btn" href="#" data-url="<?= Url::to(['/dashboard/beneficiary/delete', 'id' => $beneficiary->id]) ?>">
+                                                            <i class="feather-trash"></i> Delete
+                                                        </a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity-report/create', 'beneficiary_id' => $beneficiary->id]) ?>">
+                                                            <i class="feather-message-square"></i> Create report
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
-                                <?php else: // If no models found 
-                                ?>
+                                <?php else: ?>
                                     <tr>
-                                        <td colspan="10" class="text-center">No data found</td> <!-- Adjust colspan based on your table -->
+                                        <td colspan="10" class="text-center">No data found</td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>
-
                         </table>
-                    </div>
 
-                    <!-- pagination -->
-                    <div>
-                        <ul class="pagination mb-4">
-                            <?= LinkPager::widget([
+                        <!-- Pagination inside the table container -->
+                        <div class="pagination-wrapper mt-3">
+                            <?= \app\components\CustomLinkPager::widget([
                                 'pagination' => $dataProvider->pagination,
-                                'options' => ['class' => 'pagination mb-4'],
+                                'options' => ['class' => 'pagination justify-content-center mb-4'],
                                 'linkOptions' => ['class' => 'page-link'],
                                 'activePageCssClass' => 'active',
                                 'disabledPageCssClass' => 'disabled',
                                 'prevPageLabel' => '<span aria-hidden="true">«</span><span class="sr-only">Previous</span>',
                                 'nextPageLabel' => '<span aria-hidden="true">»</span><span class="sr-only">Next</span>',
-                                // 'firstPageLabel' => '1', // You can customize this if needed
-                                // 'lastPageLabel' => 'Last', // You can customize this if needed
                             ]); ?>
-                        </ul>
+                        </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

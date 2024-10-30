@@ -53,9 +53,9 @@ class Activity extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name', 'reference_no', 'date', 'description'], 'required'],
+            [['id', 'name', 'reference_no', 'start_date','end_date', 'description'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
-            [['id', 'name', 'reference_no', 'date', 'description', 'created_by', 'updated_by'], 'string', 'max' => 255],
+            [['id', 'name', 'reference_no', 'start_date', 'end_date', 'description', 'created_by', 'updated_by'], 'string', 'max' => 255],
             [['id'], 'unique'],
         ];
     }
