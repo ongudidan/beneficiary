@@ -200,6 +200,14 @@ $sidebarMenus = [
             ],
         ]
     ],
+    [
+        'label' => 'Auth Assignment',
+        'url' => Url::to(['/dashboard/auth-assignment/index']),
+        'icon' => 'fas fa-tachometer-alt',  // Dashboard icon
+        'module' => 'dashboard',
+        'controller' => 'auth-assignment',
+        'action' => 'index',
+    ],
 ];
 
 ?>

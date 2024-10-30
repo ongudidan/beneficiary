@@ -12,6 +12,8 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
+    // public $layout = 'LoginLayout';
+
     /**
      * {@inheritdoc}
      */
@@ -69,24 +71,52 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
+    // public function actionLogin()
+    // {
+    //     $this->layout = 'LoginLayout';
+
+    //     if (!Yii::$app->user->isGuest) {
+    //         return $this->goHome();
+    //     }
+
+    //     $model = new LoginForm();
+    //     if ($model->load(Yii::$app->request->post()) && $model->login()) {
+    //         return $this->goBack();
+    //     }
+
+    //     $model->password = '';
+    //     return $this->render('login', [
+    //         'model' => $model,
+    //     ]);
+    // }
+
     public function actionLogin()
     {
         $this->layout = 'LoginLayout';
 
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            // Check user roles and redirect accordingly
+            $user = Yii::$app->user;
+            if ($user->can('Activity-create')) {
+                return $this->redirect(['/coordinator/default/index']);
+            } elseif ($user->can('coordinator')) {
+                return $this->redirect(['/coordinator/default/index']);
+            } elseif ($user->can('officer')) {
+                return $this->redirect(['/officer/default/index']);
+            } elseif ($user->can('ambassador')) {
+                return $this->redirect(['/ambassador/default/index']);
+            } else {
+                // Default redirection if no specific role is found
+                return $this->goHome();
+            }
         }
 
-        $model->password = '';
         return $this->render('login', [
             'model' => $model,
         ]);
     }
+
 
     /**
      * Logout action.

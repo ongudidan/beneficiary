@@ -1,5 +1,7 @@
 <?php
 
+use app\components\AuthItemChildGenerator;
+use app\components\AuthItemGenerator;
 use app\components\IdGenerator;
 use yii\db\Migration;
 
@@ -15,18 +17,63 @@ class m241024_054719_seed_user_table extends Migration
     {
         $timestamp = time(); // Current timestamp
 
-        // Insert admin user with default values, including email, created_at, and updated_at
+        // // Generate auth items if they don't exist
+        // $authItemGenerator = new AuthItemGenerator();
+        // $authItemGenerator->generateAuthItems();
+
+        // // Generate auth item children
+        // $authItemChildGenerator = new AuthItemChildGenerator();
+        // $authItemChildGenerator->generateAuthItemChildren();
+
+        // Insert admin user
         $this->insert('{{%user}}', [
-            'id' => IdGenerator::generateUniqueId(), // Assuming you have a UUID generator
+            'id' => IdGenerator::generateUniqueId(),
             'username' => 'admin',
-            'email' => 'admin@gmail.com', // Admin email
-            'auth_key' => Yii::$app->security->generateRandomString(), // Random auth key
-            'password_hash' => Yii::$app->security->generatePasswordHash('admin'), // Hashed 'admin'
-            'status' => 10, // Default status for active user
-            'created_at' => $timestamp, // Set created_at to current time
-            'updated_at' => $timestamp, // Set updated_at to current time
+            'email' => 'admin@gmail.com',
+            'auth_key' => Yii::$app->security->generateRandomString(),
+            'password_hash' => Yii::$app->security->generatePasswordHash('admin'),
+            'status' => 10,
+            'created_at' => $timestamp,
+            'updated_at' => $timestamp,
+        ]);
+
+        // Insert officer user
+        $this->insert('{{%user}}', [
+            'id' => IdGenerator::generateUniqueId(),
+            'username' => 'officer',
+            'email' => 'officer@gmail.com',
+            'auth_key' => Yii::$app->security->generateRandomString(),
+            'password_hash' => Yii::$app->security->generatePasswordHash('officer'),
+            'status' => 10,
+            'created_at' => $timestamp,
+            'updated_at' => $timestamp,
+        ]);
+
+        // Insert ambassador user
+        $this->insert('{{%user}}', [
+            'id' => IdGenerator::generateUniqueId(),
+            'username' => 'ambassador',
+            'email' => 'ambassador@gmail.com',
+            'auth_key' => Yii::$app->security->generateRandomString(),
+            'password_hash' => Yii::$app->security->generatePasswordHash('ambassador'),
+            'status' => 10,
+            'created_at' => $timestamp,
+            'updated_at' => $timestamp,
+        ]);
+
+        // Insert coordinator user
+        $this->insert('{{%user}}', [
+            'id' => IdGenerator::generateUniqueId(),
+            'username' => 'coordinator',
+            'email' => 'coordinator@gmail.com',
+            'auth_key' => Yii::$app->security->generateRandomString(),
+            'password_hash' => Yii::$app->security->generatePasswordHash('coordinator'),
+            'status' => 10,
+            'created_at' => $timestamp,
+            'updated_at' => $timestamp,
         ]);
     }
+
 
     /**
      * {@inheritdoc}

@@ -59,6 +59,10 @@ class AuthItemController extends Controller
         $searchModel = new AuthItemSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
+        // Drop all data from auth_item and auth_item_child tables
+        Yii::$app->db->createCommand()->delete('auth_item_child')->execute();
+        Yii::$app->db->createCommand()->delete('auth_item')->execute();
+
         // Generate auth items if they don't exist
         $authItemGenerator = new AuthItemGenerator();
         $authItemGenerator->generateAuthItems();
@@ -72,6 +76,7 @@ class AuthItemController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
 
 
     /**

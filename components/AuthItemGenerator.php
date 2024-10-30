@@ -41,6 +41,12 @@ class AuthItemGenerator
 
         foreach ($files as $file) {
             $modelName = pathinfo($file, PATHINFO_FILENAME);
+
+            // // Skip models that end with "Search"
+            // if (substr($modelName, -6) === 'Search') {
+            //     continue; // Skip this iteration
+            // }
+
             $actions = ['create', 'view', 'update', 'delete'];
 
             // Create a parent auth item for the model
