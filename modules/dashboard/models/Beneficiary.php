@@ -79,6 +79,8 @@ class Beneficiary extends \yii\db\ActiveRecord
             'village' => 'Village',
             'stove_no' => 'Stove No',
             'issue_date' => 'Issue Date',
+            'reference_no' => 'Activity Reference No',
+
             'lat' => 'Lat',
             'long' => 'Long',
             'status' => 'Status',

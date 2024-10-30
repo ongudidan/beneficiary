@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /** @var app\modules\dashboard\models\ActivityReport $model */
 
 $this->title = 'Update Activity Report: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Activity Reports', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Beneficiaries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

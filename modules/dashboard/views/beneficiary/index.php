@@ -82,8 +82,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <th>Sub-location</th>
                                     <th>Village</th>
                                     <th>Created At</th>
+                                    <th class="text-center">Action</th>
                                     <th>Status</th>
-                                    <th class="text-end">Action</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -98,11 +99,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <td><?= Html::encode($beneficiary->sub_location) ?></td>
                                             <td><?= Html::encode($beneficiary->village) ?></td>
                                             <td><?= Yii::$app->formatter->asDatetime($beneficiary->created_at) ?></td>
-                                            <td>
-                                                <span class="badge <?= $beneficiary->status == 10 ? 'badge-success' : 'badge-warning' ?>">
-                                                    <?= $beneficiary->status == 10 ? 'Active' : 'Inactive' ?>
-                                                </span>
-                                            </td>
+
                                             <td class="text-end">
                                                 <div class="dropdown d-inline">
                                                     <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -119,11 +116,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             <i class="feather-trash"></i> Delete
                                                         </a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity-report/create', 'beneficiary_id' => $beneficiary->id]) ?>">
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/beneficiary/report-create', 'beneficiary_id' => $beneficiary->id]) ?>">
                                                             <i class="feather-message-square"></i> Create report
                                                         </a>
                                                     </div>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge <?= $beneficiary->status == 10 ? 'badge-success' : 'badge-warning' ?>">
+                                                    <?= $beneficiary->status == 10 ? 'Active' : 'Inactive' ?>
+                                                </span>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

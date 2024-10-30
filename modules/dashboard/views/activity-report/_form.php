@@ -13,8 +13,8 @@ use yii\helpers\ArrayHelper;
 $beneficiaryId = Yii::$app->request->get('beneficiary_id');
 
 $formAction = Yii::$app->controller->action->id === 'update'
-    ? ['activity-report/update', 'id' => $model->id]
-    : ['activity-report/create']; // Use 'create' action if it's not update
+    ? ['beneficiary/report-update', 'id' => $model->id]
+    : ['beneficiary/report-create']; // Use 'create' action if it's not update
 ?>
 
 <?php $form = ActiveForm::begin([

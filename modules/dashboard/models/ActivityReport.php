@@ -70,6 +70,8 @@ class ActivityReport extends \yii\db\ActiveRecord
             'id' => 'ID',
             'activity_id' => 'Activity',
             'beneficiary_id' => 'Beneficiary',
+            'activity.reference_no' => 'Activity Reference No',
+
             'usage' => 'Usage',
             'condition' => 'Condition',
             'recommendation' => 'Recommendation',
