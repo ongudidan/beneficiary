@@ -31,16 +31,10 @@ class CustomLinkPager extends LinkPager
             false
         );
 
-        // Set the sliding window of 5 pages
-        $startPage = max(0, $currentPage - 2);
-        $endPage = min($totalPages, $startPage + 5);
+        // Show the first 10 pages as a sliding window
+        $startPage = max(0, min($currentPage - 5, $totalPages - 12));
+        $endPage = min($startPage + 10, $totalPages - 2);
 
-        // Adjust startPage if near the end
-        if ($endPage - $startPage < 5) {
-            $startPage = max(0, $endPage - 5);
-        }
-
-        // Show the calculated range of pages
         for ($i = $startPage; $i < $endPage; $i++) {
             $buttons[] = $this->renderPageButton(
                 $i + 1,
@@ -51,13 +45,13 @@ class CustomLinkPager extends LinkPager
             );
         }
 
-        // Add dots if there are more pages after the sliding window
+        // Add dots if there are pages between the window and the last two pages
         if ($endPage < $totalPages - 2) {
             $buttons[] = Html::tag('li', '...', ['class' => 'page-item disabled']);
         }
 
         // Show the last 2 pages
-        for ($i = max($endPage, $totalPages - 2); $i < $totalPages; $i++) {
+        for ($i = $totalPages - 2; $i < $totalPages; $i++) {
             $buttons[] = $this->renderPageButton(
                 $i + 1,
                 $i,
