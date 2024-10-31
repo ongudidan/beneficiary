@@ -204,7 +204,7 @@ class BeneficiaryController extends Controller
 
             Yii::$app->session->setFlash('success', 'Activity report updated successfully.');
 
-            return $this->redirect(['activity-report/view', 'id' => $model->id]);
+            return $this->redirect(['beneficiary/report-view', 'id' => $model->id]);
         }
 
         return $this->render('/activity-report/update', [
@@ -227,6 +227,6 @@ class BeneficiaryController extends Controller
         Yii::$app->session->setFlash('success', 'Activity report deleted successfully.');
 
 
-        return $this->redirect(['/activity-report/index']);
+        return $this->redirect(['beneficiary/index']);
     }
 }

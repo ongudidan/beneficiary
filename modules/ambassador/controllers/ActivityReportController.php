@@ -27,7 +27,7 @@ class ActivityReportController extends Controller
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
-                        'delete' => ['POST'],
+                        // 'delete' => ['POST'],
                     ],
                 ],
             ]
@@ -90,6 +90,8 @@ class ActivityReportController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Activity report created successfully.');
+
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -113,6 +115,8 @@ class ActivityReportController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Activity report updated successfully.');
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -131,6 +135,8 @@ class ActivityReportController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+        Yii::$app->session->setFlash('success', 'Activity report deleted successfully.');
+
 
         return $this->redirect(['index']);
     }

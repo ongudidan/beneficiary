@@ -69,8 +69,9 @@ $activityId = Yii::$app->request->get('id');
                                     <th>recommendation</th>
                                     <th>Remarks</th>
                                     <th>Created At</th>
-                                    <!-- <th>Status</th> -->
-                                    <th class="text-end">Action</th>
+                                    <th>Action</th>
+                                    <th>Activity Status</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -89,36 +90,92 @@ $activityId = Yii::$app->request->get('id');
                                             <td><?= Yii::$app->formatter->asDatetime($activityReport->created_at) ?></td>
 
                                             <?php
-                                            if(Yii::$app->controller->action->id === 'report-index'){
+                                            if (Yii::$app->controller->action->id === 'report-index') {
                                             ?>
-                                            <td class="text-end">
-                                                <div class="actions ">
-                                                    <a href="<?= Url::to(['/dashboard/activity/report-view', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
-                                                        <i class="feather-eye"></i>
-                                                    </a>
-                                                    <a href="<?= Url::to(['/dashboard/activity/report-update', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-danger-light">
-                                                        <i class="feather-edit"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity/report-delete', 'id' => $activityReport->id]) ?>">
-                                                        <i class="feather-trash"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <?php } elseif(Yii::$app->controller->action->id === 'my-report'){ ?>
-                                            <td class="text-end">
-                                                <div class="actions ">
-                                                    <a href="<?= Url::to(['/dashboard/activity-report/view', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
-                                                        <i class="feather-eye"></i>
-                                                    </a>
-                                                    <a href="<?= Url::to(['/dashboard/activity-report/update', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-danger-light">
-                                                        <i class="feather-edit"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity-report/delete', 'id' => $activityReport->id]) ?>">
-                                                        <i class="feather-trash"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
+                                                <!-- <td class="text-end">
+                                                    <div class="actions ">
+                                                        <a href="<?= Url::to(['/dashboard/activity/report-view', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
+                                                            <i class="feather-eye"></i>
+                                                        </a>
+                                                        <a href="<?= Url::to(['/dashboard/activity/report-update', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-danger-light">
+                                                            <i class="feather-edit"></i>
+                                                        </a>
+                                                        <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity/report-delete', 'id' => $activityReport->id]) ?>">
+                                                            <i class="feather-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </td> -->
+                                                <td>
+                                                    <div class="dropdown d-inline">
+                                                        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Action
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity/report-view', 'id' => $activityReport->id]) ?>">
+                                                                <i class="feather-eye"></i> View
+                                                            </a>
+                                                            <?php if ($activityReport->activity->status == 10) { ?>
+
+                                                                <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity/report-update', 'id' => $activityReport->id]) ?>">
+                                                                    <i class="feather-edit"></i> Update
+                                                                </a>
+                                                                <a class="dropdown-item has-icon delete-btn" href="#" data-url="<?= Url::to(['/dashboard/activity/report-delete', 'id' => $activityReport->id]) ?>">
+                                                                    <i class="feather-trash"></i> Delete
+                                                                </a>
+                                                            <?php } ?>
+
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            <?php } elseif (Yii::$app->controller->action->id === 'my-report') { ?>
+                                                <!-- <td class="text-end">
+                                                    <div class="actions ">
+                                                        <a href="<?= Url::to(['/dashboard/activity-report/view', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
+                                                            <i class="feather-eye"></i>
+                                                        </a>
+                                                        <a href="<?= Url::to(['/dashboard/activity-report/update', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-danger-light">
+                                                            <i class="feather-edit"></i>
+                                                        </a>
+                                                        <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity-report/delete', 'id' => $activityReport->id]) ?>">
+                                                            <i class="feather-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </td> -->
+                                                <td>
+                                                    <div class="dropdown d-inline">
+                                                        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Action
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity-report/view', 'id' => $activityReport->id]) ?>">
+                                                                <i class="feather-eye"></i> View
+                                                            </a>
+                                                            <?php if ($activityReport->activity->status == 10) { ?>
+
+                                                                <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity-report/update', 'id' => $activityReport->id]) ?>">
+                                                                    <i class="feather-edit"></i> Update
+                                                                </a>
+                                                                <a class="dropdown-item has-icon delete-btn" href="#" data-url="<?= Url::to(['/dashboard/activity-report/delete', 'id' => $activityReport->id]) ?>">
+                                                                    <i class="feather-trash"></i> Delete
+                                                                </a>
+                                                            <?php } ?>
+
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             <?php } ?>
+                                            <td>
+                                                <?php if ($activityReport->activity->status == 10) { ?>
+                                                    <span class="badge bg-success text-white rounded-pill" title="Active" style="padding: 0.5rem 1rem; font-size: 1rem;">
+                                                        <i class="feather-check-circle"></i> Active
+                                                    </span>
+                                                <?php } else { ?>
+                                                    <span class="badge bg-warning text-dark rounded-pill" title="Closed" style="padding: 0.5rem 1rem; font-size: 1rem;">
+                                                        <i class="feather-x-circle"></i> Closed
+                                                    </span>
+                                                <?php } ?>
+                                            </td>
+
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else: // If no models found 
@@ -130,24 +187,20 @@ $activityId = Yii::$app->request->get('id');
                             </tbody>
 
                         </table>
-                    </div>
-
-                    <!-- pagination -->
-                    <div>
-                        <ul class="pagination mb-4">
-                            <?= LinkPager::widget([
+                        <!-- Pagination inside the table container -->
+                        <div class="pagination-wrapper mt-3">
+                            <?= \app\components\CustomLinkPager::widget([
                                 'pagination' => $dataProvider->pagination,
-                                'options' => ['class' => 'pagination mb-4'],
+                                'options' => ['class' => 'pagination justify-content-center mb-4'],
                                 'linkOptions' => ['class' => 'page-link'],
                                 'activePageCssClass' => 'active',
                                 'disabledPageCssClass' => 'disabled',
                                 'prevPageLabel' => '<span aria-hidden="true">«</span><span class="sr-only">Previous</span>',
                                 'nextPageLabel' => '<span aria-hidden="true">»</span><span class="sr-only">Next</span>',
-                                // 'firstPageLabel' => '1', // You can customize this if needed
-                                // 'lastPageLabel' => 'Last', // You can customize this if needed
                             ]); ?>
-                        </ul>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

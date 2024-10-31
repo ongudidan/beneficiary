@@ -41,7 +41,7 @@ $formAction = Yii::$app->controller->action->id === 'report-update'
                     <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'activity_id')->widget(Select2::classname(), [
-                                'data' => ArrayHelper::map(Activity::find()->all(), 'id', 'name'),
+                                'data' => ArrayHelper::map(Activity::find()->where(['status' => 10])->all(), 'id', 'name'),
                                 'language' => 'en',
                                 'options' => ['placeholder' => 'Select Activity ...'],
                                 'pluginOptions' => [

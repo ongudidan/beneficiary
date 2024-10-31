@@ -227,6 +227,6 @@ class BeneficiaryController extends Controller
         Yii::$app->session->setFlash('success', 'Activity report deleted successfully.');
 
 
-        return $this->redirect(['/activity-report/index']);
+        return $this->redirect(['beneficiary/index']);
     }
 }

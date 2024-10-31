@@ -12,9 +12,19 @@ use yii\helpers\ArrayHelper;
 
 $beneficiaryId = Yii::$app->request->get('beneficiary_id');
 
-$formAction = Yii::$app->controller->action->id === 'report-update'
+// $formAction = Yii::$app->controller->action->id === 'report-update'
+//     ? ['beneficiary/report-update', 'id' => $model->id]
+//     : ['beneficiary/report-create']; // Use 'create' action if it's not update
+if (Yii::$app->controller->id === 'beneficiary') {
+    $formAction = Yii::$app->controller->action->id === 'report-update'
     ? ['beneficiary/report-update', 'id' => $model->id]
     : ['beneficiary/report-create']; // Use 'create' action if it's not update
+
+} elseif (Yii::$app->controller->id === 'activity-report') {
+    $formAction = Yii::$app->controller->action->id === 'update'
+        ? ['activity-report/update', 'id' => $model->id]
+        : ['activity-report/create']; // Use 'create' action if it's not update
+}
 ?>
 
 <?php $form = ActiveForm::begin([
@@ -34,7 +44,7 @@ $formAction = Yii::$app->controller->action->id === 'report-update'
                     <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'activity_id')->widget(Select2::classname(), [
-                                'data' => ArrayHelper::map(Activity::find()->all(), 'id', 'name'),
+                                'data' => ArrayHelper::map(Activity::find()->where(['status' => 10])->all(), 'id', 'name'),
                                 'language' => 'en',
                                 'options' => ['placeholder' => 'Select Activity ...'],
                                 'pluginOptions' => [

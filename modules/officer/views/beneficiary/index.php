@@ -1,6 +1,6 @@
 <?php
 
-use app\modules\coordinator\models\Beneficiary;
+use app\modules\officer\models\Beneficiary;
 use yii\bootstrap5\LinkPager;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -8,7 +8,7 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var app\modules\coordinator\models\BeneficiarySearch $searchModel */
+/** @var app\modules\officer\models\BeneficiarySearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Beneficiaries';
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="product-group-form">
         <div class="row">
-            <form method="get" action="<?= Url::to(['/coordinator/beneficiary/index']) ?>">
+            <form method="get" action="<?= Url::to(['/officer/beneficiary/index']) ?>">
                 <div class="row">
                     <!-- <h1><?= Html::encode($this->title) ?></h1> -->
 
@@ -65,7 +65,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="page-header">
                         <div class="row align-items-center">
                             <div class="col-auto text-end float-end ms-auto download-grp">
-                                <a href="<?= Url::to('/coordinator/beneficiary/create') ?>" class="btn btn-primary"><i
+                                <a href="<?= Url::to('/officer/beneficiary/create') ?>" class="btn btn-primary"><i
                                         class="fas fa-plus"></i></a>
                             </div>
                         </div>
@@ -107,11 +107,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         Action
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/coordinator/beneficiary/view', 'id' => $beneficiary->id]) ?>">
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/officer/beneficiary/view', 'id' => $beneficiary->id]) ?>">
                                                             <i class="feather-eye"></i> View
                                                         </a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/coordinator/beneficiary/report-create', 'beneficiary_id' => $beneficiary->id]) ?>">
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/officer/beneficiary/report-create', 'beneficiary_id' => $beneficiary->id]) ?>">
                                                             <i class="feather-message-square"></i> Create report
                                                         </a>
                                                     </div>

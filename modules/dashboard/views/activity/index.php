@@ -144,9 +144,21 @@ $this->params['breadcrumbs'][] = $this->title;
                             </tbody>
 
                         </table>
+                        <!-- Pagination inside the table container -->
+                        <div class="pagination-wrapper mt-3">
+                            <?= \app\components\CustomLinkPager::widget([
+                                'pagination' => $dataProvider->pagination,
+                                'options' => ['class' => 'pagination justify-content-center mb-4'],
+                                'linkOptions' => ['class' => 'page-link'],
+                                'activePageCssClass' => 'active',
+                                'disabledPageCssClass' => 'disabled',
+                                'prevPageLabel' => '<span aria-hidden="true">«</span><span class="sr-only">Previous</span>',
+                                'nextPageLabel' => '<span aria-hidden="true">»</span><span class="sr-only">Next</span>',
+                            ]); ?>
+                        </div>
                     </div>
 
-                    <!-- pagination -->
+                    <!-- pagination
                     <div>
                         <ul class="pagination mb-4">
                             <?= LinkPager::widget([
@@ -161,7 +173,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 // 'lastPageLabel' => 'Last', // You can customize this if needed
                             ]); ?>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

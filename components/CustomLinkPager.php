@@ -13,6 +13,11 @@ class CustomLinkPager extends LinkPager
         $currentPage = $this->pagination->page;
         $totalPages = $this->pagination->pageCount;
 
+        // Display pager only if there is more than one page
+        if ($totalPages <= 1) {
+            return '';
+        }
+
         // Display "Start" button
         $buttons[] = $this->renderPageButton(
             'Start',
