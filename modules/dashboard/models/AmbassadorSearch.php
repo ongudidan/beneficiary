@@ -40,7 +40,7 @@ class AmbassadorSearch extends Ambassador
      */
     public function search($params)
     {
-        $query = Ambassador::find();
+        $query = Ambassador::find()->orderBy(['created_at' => SORT_DESC]);
 
         // add conditions that should always apply here
 

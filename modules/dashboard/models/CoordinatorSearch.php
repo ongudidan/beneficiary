@@ -40,7 +40,7 @@ class CoordinatorSearch extends Coordinator
      */
     public function search($params)
     {
-        $query = Coordinator::find();
+        $query = Coordinator::find()->orderBy(['created_at' => SORT_DESC]);
 
         // add conditions that should always apply here
 

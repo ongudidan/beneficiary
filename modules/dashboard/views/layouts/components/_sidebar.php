@@ -19,7 +19,7 @@ $sidebarMenus = [
     ],
     [
         'label' => 'Beneficiaries',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'icon' => 'fas fa-users',  // Beneficiaries icon
         'submenu' => true,
         'active' => $module === 'dashboard' && $controller === 'beneficiary',
         'items' => [
@@ -37,18 +37,11 @@ $sidebarMenus = [
                 'controller' => 'beneficiary',
                 'action' => 'create',
             ],
-            // [
-            //     'label' => 'Beneficiary settings',
-            //     'url' => Url::to(['/dashboard/car-make/index']),
-            //     'module' => 'dashboard',
-            //     'controller' => 'car-make',
-            //     'action' => 'index',
-            // ],
         ]
     ],
     [
         'label' => 'Activities',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'icon' => 'fas fa-tasks',  // Activities icon
         'submenu' => true,
         'active' => $module === 'dashboard' && $controller === 'activity',
         'items' => [
@@ -60,7 +53,7 @@ $sidebarMenus = [
                 'action' => 'index',
             ],
             [
-                'label' => 'Create activity',
+                'label' => 'Create Activity',
                 'url' => Url::to(['/dashboard/activity/create']),
                 'module' => 'dashboard',
                 'controller' => 'activity',
@@ -69,20 +62,28 @@ $sidebarMenus = [
         ]
     ],
     [
+        'label' => 'My Reports',
+        'url' => Url::to(['/dashboard/activity-report/my-report']),
+        'icon' => 'fas fa-file-alt',  // My Reports icon
+        'module' => 'dashboard',
+        'controller' => 'activity-report',
+        'action' => 'my-report',
+    ],
+    [
         'label' => 'Coordinators',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'icon' => 'fas fa-user-friends',  // Coordinators icon
         'submenu' => true,
         'active' => $module === 'dashboard' && $controller === 'coordinator',
         'items' => [
             [
-                'label' => 'coordinator List',
+                'label' => 'Coordinator List',
                 'url' => Url::to(['/dashboard/coordinator/index']),
                 'module' => 'dashboard',
                 'controller' => 'coordinator',
                 'action' => 'index',
             ],
             [
-                'label' => 'Create coordinator',
+                'label' => 'Create Coordinator',
                 'url' => Url::to(['/dashboard/coordinator/create']),
                 'module' => 'dashboard',
                 'controller' => 'coordinator',
@@ -92,19 +93,19 @@ $sidebarMenus = [
     ],
     [
         'label' => 'Field Officers',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'icon' => 'fas fa-user-tie',  // Field Officers icon
         'submenu' => true,
         'active' => $module === 'dashboard' && $controller === 'field-officer',
         'items' => [
             [
-                'label' => 'field-officer List',
+                'label' => 'Field Officer List',
                 'url' => Url::to(['/dashboard/field-officer/index']),
                 'module' => 'dashboard',
                 'controller' => 'field-officer',
                 'action' => 'index',
             ],
             [
-                'label' => 'Create field-officer',
+                'label' => 'Create Field Officer',
                 'url' => Url::to(['/dashboard/field-officer/create']),
                 'module' => 'dashboard',
                 'controller' => 'field-officer',
@@ -114,19 +115,19 @@ $sidebarMenus = [
     ],
     [
         'label' => 'Ambassadors',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'icon' => 'fas fa-user-circle',  // Ambassadors icon
         'submenu' => true,
         'active' => $module === 'dashboard' && $controller === 'ambassador',
         'items' => [
             [
-                'label' => 'ambassador List',
+                'label' => 'Ambassador List',
                 'url' => Url::to(['/dashboard/ambassador/index']),
                 'module' => 'dashboard',
                 'controller' => 'ambassador',
                 'action' => 'index',
             ],
             [
-                'label' => 'Create ambassador',
+                'label' => 'Create Ambassador',
                 'url' => Url::to(['/dashboard/ambassador/create']),
                 'module' => 'dashboard',
                 'controller' => 'ambassador',
@@ -136,19 +137,19 @@ $sidebarMenus = [
     ],
     [
         'label' => 'Auth Rules',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'icon' => 'fas fa-lock',  // Auth Rules icon
         'submenu' => true,
         'active' => $module === 'dashboard' && $controller === 'auth-rule',
         'items' => [
             [
-                'label' => 'auth-rule List',
+                'label' => 'Auth Rule List',
                 'url' => Url::to(['/dashboard/auth-rule/index']),
                 'module' => 'dashboard',
                 'controller' => 'auth-rule',
                 'action' => 'index',
             ],
             [
-                'label' => 'Create auth-rule',
+                'label' => 'Create Auth Rule',
                 'url' => Url::to(['/dashboard/auth-rule/create']),
                 'module' => 'dashboard',
                 'controller' => 'auth-rule',
@@ -158,19 +159,19 @@ $sidebarMenus = [
     ],
     [
         'label' => 'Auth Item',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'icon' => 'fas fa-key',  // Auth Item icon
         'submenu' => true,
         'active' => $module === 'dashboard' && $controller === 'auth-item',
         'items' => [
             [
-                'label' => 'auth-item List',
+                'label' => 'Auth Item List',
                 'url' => Url::to(['/dashboard/auth-item/index']),
                 'module' => 'dashboard',
                 'controller' => 'auth-item',
                 'action' => 'index',
             ],
             [
-                'label' => 'Create auth-item',
+                'label' => 'Create Auth Item',
                 'url' => Url::to(['/dashboard/auth-item/create']),
                 'module' => 'dashboard',
                 'controller' => 'auth-item',
@@ -180,19 +181,19 @@ $sidebarMenus = [
     ],
     [
         'label' => 'Auth Item Child',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
+        'icon' => 'fas fa-sitemap',  // Auth Item Child icon
         'submenu' => true,
         'active' => $module === 'dashboard' && $controller === 'auth-item-child',
         'items' => [
             [
-                'label' => 'auth-item-child List',
+                'label' => 'Auth Item Child List',
                 'url' => Url::to(['/dashboard/auth-item-child/index']),
                 'module' => 'dashboard',
                 'controller' => 'auth-item-child',
                 'action' => 'index',
             ],
             [
-                'label' => 'Create auth-item-child',
+                'label' => 'Create Auth Item Child',
                 'url' => Url::to(['/dashboard/auth-item-child/create']),
                 'module' => 'dashboard',
                 'controller' => 'auth-item-child',
@@ -203,12 +204,13 @@ $sidebarMenus = [
     [
         'label' => 'Auth Assignment',
         'url' => Url::to(['/dashboard/auth-assignment/index']),
-        'icon' => 'fas fa-tachometer-alt',  // Dashboard icon
+        'icon' => 'fas fa-user-shield',  // Auth Assignment icon
         'module' => 'dashboard',
         'controller' => 'auth-assignment',
         'action' => 'index',
     ],
 ];
+
 
 ?>
 <div class="sidebar" id="sidebar">

@@ -1,11 +1,9 @@
 <?php
 
-namespace app\modules\dashboard\controllers;
+namespace app\modules\coordinator\controllers;
 
-use app\components\IdGenerator;
 use app\modules\dashboard\models\ActivityReport;
-use app\modules\dashboard\models\ActivityReportSearch;
-use Yii;
+use app\modules\coordinator\models\ActivityReportSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -28,7 +26,7 @@ class ActivityReportController extends Controller
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
-                        // 'delete' => ['POST'],
+                        'delete' => ['POST'],
                     ],
                 ],
             ]
@@ -40,49 +38,16 @@ class ActivityReportController extends Controller
      *
      * @return string
      */
-    // public function actionIndex()
-    // {
-    //     $searchModel = new ActivityReportSearch();
-    //     $dataProvider = $searchModel->search($this->request->queryParams);
-
-    //     return $this->render('index', [
-    //         'searchModel' => $searchModel,
-    //         'dataProvider' => $dataProvider,
-    //     ]);
-    // }
-
     public function actionIndex()
     {
         $searchModel = new ActivityReportSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
-        // Check if activity_id is present in the query parameters and apply the filter
-        if ($activityId = $this->request->get('activity_id')) {
-            $dataProvider->query->andWhere(['activity_id' => $activityId]);
-        }
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
-
-    public function actionMyReport()
-    {
-        $searchModel = new ActivityReportSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
-
-        // Check if logged in user_id is present in the query parameters and apply the filter
-        if ($userId = Yii::$app->user->id) {
-            $dataProvider->query->andWhere(['created_by' => $userId]);
-        }
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
 
     /**
      * Displays a single ActivityReport model.
@@ -106,29 +71,9 @@ class ActivityReportController extends Controller
     {
         $model = new ActivityReport();
 
-
-
         if ($this->request->isPost) {
-            if ($model->load($this->request->post())) {
-                $model->id = IdGenerator::generateUniqueId();
-                $activityId = $model->activity_id;
-
-                // print_r($activityId);
-                // exit;
-
-                // var_dump($activityId);
-                // exit;
-
-
-                if ($model->save()) {
-                    Yii::$app->session->setFlash('success', 'Activity report created successfully.');
-
-                    return $this->redirect(['view', 'id' => $model->id]);
-                } else {
-                    // Capture model errors and set a flash message
-                    $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($model->getErrors(), 0));
-                    Yii::$app->session->setFlash('error', 'Failed to save the customer. Errors: <br>' . $errors);
-                }
+            if ($model->load($this->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -136,8 +81,6 @@ class ActivityReportController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'activity_id' => $activityId ?? '',
-
         ]);
     }
 
@@ -153,8 +96,6 @@ class ActivityReportController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Activity report updated successfully.');
-
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -173,8 +114,6 @@ class ActivityReportController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-        Yii::$app->session->setFlash('success', 'Activity report deleted successfully.');
-
 
         return $this->redirect(['index']);
     }

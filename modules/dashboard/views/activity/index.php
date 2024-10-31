@@ -69,8 +69,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <th>Name</th>
                                     <th>Date</th>
                                     <th>Created At</th>
+                                    <th class="text-center">Action</th>
                                     <th>Status</th>
-                                    <th class="text-end">Action</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -83,16 +84,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <td><?= $activity->name ?></td>
                                             <td><?= $activity->start_date ?></td>
                                             <td><?= Yii::$app->formatter->asDatetime($activity->created_at) ?></td>
-                                            <?php if ($activity->status == 10) { ?>
-                                                <td>
-                                                    <span class="badge badge-success">Active</span>
-                                                </td>
-                                            <?php } else { ?>
-                                                <td>
-                                                    <span class="badge badge-warning">Closed</span>
-                                                </td>
-                                            <?php } ?>
-                                            <td class="text-end">
+
+                                            <!-- <td class="text-end">
                                                 <div class="actions ">
                                                     <a href="<?= Url::to(['/dashboard/activity/view', 'id' => $activity->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
                                                         <i class="feather-eye"></i>
@@ -104,7 +97,42 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         <i class="feather-trash"></i>
                                                     </a>
                                                 </div>
+                                            </td> -->
+                                            <td class="text-end">
+                                                <div class="dropdown d-inline">
+                                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Action
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity/view', 'id' => $activity->id]) ?>">
+                                                            <i class="feather-eye"></i> View
+                                                        </a>
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity/update', 'id' => $activity->id]) ?>">
+                                                            <i class="feather-edit"></i> Update
+                                                        </a>
+                                                        <a class="dropdown-item has-icon delete-btn" href="#" data-url="<?= Url::to(['/dashboard/activity/delete', 'id' => $activity->id]) ?>">
+                                                            <i class="feather-trash"></i> Delete
+                                                        </a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity-report/index', 'activity_id' => $activity->id]) ?>">
+                                                            <i class="feather-message-square"></i> View Activity reports
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
+                                            <td>
+                                                <?php if ($activity->status == 10) { ?>
+                                                    <span class="badge bg-success text-white rounded-pill" title="Active" style="padding: 0.5rem 1rem; font-size: 1rem;">
+                                                        <i class="feather-check-circle"></i> Active
+                                                    </span>
+                                                <?php } else { ?>
+                                                    <span class="badge bg-warning text-dark rounded-pill" title="Closed" style="padding: 0.5rem 1rem; font-size: 1rem;">
+                                                        <i class="feather-x-circle"></i> Closed
+                                                    </span>
+                                                <?php } ?>
+                                            </td>
+
+
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else: // If no models found 

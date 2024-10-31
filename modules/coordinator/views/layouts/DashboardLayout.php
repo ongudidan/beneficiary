@@ -70,6 +70,21 @@ $headerTitle = '';
 
     </div>
 
+    <?php
+    // Extract and display flash messages as Toastr notifications
+    $flashes = Yii::$app->session->getAllFlashes();
+    if (!empty($flashes)) {
+        $this->registerJs('
+        document.addEventListener("DOMContentLoaded", function() {
+            ' . implode("\n", array_map(function ($key, $message) {
+            return 'toastr.' . $key . '("' . addslashes($message) . '");';
+        }, array_keys($flashes), $flashes)) . '
+        });
+    ');
+    }
+    ?>
+
+
     <?php $this->endBody() ?>
 
     <script>

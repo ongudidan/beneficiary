@@ -6,7 +6,7 @@ use yii\helpers\Url;
 use yii\widgets\DetailView;
 
 /** @var yii\web\View $this */
-/** @var app\modules\dashboard\models\ActivityReport $model */
+/** @var app\modules\coordinator\models\ActivityReport $model */
 
 $this->title = 'Activity Report for :' . ' ' . $model->beneficiary->name;
 $this->params['breadcrumbs'][] = ['label' => 'Beneficiaries', 'url' => ['index']];
@@ -22,10 +22,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="row align-items-center">
                     <div class="col-auto text-end float-end ms-auto download-grp">
                         <p>
-                            <a href="<?= Url::to(['/dashboard/beneficiary/report-update', 'id' => $model->id]) ?>" class="btn btn-sm bg-danger-light">
+                            <a href="<?= Url::to(['/coordinator/beneficiary/report-update', 'id' => $model->id]) ?>" class="btn btn-sm bg-danger-light">
                                 <i class="feather-edit"></i>
                             </a>
-                            <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/beneficiary/report-delete', 'id' => $model->id]) ?>">
+                            <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/coordinator/beneficiary/report-delete', 'id' => $model->id]) ?>">
                                 <i class="feather-trash"></i>
                             </a>
                         </p>

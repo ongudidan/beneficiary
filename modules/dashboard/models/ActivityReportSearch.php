@@ -40,7 +40,7 @@ class ActivityReportSearch extends ActivityReport
      */
     public function search($params)
     {
-        $query = ActivityReport::find();
+        $query = ActivityReport::find()->orderBy(['created_at' => SORT_DESC]);
 
         // add conditions that should always apply here
 

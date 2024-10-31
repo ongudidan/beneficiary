@@ -19,50 +19,30 @@ $sidebarMenus = [
     ],
     [
         'label' => 'Beneficiaries',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
-        'submenu' => true,
-        'active' => $module === 'coordinator' && $controller === 'beneficiary',
-        'items' => [
-            [
-                'label' => 'Beneficiary List',
-                'url' => Url::to(['/coordinator/beneficiary/index']),
-                'module' => 'coordinator',
-                'controller' => 'beneficiary',
-                'action' => 'index',
-            ],
-        ]
+        'url' => Url::to(['/coordinator/beneficiary/index']),
+        'icon' => 'fas fa-users',  // Beneficiaries icon
+        'module' => 'coordinator',
+        'controller' => 'beneficiary',
+        'action' => 'index',
     ],
     [
-        'label' => 'Activities',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
-        'submenu' => true,
-        'active' => $module === 'coordinator' && $controller === 'activity',
-        'items' => [
-            [
-                'label' => 'Activity List',
-                'url' => Url::to(['/coordinator/activity/index']),
-                'module' => 'coordinator',
-                'controller' => 'activity',
-                'action' => 'index',
-            ],
-        ]
+        'label' => 'My Reports',
+        'url' => Url::to(['/coordinator/activity-report/index']),
+        'icon' => 'fas fa-file-alt',  // My Reports icon
+        'module' => 'coordinator',
+        'controller' => 'activity-report',
+        'action' => 'index',
     ],
     [
         'label' => 'Field Officers',
-        'icon' => 'fas fa-clipboard-list',  // Job Card icon
-        'submenu' => true,
-        'active' => $module === 'coordinator' && $controller === 'field-officer',
-        'items' => [
-            [
-                'label' => 'field-officer List',
-                'url' => Url::to(['/coordinator/field-officer/index']),
-                'module' => 'coordinator',
-                'controller' => 'field-officer',
-                'action' => 'index',
-            ],
-        ]
+        'url' => Url::to(['/coordinator/field-officer/index']),
+        'icon' => 'fas fa-user-tie',  // Field Officers icon
+        'module' => 'coordinator',
+        'controller' => 'field-officer',
+        'action' => 'index',
     ],
 ];
+
 
 ?>
 <div class="sidebar" id="sidebar">
@@ -82,7 +62,7 @@ $sidebarMenus = [
                                 <?php foreach ($menu['items'] as $subItem): ?>
                                     <li>
                                         <a href="<?= $subItem['url'] ?>"
-                                            class="<?= ($module == $subItem['module'] && $controller == $subItem['controller'] && $action == $subItem['action']) ? 'active' : '' ?>">
+                                            class="<?= ($module == $subItem['module'] && $controller == $subItem['controller']) ? 'active' : '' ?>">
                                             <?= $subItem['label'] ?>
                                         </a>
                                     </li>
@@ -91,7 +71,7 @@ $sidebarMenus = [
                         </li>
                     <?php else: ?>
                         <!-- Regular Menu -->
-                        <li class="<?= ($module == $menu['module'] && $controller == $menu['controller'] && $action == $menu['action']) ? 'active' : '' ?>">
+                        <li class="<?= ($module == $menu['module'] && $controller == $menu['controller']) ? 'active' : '' ?>">
                             <a href="<?= $menu['url'] ?>"><i class="<?= $menu['icon'] ?>"></i> <span> <?= $menu['label'] ?> </span></a>
                         </li>
                     <?php endif; ?>

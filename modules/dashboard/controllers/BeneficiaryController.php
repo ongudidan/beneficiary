@@ -207,7 +207,7 @@ class BeneficiaryController extends Controller
 
 
                 if ($model->save()) {
-                    Yii::$app->session->setFlash('success', 'Activity created successfully.');
+                    Yii::$app->session->setFlash('success', 'Activity report created successfully.');
 
                     return $this->redirect(['beneficiary/report-view', 'id' => $model->id]);
                 } else {
@@ -238,10 +238,13 @@ class BeneficiaryController extends Controller
         $model = ActivityReport::findOne($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+
+            Yii::$app->session->setFlash('success', 'Activity report updated successfully.');
+
             return $this->redirect(['activity-report/view', 'id' => $model->id]);
         }
 
-        return $this->render('activity-report/update', [
+        return $this->render('/activity-report/update', [
             'model' => $model,
         ]);
     }
@@ -255,8 +258,11 @@ class BeneficiaryController extends Controller
      */
     public function actionReportDelete($id)
     {
-        $this->findModel($id)->delete();
+        // $this->findModel($id)->delete();
+        $model = ActivityReport::findOne($id)->delete();
+        Yii::$app->session->setFlash('success', 'Activity report deleted successfully.');
 
-        return $this->redirect(['activity-report/index']);
+
+        return $this->redirect(['/wactivity-report/index']);
     }
 }

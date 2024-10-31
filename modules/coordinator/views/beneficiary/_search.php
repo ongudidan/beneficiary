@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
-/** @var app\modules\dashboard\models\ActivityReportSearch $model */
+/** @var app\modules\coordinator\models\BeneficiarySearch $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="activity-report-search">
+<div class="beneficiary-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,17 +17,29 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'activity_id') ?>
+    <?= $form->field($model, 'sub_location_id') ?>
 
-    <?= $form->field($model, 'beneficiary_id') ?>
+    <?= $form->field($model, 'village_id') ?>
 
-    <?= $form->field($model, 'usage') ?>
+    <?= $form->field($model, 'name') ?>
 
-    <?= $form->field($model, 'condition') ?>
+    <?= $form->field($model, 'national_id') ?>
 
-    <?php // echo $form->field($model, 'recommendation') ?>
+    <?php // echo $form->field($model, 'contact') ?>
 
-    <?php // echo $form->field($model, 'remarks') ?>
+    <?php // echo $form->field($model, 'sub_location') ?>
+
+    <?php // echo $form->field($model, 'village') ?>
+
+    <?php // echo $form->field($model, 'stove_no') ?>
+
+    <?php // echo $form->field($model, 'issue_date') ?>
+
+    <?php // echo $form->field($model, 'lat') ?>
+
+    <?php // echo $form->field($model, 'long') ?>
+
+    <?php // echo $form->field($model, 'status') ?>
 
     <?php // echo $form->field($model, 'created_at') ?>
 

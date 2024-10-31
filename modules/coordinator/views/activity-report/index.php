@@ -1,6 +1,6 @@
 <?php
 
-use app\modules\dashboard\models\ActivityReport;
+use app\modules\coordinator\models\ActivityReport;
 use yii\bootstrap5\LinkPager;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -8,7 +8,7 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var app\modules\dashboard\models\ActivityReportSearch $searchModel */
+/** @var app\modules\coordinator\models\ActivityReportSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Activity Reports';
@@ -21,7 +21,7 @@ $activityId = Yii::$app->request->get('id');
 
     <div class="product-group-form">
         <div class="row">
-            <form method="get" action="<?= Url::to(['/dashboard/activityReport/index']) ?>">
+            <form method="get" action="<?= Url::to(['/coordinator/activityReport/index']) ?>">
                 <div class="row">
 
                     <div class="col-lg-5 col-md-6">
@@ -48,15 +48,7 @@ $activityId = Yii::$app->request->get('id');
         <div class="col-sm-12">
             <div class="card card-table comman-shadow">
                 <div class="card-body">
-                    <div class="page-header">
-                        <div class="row align-items-center">
-                            <div class="col-auto text-end float-end ms-auto download-grp">
-                                <a href="<?= Url::to(['/dashboard/activity-report/create', 'activity_id' => $activityId]) ?>" class="btn btn-primary"><i
-                                        class="fas fa-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
+                    
                     <div class="table-responsive">
                         <table class="table table-striped mb-0">
                             <thead class="student-thread">
@@ -90,13 +82,13 @@ $activityId = Yii::$app->request->get('id');
 
                                             <td class="text-end">
                                                 <div class="actions ">
-                                                    <a href="<?= Url::to(['/dashboard/activity-report/view', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
+                                                    <a href="<?= Url::to(['/coordinator/activity-report/view', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
                                                         <i class="feather-eye"></i>
                                                     </a>
-                                                    <a href="<?= Url::to(['/dashboard/activity-report/update', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-danger-light">
+                                                    <a href="<?= Url::to(['/coordinator/activity-report/update', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-danger-light">
                                                         <i class="feather-edit"></i>
                                                     </a>
-                                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity-report/delete', 'id' => $activityReport->id]) ?>">
+                                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/coordinator/activity-report/delete', 'id' => $activityReport->id]) ?>">
                                                         <i class="feather-trash"></i>
                                                     </a>
                                                 </div>

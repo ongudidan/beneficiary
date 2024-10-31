@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /** @var app\modules\dashboard\models\ActivityReport $model */
 
 $this->title = 'Create Activity Report';
-$this->params['breadcrumbs'][] = ['label' => 'Beneficiaries', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Activity Reports', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="activity-report-create">

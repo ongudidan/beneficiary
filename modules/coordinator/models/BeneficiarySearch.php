@@ -1,15 +1,15 @@
 <?php
 
-namespace app\modules\dashboard\models;
+namespace app\modules\coordinator\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\dashboard\models\FieldOfficer;
+use app\modules\dashboard\models\Beneficiary;
 
 /**
- * FieldOfficerSearch represents the model behind the search form of `app\modules\dashboard\models\FieldOfficer`.
+ * BeneficiarySearch represents the model behind the search form of `app\modules\dashboard\models\Beneficiary`.
  */
-class FieldOfficerSearch extends FieldOfficer
+class BeneficiarySearch extends Beneficiary
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,7 @@ class FieldOfficerSearch extends FieldOfficer
     public function rules()
     {
         return [
-            [['id', 'name', 'user_id', 'national_id', 'coordinator_id', 'email', 'phone_no', 'created_by', 'updated_by'], 'safe'],
+            [['id', 'sub_location_id', 'village_id', 'name', 'national_id', 'contact', 'sub_location', 'village', 'stove_no', 'issue_date', 'lat', 'long', 'created_by', 'updated_by'], 'safe'],
             [['status', 'created_at', 'updated_at'], 'integer'],
         ];
     }
@@ -40,7 +40,7 @@ class FieldOfficerSearch extends FieldOfficer
      */
     public function search($params)
     {
-        $query = FieldOfficer::find()->orderBy(['created_at' => SORT_DESC]);
+        $query = Beneficiary::find();
 
         // add conditions that should always apply here
 
@@ -64,12 +64,17 @@ class FieldOfficerSearch extends FieldOfficer
         ]);
 
         $query->andFilterWhere(['like', 'id', $this->id])
+            ->andFilterWhere(['like', 'sub_location_id', $this->sub_location_id])
+            ->andFilterWhere(['like', 'village_id', $this->village_id])
             ->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'user_id', $this->user_id])
             ->andFilterWhere(['like', 'national_id', $this->national_id])
-            ->andFilterWhere(['like', 'coordinator_id', $this->coordinator_id])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'phone_no', $this->phone_no])
+            ->andFilterWhere(['like', 'contact', $this->contact])
+            ->andFilterWhere(['like', 'sub_location', $this->sub_location])
+            ->andFilterWhere(['like', 'village', $this->village])
+            ->andFilterWhere(['like', 'stove_no', $this->stove_no])
+            ->andFilterWhere(['like', 'issue_date', $this->issue_date])
+            ->andFilterWhere(['like', 'lat', $this->lat])
+            ->andFilterWhere(['like', 'long', $this->long])
             ->andFilterWhere(['like', 'created_by', $this->created_by])
             ->andFilterWhere(['like', 'updated_by', $this->updated_by]);
 

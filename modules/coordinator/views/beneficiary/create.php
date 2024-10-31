@@ -3,14 +3,15 @@
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var app\modules\dashboard\models\ActivityReport $model */
+/** @var app\modules\dashboard\models\Beneficiary $model */
 
-$this->title = 'Create Activity Report';
+$this->title = 'Create Beneficiary';
 $this->params['breadcrumbs'][] = ['label' => 'Beneficiaries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="activity-report-create">
+<div class="beneficiary-create">
 
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

@@ -29,7 +29,10 @@ class DashboardAsset extends AssetBundle
         "/web/css/all.min.css",
         "/web/css/style.css",
         "/web/css/datatables.min.css",
-        "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css",
+        "/web/css/toastr.min.css",
+
+        // "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css",
+        // "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css",
 
         "/web/css/toatr.css",
 
@@ -51,6 +54,7 @@ class DashboardAsset extends AssetBundle
         "/web/js/datatables.min.js",
         "/web/js/sweetalert.min.js",
         "/web/js/custom.js",
+        // "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js",
         // "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js",
 
         "/web/js/toastr.min.js",

@@ -123,10 +123,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 </div>
                                             </td>
                                             <td>
-                                                <span class="badge <?= $beneficiary->status == 10 ? 'badge-success' : 'badge-warning' ?>">
+                                                <span class="badge <?= $beneficiary->status == 10 ? 'bg-success text-white rounded-pill' : 'bg-warning text-dark rounded-pill' ?>"
+                                                    style="padding: 0.5rem 1rem; font-size: 1rem;">
                                                     <?= $beneficiary->status == 10 ? 'Active' : 'Inactive' ?>
                                                 </span>
                                             </td>
+
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else: ?>
