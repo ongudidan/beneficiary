@@ -1,11 +1,17 @@
 <?php
 
+use app\modules\dashboard\models\Beneficiary;
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
 /** @var app\modules\dashboard\models\ActivityReport $model */
 
-$this->title = 'Create Activity Report';
+// $this->title = 'Create Activity Report';
+$beneficiaryId = Yii::$app->request->get('beneficiary_id');
+$beneficiaryName = Beneficiary::findOne($beneficiaryId)->name;
+
+$this->title = 'Create Activity Report for: ' . $beneficiaryName;
+
 $this->params['breadcrumbs'][] = ['label' => 'Beneficiaries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

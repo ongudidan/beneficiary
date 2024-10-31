@@ -88,6 +88,23 @@ $activityId = Yii::$app->request->get('id');
 
                                             <td><?= Yii::$app->formatter->asDatetime($activityReport->created_at) ?></td>
 
+                                            <?php
+                                            if(Yii::$app->controller->action->id === 'report-index'){
+                                            ?>
+                                            <td class="text-end">
+                                                <div class="actions ">
+                                                    <a href="<?= Url::to(['/dashboard/activity/report-view', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
+                                                        <i class="feather-eye"></i>
+                                                    </a>
+                                                    <a href="<?= Url::to(['/dashboard/activity/report-update', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-danger-light">
+                                                        <i class="feather-edit"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity/report-delete', 'id' => $activityReport->id]) ?>">
+                                                        <i class="feather-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <?php } elseif(Yii::$app->controller->action->id === 'my-report'){ ?>
                                             <td class="text-end">
                                                 <div class="actions ">
                                                     <a href="<?= Url::to(['/dashboard/activity-report/view', 'id' => $activityReport->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
@@ -101,6 +118,7 @@ $activityId = Yii::$app->request->get('id');
                                                     </a>
                                                 </div>
                                             </td>
+                                            <?php } ?>
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else: // If no models found 

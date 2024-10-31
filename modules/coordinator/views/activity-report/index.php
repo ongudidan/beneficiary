@@ -48,7 +48,7 @@ $activityId = Yii::$app->request->get('id');
         <div class="col-sm-12">
             <div class="card card-table comman-shadow">
                 <div class="card-body">
-                    
+
                     <div class="table-responsive">
                         <table class="table table-striped mb-0">
                             <thead class="student-thread">
@@ -104,24 +104,21 @@ $activityId = Yii::$app->request->get('id');
                             </tbody>
 
                         </table>
-                    </div>
 
-                    <!-- pagination -->
-                    <div>
-                        <ul class="pagination mb-4">
-                            <?= LinkPager::widget([
+                        <!-- Pagination inside the table container -->
+                        <div class="pagination-wrapper mt-3">
+                            <?= \app\components\CustomLinkPager::widget([
                                 'pagination' => $dataProvider->pagination,
-                                'options' => ['class' => 'pagination mb-4'],
+                                'options' => ['class' => 'pagination justify-content-center mb-4'],
                                 'linkOptions' => ['class' => 'page-link'],
                                 'activePageCssClass' => 'active',
                                 'disabledPageCssClass' => 'disabled',
                                 'prevPageLabel' => '<span aria-hidden="true">«</span><span class="sr-only">Previous</span>',
                                 'nextPageLabel' => '<span aria-hidden="true">»</span><span class="sr-only">Next</span>',
-                                // 'firstPageLabel' => '1', // You can customize this if needed
-                                // 'lastPageLabel' => 'Last', // You can customize this if needed
                             ]); ?>
-                        </ul>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

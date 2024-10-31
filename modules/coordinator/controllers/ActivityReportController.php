@@ -4,6 +4,7 @@ namespace app\modules\coordinator\controllers;
 
 use app\modules\dashboard\models\ActivityReport;
 use app\modules\coordinator\models\ActivityReportSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -38,10 +39,26 @@ class ActivityReportController extends Controller
      *
      * @return string
      */
+    // public function actionIndex()
+    // {
+    //     $searchModel = new ActivityReportSearch();
+    //     $dataProvider = $searchModel->search($this->request->queryParams);
+
+    //     return $this->render('index', [
+    //         'searchModel' => $searchModel,
+    //         'dataProvider' => $dataProvider,
+    //     ]);
+    // }
+
     public function actionIndex()
     {
         $searchModel = new ActivityReportSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
+
+        // Check if logged in user_id is present in the query parameters and apply the filter
+        if ($userId = Yii::$app->user->id) {
+            $dataProvider->query->andWhere(['created_by' => $userId]);
+        }
 
         return $this->render('index', [
             'searchModel' => $searchModel,

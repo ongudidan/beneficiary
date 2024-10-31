@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <th>Name</th>
                                     <th>Date</th>
                                     <th>Created At</th>
-                                    <th class="text-center">Action</th>
+                                    <th>Action</th>
                                     <th>Status</th>
 
                                 </tr>
@@ -98,7 +98,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     </a>
                                                 </div>
                                             </td> -->
-                                            <td class="text-end">
+                                            <td>
                                                 <div class="dropdown d-inline">
                                                     <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                                         Action
@@ -114,7 +114,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             <i class="feather-trash"></i> Delete
                                                         </a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity-report/index', 'activity_id' => $activity->id]) ?>">
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity/report-index', 'activity_id' => $activity->id]) ?>">
                                                             <i class="feather-message-square"></i> View Activity reports
                                                         </a>
                                                     </div>

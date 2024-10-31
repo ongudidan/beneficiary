@@ -218,7 +218,7 @@ $sidebarMenus = [
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
                 <li class="menu-title">
-                    <span>Main Menu</span>
+                    <span>Main Dashboard</span>
                 </li>
 
                 <?php foreach ($sidebarMenus as $menu): ?>
