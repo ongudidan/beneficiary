@@ -4,6 +4,7 @@ namespace app\modules\dashboard\controllers;
 
 use app\components\IdGenerator;
 use app\models\User;
+use app\modules\dashboard\models\AuthAssignment;
 use app\modules\dashboard\models\FieldOfficer;
 use app\modules\dashboard\models\FieldOfficerSearch;
 use Yii;
@@ -89,15 +90,14 @@ class FieldOfficerController extends Controller
         $user = new User();
 
         if ($this->request->isPost) {
-            // Load the data into the Students model
+            // Load the data into the FieldOfficer model
             if ($model->load($this->request->post())) {
 
-                // Generate and set the id
+                // Generate and set the unique ID
                 $id = IdGenerator::generateUniqueId();
-
                 $model->id = $id;
 
-                // Extract national id from the field officer model
+                // Use national_id as the username
                 $username = $model->national_id;
 
                 // Set User attributes
@@ -105,35 +105,45 @@ class FieldOfficerController extends Controller
                 $user->username = $username;
                 $user->auth_key = Yii::$app->security->generateRandomString();
                 $user->email = $model->email;
+                $user->status = 10;
                 $user->password_hash = Yii::$app->security->generatePasswordHash($username);  // Set password to hashed username
 
-                // Use a transaction to ensure both models are saved successfully
+                // Start a transaction to ensure atomicity
                 $transaction = Yii::$app->db->beginTransaction();
 
                 try {
                     // Save the User model first
                     if ($user->save()) {
-                        // Set the user_id for the User model
-                        $model->user_id = $user->id; // Assuming user_id is the primary key of the Users model
+                        // Set the user_id for the FieldOfficer model
+                        $model->user_id = $user->id;
 
-                        // Save the field officer model
+                        // Save the FieldOfficer model
                         if ($model->save()) {
-                            $transaction->commit();
+                            // Assign the 'officer' role to the new user
+                            $authAssignment = new AuthAssignment();
+                            $authAssignment->item_name = 'officer';
+                            $authAssignment->user_id = $user->id;
+                            $authAssignment->created_at = time();
 
-                            Yii::$app->session->setFlash('success', 'Field officer created successfully.');
+                            if ($authAssignment->save()) {
+                                // Commit the transaction
+                                $transaction->commit();
 
-                            return $this->redirect(['view', 'id' => $model->id]);
+                                Yii::$app->session->setFlash('success', 'Field officer created successfully and assigned officer role.');
+                                return $this->redirect(['view', 'id' => $model->id]);
+                            } else {
+                                $transaction->rollBack();
+                                Yii::$app->session->setFlash('error', 'Failed to assign officer role.');
+                            }
                         } else {
                             $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($model->getErrors(), 0));
-
                             $transaction->rollBack();
-                            Yii::$app->session->setFlash('error', 'Failed to save field officer Errors: <br>' . $errors);
+                            Yii::$app->session->setFlash('error', 'Failed to save field officer. Errors: <br>' . $errors);
                         }
                     } else {
                         $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($user->getErrors(), 0));
-
                         $transaction->rollBack();
-                        Yii::$app->session->setFlash('error', 'Failed to save userErrors: <br>' . $errors);
+                        Yii::$app->session->setFlash('error', 'Failed to save user. Errors: <br>' . $errors);
                     }
                 } catch (\Exception $e) {
                     $transaction->rollBack();
@@ -148,6 +158,7 @@ class FieldOfficerController extends Controller
             'model' => $model,
         ]);
     }
+
 
     /**
      * Updates an existing FieldOfficer model.

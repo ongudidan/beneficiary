@@ -6,6 +6,7 @@ use app\components\IdGenerator;
 use app\models\User;
 use app\modules\dashboard\models\Ambassador;
 use app\modules\dashboard\models\AmbassadorSearch;
+use app\modules\dashboard\models\AuthAssignment;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -89,14 +90,14 @@ class AmbassadorController extends Controller
         $user = new User();
 
         if ($this->request->isPost) {
-            // Load the data into the Students model
+            // Load the data into the Ambassador model
             if ($model->load($this->request->post())) {
 
-                // Generate and set the staff number
+                // Generate and set the unique ID
                 $id = IdGenerator::generateUniqueId();
                 $model->id = $id;
 
-                // Extract staff number from the Students model
+                // Extract national ID as username
                 $username = $model->national_id;
 
                 // Set User attributes
@@ -104,35 +105,45 @@ class AmbassadorController extends Controller
                 $user->username = $username;
                 $user->auth_key = Yii::$app->security->generateRandomString();
                 $user->email = $model->email;
+                $user->status = 10;
                 $user->password_hash = Yii::$app->security->generatePasswordHash($username);  // Set password to hashed username
 
-                // Use a transaction to ensure both models are saved successfully
+                // Start a transaction to ensure atomicity
                 $transaction = Yii::$app->db->beginTransaction();
 
                 try {
                     // Save the User model first
                     if ($user->save()) {
-                        // Set the student_id for the User model
-                        $model->user_id = $user->id; // Assuming user_id is the primary key of the Users model
+                        // Set the user_id for the Ambassador model
+                        $model->user_id = $user->id;
 
-                        // Save the Students model
+                        // Save the Ambassador model
                         if ($model->save()) {
-                            $transaction->commit();
+                            // Assign the 'ambassador' role to the new user
+                            $authAssignment = new AuthAssignment();
+                            $authAssignment->item_name = 'ambassador';
+                            $authAssignment->user_id = $user->id;
+                            $authAssignment->created_at = time();
 
-                            Yii::$app->session->setFlash('success', 'Ambassador created successfully.');
+                            if ($authAssignment->save()) {
+                                // Commit the transaction
+                                $transaction->commit();
 
-                            return $this->redirect(['view', 'id' => $model->id]);
+                                Yii::$app->session->setFlash('success', 'Ambassador created successfully and assigned ambassador role.');
+                                return $this->redirect(['view', 'id' => $model->id]);
+                            } else {
+                                $transaction->rollBack();
+                                Yii::$app->session->setFlash('error', 'Failed to assign ambassador role.');
+                            }
                         } else {
                             $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($model->getErrors(), 0));
-
                             $transaction->rollBack();
-                            Yii::$app->session->setFlash('error', 'Failed to save ambassador Errors: <br>' . $errors);
+                            Yii::$app->session->setFlash('error', 'Failed to save ambassador. Errors: <br>' . $errors);
                         }
                     } else {
                         $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($user->getErrors(), 0));
-
                         $transaction->rollBack();
-                        Yii::$app->session->setFlash('error', 'Failed to save userErrors: <br>' . $errors);
+                        Yii::$app->session->setFlash('error', 'Failed to save user. Errors: <br>' . $errors);
                     }
                 } catch (\Exception $e) {
                     $transaction->rollBack();
@@ -147,6 +158,7 @@ class AmbassadorController extends Controller
             'model' => $model,
         ]);
     }
+
 
     /**
      * Updates an existing Ambassador model.

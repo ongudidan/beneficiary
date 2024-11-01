@@ -135,43 +135,43 @@ $sidebarMenus = [
             ],
         ]
     ],
+    // [
+    //     'label' => 'Auth Rules',
+    //     'icon' => 'fas fa-lock',  // Auth Rules icon
+    //     'submenu' => true,
+    //     'active' => $module === 'dashboard' && $controller === 'auth-rule',
+    //     'items' => [
+    //         [
+    //             'label' => 'Auth Rule List',
+    //             'url' => Url::to(['/dashboard/auth-rule/index']),
+    //             'module' => 'dashboard',
+    //             'controller' => 'auth-rule',
+    //             'action' => 'index',
+    //         ],
+    //         [
+    //             'label' => 'Create Auth Rule',
+    //             'url' => Url::to(['/dashboard/auth-rule/create']),
+    //             'module' => 'dashboard',
+    //             'controller' => 'auth-rule',
+    //             'action' => 'create',
+    //         ],
+    //     ]
+    // ],
     [
-        'label' => 'Auth Rules',
-        'icon' => 'fas fa-lock',  // Auth Rules icon
-        'submenu' => true,
-        'active' => $module === 'dashboard' && $controller === 'auth-rule',
-        'items' => [
-            [
-                'label' => 'Auth Rule List',
-                'url' => Url::to(['/dashboard/auth-rule/index']),
-                'module' => 'dashboard',
-                'controller' => 'auth-rule',
-                'action' => 'index',
-            ],
-            [
-                'label' => 'Create Auth Rule',
-                'url' => Url::to(['/dashboard/auth-rule/create']),
-                'module' => 'dashboard',
-                'controller' => 'auth-rule',
-                'action' => 'create',
-            ],
-        ]
-    ],
-    [
-        'label' => 'Auth Item',
-        'icon' => 'fas fa-key',  // Auth Item icon
+        'label' => 'Rules',
+        'icon' => 'fas fa-key',  // Rules icon
         'submenu' => true,
         'active' => $module === 'dashboard' && $controller === 'auth-item',
         'items' => [
             [
-                'label' => 'Auth Item List',
+                'label' => 'Rules List',
                 'url' => Url::to(['/dashboard/auth-item/index']),
                 'module' => 'dashboard',
                 'controller' => 'auth-item',
                 'action' => 'index',
             ],
             [
-                'label' => 'Create Auth Item',
+                'label' => 'Create Rules',
                 'url' => Url::to(['/dashboard/auth-item/create']),
                 'module' => 'dashboard',
                 'controller' => 'auth-item',
@@ -179,36 +179,36 @@ $sidebarMenus = [
             ],
         ]
     ],
-    [
-        'label' => 'Auth Item Child',
-        'icon' => 'fas fa-sitemap',  // Auth Item Child icon
-        'submenu' => true,
-        'active' => $module === 'dashboard' && $controller === 'auth-item-child',
-        'items' => [
-            [
-                'label' => 'Auth Item Child List',
-                'url' => Url::to(['/dashboard/auth-item-child/index']),
-                'module' => 'dashboard',
-                'controller' => 'auth-item-child',
-                'action' => 'index',
-            ],
-            [
-                'label' => 'Create Auth Item Child',
-                'url' => Url::to(['/dashboard/auth-item-child/create']),
-                'module' => 'dashboard',
-                'controller' => 'auth-item-child',
-                'action' => 'create',
-            ],
-        ]
-    ],
-    [
-        'label' => 'Auth Assignment',
-        'url' => Url::to(['/dashboard/auth-assignment/index']),
-        'icon' => 'fas fa-user-shield',  // Auth Assignment icon
-        'module' => 'dashboard',
-        'controller' => 'auth-assignment',
-        'action' => 'index',
-    ],
+    // [
+    //     'label' => 'Auth Item Child',
+    //     'icon' => 'fas fa-sitemap',  // Auth Item Child icon
+    //     'submenu' => true,
+    //     'active' => $module === 'dashboard' && $controller === 'auth-item-child',
+    //     'items' => [
+    //         [
+    //             'label' => 'Auth Item Child List',
+    //             'url' => Url::to(['/dashboard/auth-item-child/index']),
+    //             'module' => 'dashboard',
+    //             'controller' => 'auth-item-child',
+    //             'action' => 'index',
+    //         ],
+    //         [
+    //             'label' => 'Create Auth Item Child',
+    //             'url' => Url::to(['/dashboard/auth-item-child/create']),
+    //             'module' => 'dashboard',
+    //             'controller' => 'auth-item-child',
+    //             'action' => 'create',
+    //         ],
+    //     ]
+    // ],
+    // [
+    //     'label' => 'Auth Assignment',
+    //     'url' => Url::to(['/dashboard/auth-assignment/index']),
+    //     'icon' => 'fas fa-user-shield',  // Auth Assignment icon
+    //     'module' => 'dashboard',
+    //     'controller' => 'auth-assignment',
+    //     'action' => 'index',
+    // ],
 ];
 
 

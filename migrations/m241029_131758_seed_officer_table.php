@@ -57,6 +57,8 @@ class m241029_131758_seed_officer_table extends Migration
                     'id' => $id,
                     'username' => $nationalId,
                     'email' => $email,
+                    'status' => 10,
+
                     'auth_key' => Yii::$app->security->generateRandomString(), // Random auth key
                     'password_hash' => Yii::$app->security->generatePasswordHash($nationalId), // Hashed 'admin'
                     'status' => 10, // Default status for active user

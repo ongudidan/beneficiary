@@ -43,14 +43,14 @@ class AuthItemGenerator
             $modelName = pathinfo($file, PATHINFO_FILENAME);
 
             // // Skip models that end with "Search"
-            // if (substr($modelName, -6) === 'Search') {
-            //     continue; // Skip this iteration
-            // }
+            if (substr($modelName, -6) === 'Search') {
+                continue; // Skip this iteration
+            }
 
             $actions = ['create', 'view', 'update', 'delete'];
 
-            // Create a parent auth item for the model
-            $this->addParentAuthItem($modelName);
+            // Remove or comment out the parent creation
+            // $this->addParentAuthItem($modelName);
 
             foreach ($actions as $action) {
                 $itemName = "{$modelName}-{$action}";
@@ -60,12 +60,13 @@ class AuthItemGenerator
         }
     }
 
-    protected function addParentAuthItem($modelName)
-    {
-        $parentName = "{$modelName}-parent"; // Naming convention for parent item
-        $description = "Parent permission for {$modelName}";
-        $this->addAuthItem($parentName, $description, self::TYPE_PARENT);
-    }
+    // This method can be removed if not needed anymore
+    // protected function addParentAuthItem($modelName)
+    // {
+    //     $parentName = "{$modelName}-parent"; // Naming convention for parent item
+    //     $description = "Parent permission for {$modelName}";
+    //     $this->addAuthItem($parentName, $description, self::TYPE_PARENT);
+    // }
 
     protected function addAuthItem($name, $description, $type)
     {
