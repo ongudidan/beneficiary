@@ -5,6 +5,7 @@ namespace app\modules\dashboard\controllers;
 use app\components\AuthItemChildGenerator;
 use app\components\AuthItemGenerator;
 use app\modules\dashboard\models\AuthItem;
+use app\modules\dashboard\models\AuthItemForm;
 use app\modules\dashboard\models\AuthItemSearch;
 use Yii;
 use yii\filters\AccessControl;
@@ -59,17 +60,17 @@ class AuthItemController extends Controller
         $searchModel = new AuthItemSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
-        // Drop all data from auth_item and auth_item_child tables
-        Yii::$app->db->createCommand()->delete('auth_item_child')->execute();
-        Yii::$app->db->createCommand()->delete('auth_item')->execute();
+        // // Drop all data from auth_item and auth_item_child tables
+        // Yii::$app->db->createCommand()->delete('auth_item_child')->execute();
+        // Yii::$app->db->createCommand()->delete('auth_item')->execute();
 
-        // Generate auth items if they don't exist
-        $authItemGenerator = new AuthItemGenerator();
-        $authItemGenerator->generateAuthItems();
+        // // Generate auth items if they don't exist
+        // $authItemGenerator = new AuthItemGenerator();
+        // $authItemGenerator->generateAuthItems();
 
-        // Generate auth item children
-        $authItemChildGenerator = new AuthItemChildGenerator();
-        $authItemChildGenerator->generateAuthItemChildren();
+        // // Generate auth item children
+        // $authItemChildGenerator = new AuthItemChildGenerator();
+        // $authItemChildGenerator->generateAuthItemChildren();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -97,20 +98,59 @@ class AuthItemController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
+    // public function actionCreate()
+    // {
+    //     $model = new AuthItem();
+
+    //     if ($this->request->isPost) {
+    //         if ($model->load($this->request->post()) && $model->save()) {
+    //             return $this->redirect(['view', 'name' => $model->name]);
+    //         }
+    //     } else {
+    //         $model->loadDefaultValues();
+    //     }
+
+    //     return $this->render('create', [
+    //         'model' => $model,
+    //     ]);
+    // }
+
     public function actionCreate()
     {
-        $model = new AuthItem();
+        $model = new AuthItemForm();
+        $auth = Yii::$app->authManager;
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'name' => $model->name]);
+        // Group permissions by model name
+        $permissions = $auth->getPermissions();
+        $authItemsGrouped = [];
+
+        foreach ($permissions as $permission) {
+            // Assuming permission names follow the 'ModelName-action' convention
+            list($modelName, $action) = explode('-', $permission->name, 2);
+
+            // Group by model name
+            $authItemsGrouped[$modelName][$action] = $permission->name;
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $parent = $auth->createRole($model->name);
+            $parent->description = $model->description;
+            $auth->add($parent);
+
+            foreach ($model->children as $childName) {
+                $child = $auth->getPermission($childName);
+                if ($child) {
+                    $auth->addChild($parent, $child);
+                }
             }
-        } else {
-            $model->loadDefaultValues();
+
+            Yii::$app->session->setFlash('success', 'Parent item created and children assigned.');
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'authItemsGrouped' => $authItemsGrouped,
         ]);
     }
 
@@ -121,18 +161,87 @@ class AuthItemController extends Controller
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
+    // public function actionUpdate($name)
+    // {
+    //     $model = $this->findModel($name);
+
+    //     if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+    //         return $this->redirect(['view', 'name' => $model->name]);
+    //     }
+
+    //     return $this->render('update', [
+    //         'model' => $model,
+    //     ]);
+    // }
+
     public function actionUpdate($name)
     {
-        $model = $this->findModel($name);
+        $modelData = AuthItem::findOne($name); // Fetch the existing auth item
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'name' => $model->name]);
+        if (!$modelData || $modelData->type !== 1) {
+            throw new NotFoundHttpException("The requested auth item does not exist or is not a parent item.");
+        }
+
+        // Create a new instance of the form model
+        $model = new AuthItemForm();
+
+        // Populate the form model with the retrieved data
+        $model->name = $modelData->name; // Name of the parent item
+        $model->description = $modelData->description; // Description of the parent item
+
+        // Get existing child permissions for the parent auth item
+        $auth = Yii::$app->authManager;
+        $existingChildren = $auth->getChildren($model->name);
+        $assignedChildren = array_keys($existingChildren); // Array of assigned child item names
+
+        // Set the model's children with currently assigned children
+        $model->children = $assignedChildren;
+
+        // Retrieve auth items of type 2 (permissions) to display in the form
+        $authItems = AuthItem::find()->where(['type' => 2])->all();
+
+        // Organize auth items by model name for grouped display
+        $authItemsGrouped = [];
+        foreach ($authItems as $item) {
+            [$modelName, $action] = explode('-', $item->name);
+            $authItemsGrouped[$modelName][$action] = $item->name;
+        }
+
+        // Process form submission
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $transaction = Yii::$app->db->beginTransaction();
+            try {
+                // Update parent auth item
+                $authItem = $auth->getRole($model->name) ?? $auth->createRole($model->name);
+                $authItem->name = $model->name; // Set new name
+                $authItem->description = $model->description; // Set new description if needed
+                $auth->update($authItem->name, $authItem); // Update the auth item in the database
+
+                // Update child permissions
+                $auth->removeChildren($authItem); // Clear current children
+                foreach ($model->children as $childName) {
+                    $child = $auth->getPermission($childName);
+                    if ($child) {
+                        $auth->addChild($authItem, $child); // Add new children
+                    }
+                }
+
+                $transaction->commit();
+                Yii::$app->session->setFlash('success', 'Role updated successfully.');
+                return $this->redirect(['index']);
+            } catch (\Exception $e) {
+                $transaction->rollBack();
+                Yii::$app->session->setFlash('error', 'Failed to update role. Please try again.');
+            }
         }
 
         return $this->render('update', [
-            'model' => $model,
+            'model' => $model, // Pass the populated model to the view
+            'authItemsGrouped' => $authItemsGrouped, // Now this variable is defined
         ]);
     }
+
+
 
     /**
      * Deletes an existing AuthItem model.

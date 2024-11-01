@@ -1,1 +1,0 @@
-a:2:{i:0;a:1:{s:5:"admin";O:13:"yii\rbac\Role":7:{s:4:"type";i:1;s:4:"name";s:5:"admin";s:11:"description";s:31:"Admin role with all permissions";s:8:"ruleName";N;s:4:"data";N;s:9:"createdAt";i:1730271920;s:9:"updatedAt";i:1730271920;}}i:1;N;}

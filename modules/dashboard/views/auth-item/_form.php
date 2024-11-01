@@ -8,28 +8,93 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="auth-item-form">
+<?php
 
-    <?php $form = ActiveForm::begin(); ?>
+$this->registerJs(<<<JS
+    // Listen for changes on "All" checkboxes
+    document.querySelectorAll('.select-all').forEach(function(selectAllCheckbox) {
+        selectAllCheckbox.addEventListener('change', function() {
+            // Find all checkboxes in the same row as the "All" checkbox
+            let rowCheckboxes = this.closest('tr').querySelectorAll('.form-check-input');
+            rowCheckboxes.forEach(function(checkbox) {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+        });
+    });
+JS);
+?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'type')->textInput() ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+<div>
+    <?php $form = ActiveForm::begin([
+        'options' => ['class' => 'form-create-role']
+    ]); ?>
 
-    <?= $form->field($model, 'rule_name')->textInput(['maxlength' => true]) ?>
+    <div class="card p-3 mb-4">
+        <div class="mb-3">
+            <label class="form-label">Auth Rule Name</label>
+            <?= $form->field($model, 'name')->textInput(['placeholder' => 'Rule Name'])->label(false) ?>
+        </div>
 
-    <?= $form->field($model, 'data')->textarea(['rows' => 6]) ?>
+        <div class="mb-3">
+            <h5>Permissions</h5>
+            <div class="table-responsive">
+                <table class="table table-striped mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Section</th>
+                            <th>All</th>
+                            <th>Index</th>
+                            <th>Create</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($authItemsGrouped as $modelName => $actions): ?>
+                            <tr>
+                                <td><?= ucfirst($modelName) ?></td>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
+                                <!-- "All" checkbox to select/deselect all permissions in the row -->
+                                <td><input type="checkbox" class="form-check-input select-all"></td>
 
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+                                <!-- Individual action checkboxes for each permission type -->
+                                <td>
+                                    <input type="checkbox" name="AuthItemForm[children][]" class="form-check-input"
+                                        value="<?= $actions['view'] ?? '' ?>"
+                                        <?= isset($actions['view']) && in_array($actions['view'], $model->children) ? 'checked' : '' ?>
+                                        <?= isset($actions['view']) ? '' : 'disabled' ?>>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="AuthItemForm[children][]" class="form-check-input"
+                                        value="<?= $actions['create'] ?? '' ?>"
+                                        <?= isset($actions['create']) && in_array($actions['create'], $model->children) ? 'checked' : '' ?>
+                                        <?= isset($actions['create']) ? '' : 'disabled' ?>>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="AuthItemForm[children][]" class="form-check-input"
+                                        value="<?= $actions['update'] ?? '' ?>"
+                                        <?= isset($actions['update']) && in_array($actions['update'], $model->children) ? 'checked' : '' ?>
+                                        <?= isset($actions['update']) ? '' : 'disabled' ?>>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="AuthItemForm[children][]" class="form-check-input"
+                                        value="<?= $actions['delete'] ?? '' ?>"
+                                        <?= isset($actions['delete']) && in_array($actions['delete'], $model->children) ? 'checked' : '' ?>
+                                        <?= isset($actions['delete']) ? '' : 'disabled' ?>>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    <div class="text-center">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
-
 </div>
