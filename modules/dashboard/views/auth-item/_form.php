@@ -21,10 +21,18 @@ $this->registerJs(<<<JS
             });
         });
     });
+
+    // Toggle all checkboxes when the "Toggle All" button is clicked
+    document.querySelector('#toggle-all').addEventListener('click', function() {
+        let allCheckboxes = document.querySelectorAll('.form-check-input');
+        let allChecked = Array.from(allCheckboxes).every(checkbox => checkbox.checked);
+        
+        allCheckboxes.forEach(function(checkbox) {
+            checkbox.checked = !allChecked; // Check if all are checked and toggle
+        });
+    });
 JS);
 ?>
-
-
 
 <div>
     <?php $form = ActiveForm::begin([
@@ -39,6 +47,7 @@ JS);
 
         <div class="mb-3">
             <h5>Permissions</h5>
+            <button type="button" id="toggle-all" class="btn btn-secondary mb-3">Toggle All</button>
             <div class="table-responsive">
                 <table class="table table-striped mb-0">
                     <thead class="table-light">
