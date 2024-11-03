@@ -13,14 +13,20 @@ use app\modules\dashboard\models\Ambassador;
 use app\modules\dashboard\models\AuthAssignment;
 use app\modules\dashboard\models\AuthItem;
 use app\modules\dashboard\models\AuthItemSearch;
+use app\modules\dashboard\models\Beneficiary;
 use app\modules\dashboard\models\Coordinator;
 use app\modules\dashboard\models\FieldOfficer;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use Yii;
+use yii\data\ActiveDataProvider;
+use yii\data\ArrayDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\HttpException;
 
 /**
  * AuthItemController implements the CRUD actions for AuthItem model.
@@ -311,6 +317,129 @@ class AuthItemController extends Controller
         // Redirect to an appropriate page, e.g., index or another relevant action
         return $this->redirect(['index']);
     }
+
+
+
+    public function actionExport()
+    {
+        ini_set('memory_limit', '512M'); // Increase memory limit if necessary
+        set_time_limit(300); // Increase execution time
+
+        // Fetch data for export (modify as needed)
+        $dataProvider = Beneficiary::find()->all(); // Adjust query to fit your needs
+
+        // Create a new Spreadsheet object
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Set the header row (customize as needed)
+        $headers = [
+            'ID',
+            'Sub Location ID',
+            'Village ID',
+            'Name',
+            'National ID',
+            'Contact',
+            'Sub Location',
+            'Village',
+            'Stove No',
+            'Issue Date',
+            'Lat',
+            'Long',
+            'Status',
+            'Created At',
+            'Updated At',
+            'Created By',
+            'Updated By',
+        ];
+        $sheet->fromArray($headers, NULL, 'A1');
+
+        // Fill the sheet with data
+        $row = 2; // Start from the second row
+        foreach ($dataProvider as $model) {
+            $sheet->fromArray([
+                $model->id,
+                $model->sub_location_id,
+                $model->village_id,
+                $model->name,
+                $model->national_id,
+                $model->contact,
+                $model->sub_location,
+                $model->village,
+                $model->stove_no,
+                $model->issue_date,
+                $model->lat,
+                $model->long,
+                $model->status,
+                $model->created_at,
+                $model->updated_at,
+                $model->created_by,
+                $model->updated_by,
+            ], NULL, 'A' . $row++);
+        }
+
+        // Save the spreadsheet to a file on the server
+        $uploadDir = Yii::getAlias('@webroot/exports/'); // Specify your directory to save the file
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true); // Create directory if it doesn't exist
+        }
+        $filename = 'Beneficiaries_' . date('Y-m-d_H-i-s') . '.xlsx'; // Generate a unique filename
+        $filepath = $uploadDir . $filename;
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save($filepath);
+
+        // Return the filename for the download link
+        return $this->redirect(['download', 'filename' => $filename]);
+    }
+
+    // New action for downloading the file
+    public function actionDownload($filename)
+    {
+        $filepath = Yii::getAlias('@webroot/exports/' . $filename);
+
+        if (file_exists($filepath)) {
+            // Set headers for download
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment; filename="' . basename($filepath) . '"');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize($filepath));
+            flush(); // Flush system output buffer
+            readfile($filepath); // Read the file
+            exit; // Terminate the script
+        } else {
+            throw new NotFoundHttpException("The requested file does not exist.");
+        }
+    }
+
+
+    public function actionClearExports()
+    {
+        $uploadDir = Yii::getAlias('@webroot/exports/'); // Define the path to the exports folder
+
+        // Clear the exports folder
+        $this->clearExportsFolder($uploadDir);
+
+        // Set a flash message to notify the user
+        Yii::$app->session->setFlash('success', 'The exports folder has been cleared successfully.');
+
+        return $this->redirect(['index']); // Redirect to the index or desired page
+    }
+
+    // Function to clear all files in the exports directory
+    private function clearExportsFolder($path)
+    {
+        $files = glob($path . '*'); // Get all files in the directory
+        foreach ($files as $file) {
+            if (is_file($file)) {
+                unlink($file); // Delete the file
+            }
+        }
+    }
+
 
 
 

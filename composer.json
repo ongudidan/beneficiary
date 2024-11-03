@@ -30,7 +30,9 @@
     "phpoffice/phpspreadsheet": "^2.2",
     "kartik-v/yii2-date-range": "dev-master",
     "kartik-v/yii2-widget-datepicker": "dev-master",
-    "ramsey/uuid": "^4.7"
+    "ramsey/uuid": "^4.7",
+    "kartik-v/yii2-export": "^1.4",
+    "kartik-v/yii2-grid": "^3.5"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "~2.1.0",

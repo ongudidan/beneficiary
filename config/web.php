@@ -12,6 +12,9 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'modules' => [
+        'grid' => [
+            'class' => 'kartik\grid\Module',
+        ],
         'dashboard' => [
             'class' => 'app\modules\dashboard\dashboard',
         ],
@@ -29,6 +32,10 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'rtPgQRDW2IBADuJwYQ9OPAHjg-gHbITP',
+        ],
+        'gridview' => [
+            'class' => '\kartik\grid\Module',
+            // additional configurations if needed
         ],
         'session' => [
             'class' => 'yii\web\Session',

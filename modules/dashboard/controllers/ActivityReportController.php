@@ -9,6 +9,7 @@ use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ActivityReportController implements the CRUD actions for ActivityReport model.
@@ -106,28 +107,58 @@ class ActivityReportController extends Controller
     {
         $model = new ActivityReport();
 
-
-
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
+                // Retrieve file instances from the request
+                $model->audioFile = UploadedFile::getInstance($model, 'audioFile');
+                $model->photoFile = UploadedFile::getInstance($model, 'photoFile');
+
                 $model->id = IdGenerator::generateUniqueId();
-                $activityId = $model->activity_id;
 
-                // print_r($activityId);
-                // exit;
+                // Set up the uploads directory
+                $uploadsDir = Yii::getAlias('@webroot/uploads');
+                if (!is_dir($uploadsDir)) {
+                    if (!mkdir($uploadsDir, 0777, true) && !is_dir($uploadsDir)) {
+                        Yii::$app->session->setFlash('error', 'Failed to create uploads directory.');
+                        return $this->render('create', ['model' => $model]);
+                    }
+                }
 
-                // var_dump($activityId);
-                // exit;
+                // Handle photo file upload
+                if ($model->photoFile) {
+                    $photoName = uniqid('photo_') . '.' . $model->photoFile->extension;
+                    $photoPath = $uploadsDir . '/' . $photoName;
 
+                    if ($model->photoFile->saveAs($photoPath)) {
+                        $model->photo = 'uploads/' . $photoName; // Save relative path
+                    } else {
+                        Yii::$app->session->setFlash('error', 'Failed to upload photo file.');
+                        Yii::error('Photo file upload failed for path: ' . $photoPath);
+                    }
+                }
 
+                // Handle audio file upload
+                if ($model->audioFile) {
+                    $audioName = uniqid('audio_') . '.' . $model->audioFile->extension;
+                    $audioPath = $uploadsDir . '/' . $audioName;
+
+                    if ($model->audioFile->saveAs($audioPath)) {
+                        $model->audio = 'uploads/' . $audioName; // Save relative path
+                    } else {
+                        Yii::$app->session->setFlash('error', 'Failed to upload audio file.');
+                        Yii::error('Audio file upload failed for path: ' . $audioPath);
+                    }
+                }
+
+                // Attempt to save the model after handling file uploads
                 if ($model->save()) {
                     Yii::$app->session->setFlash('success', 'Activity report created successfully.');
-
                     return $this->redirect(['view', 'id' => $model->id]);
                 } else {
                     // Capture model errors and set a flash message
                     $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($model->getErrors(), 0));
-                    Yii::$app->session->setFlash('error', 'Failed to save the customer. Errors: <br>' . $errors);
+                    Yii::$app->session->setFlash('error', 'Failed to save the activity report. Errors: <br>' . $errors);
+                    Yii::error('Model save failed: ' . $errors);
                 }
             }
         } else {
@@ -137,9 +168,10 @@ class ActivityReportController extends Controller
         return $this->render('create', [
             'model' => $model,
             'activity_id' => $activityId ?? '',
-
         ]);
     }
+
+
 
     /**
      * Updates an existing ActivityReport model.
@@ -152,10 +184,75 @@ class ActivityReportController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Activity report updated successfully.');
+        if ($model === null) {
+            throw new NotFoundHttpException('The requested activity report does not exist.');
+        }
 
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost) {
+            // Load the model data from POST
+            if ($model->load($this->request->post())) {
+                // Retrieve the new file instances
+                $model->audioFile = UploadedFile::getInstance($model, 'audioFile');
+                $model->photoFile = UploadedFile::getInstance($model, 'photoFile');
+
+                // Set up the uploads directory
+                $uploadsDir = Yii::getAlias('@webroot/uploads');
+
+                // Handle photo file upload
+                if ($model->photoFile) {
+                    // Delete the old photo file if it exists
+                    if ($model->photo) {
+                        $oldPhotoPath = Yii::getAlias('@webroot/' . $model->photo);
+                        if (file_exists($oldPhotoPath)) {
+                            unlink($oldPhotoPath);
+                        }
+                    }
+
+                    // Save the new photo file
+                    $photoName = uniqid('photo_') . '.' . $model->photoFile->extension;
+                    $photoPath = $uploadsDir . '/' . $photoName;
+
+                    if ($model->photoFile->saveAs($photoPath)) {
+                        $model->photo = 'uploads/' . $photoName; // Save the relative path
+                    } else {
+                        Yii::$app->session->setFlash('error', 'Failed to upload new photo file.');
+                        Yii::error('New photo file upload failed for path: ' . $photoPath);
+                    }
+                }
+
+                // Handle audio file upload
+                if ($model->audioFile) {
+                    // Delete the old audio file if it exists
+                    if ($model->audio) {
+                        $oldAudioPath = Yii::getAlias('@webroot/' . $model->audio);
+                        if (file_exists($oldAudioPath)) {
+                            unlink($oldAudioPath);
+                        }
+                    }
+
+                    // Save the new audio file
+                    $audioName = uniqid('audio_') . '.' . $model->audioFile->extension;
+                    $audioPath = $uploadsDir . '/' . $audioName;
+
+                    if ($model->audioFile->saveAs($audioPath)) {
+                        $model->audio = 'uploads/' . $audioName; // Save the relative path
+                    } else {
+                        Yii::$app->session->setFlash('error', 'Failed to upload new audio file.');
+                        Yii::error('New audio file upload failed for path: ' . $audioPath);
+                    }
+                }
+
+                // Attempt to save the model after handling file uploads
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Activity report updated successfully.');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    // Capture model errors and set a flash message
+                    $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($model->getErrors(), 0));
+                    Yii::$app->session->setFlash('error', 'Failed to save the activity report. Errors: <br>' . $errors);
+                    Yii::error('Model save failed: ' . $errors);
+                }
+            }
         }
 
         return $this->render('update', [
@@ -172,12 +269,33 @@ class ActivityReportController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-        Yii::$app->session->setFlash('success', 'Activity report deleted successfully.');
+        // Find the model based on the ID
+        $model = $this->findModel($id);
 
+        // Delete the associated photo file if it exists
+        if ($model->photo) {
+            $oldPhotoPath = Yii::getAlias('@webroot/' . $model->photo);
+            if (file_exists($oldPhotoPath)) {
+                unlink($oldPhotoPath);
+            }
+        }
+
+        // Delete the associated audio file if it exists
+        if ($model->audio) {
+            $oldAudioPath = Yii::getAlias('@webroot/' . $model->audio);
+            if (file_exists($oldAudioPath)) {
+                unlink($oldAudioPath);
+            }
+        }
+
+        // Now delete the model from the database
+        $model->delete();
+
+        Yii::$app->session->setFlash('success', 'Activity report deleted successfully.');
 
         return $this->redirect(['index']);
     }
+
 
     /**
      * Finds the ActivityReport model based on its primary key value.

@@ -5,73 +5,51 @@ namespace app\modules\dashboard\models;
 use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
+use yii\web\UploadedFile;
 
-/**
- * This is the model class for table "activity_report".
- *
- * @property string $id
- * @property string|null $activity_id
- * @property string|null $beneficiary_id
- * @property string|null $usage
- * @property string|null $condition
- * @property string|null $recommendation
- * @property string|null $remarks
- * @property int|null $created_at
- * @property int|null $updated_at
- * @property string|null $created_by
- * @property string|null $updated_by
- */
-class ActivityReport extends \yii\db\ActiveRecord
+class ActivityReport extends ActiveRecord
 {
+    public $audioFile;
+    public $photoFile;
+
     public function behaviors()
     {
         return [
-            [
-                'class' => TimestampBehavior::class,
-                'createdAtAttribute' => 'created_at',
-                'updatedAtAttribute' => 'updated_at',
-            ],
-            [
-                'class' => BlameableBehavior::class,
-                'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-
-            ],
-
+            TimestampBehavior::class,
+            BlameableBehavior::class,
         ];
     }
-    /**
-     * {@inheritdoc}
-     */
+
     public static function tableName()
     {
         return 'activity_report';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
-            [['id', 'usage', 'condition', 'beneficiary_id', 'activity_id'], 'required'],
+            [['id', 'usage', 'condition', 'beneficiary_id', 'photoFile', 'activity_id'], 'required'],
             [['created_at', 'updated_at'], 'integer'],
-            [['id', 'activity_id', 'beneficiary_id', 'usage', 'condition', 'recommendation', 'remarks', 'created_by', 'updated_by'], 'string', 'max' => 255],
+            [['id', 'activity_id', 'audio', 'photo', 'beneficiary_id', 'usage', 'condition', 'recommendation', 'remarks', 'created_by', 'updated_by'], 'string', 'max' => 255],
             [['id'], 'unique'],
+            // [['photoFile'], 'file', 'extensions' => 'jpg, png', 'maxSize' => 50 * 1024 * 1024, 'skipOnEmpty' => true],
+            // [['audioFile'], 'file', 'extensions' => 'mp3, wav', 'maxSize' => 50 * 1024 * 1024, 'skipOnEmpty' => true],
+            // Add validation rules for audioFile and photoFile
+            [['audioFile', 'photoFile'], 'file', 'skipOnEmpty' => true],
+            // [['audioFile', 'photoFile'], 'safe'], // Mark these fields as safe
+      
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function attributeLabels()
     {
         return [
             'id' => 'ID',
             'activity_id' => 'Activity',
             'beneficiary_id' => 'Beneficiary',
-            'activity.reference_no' => 'Activity Reference No',
-
+            'audio' => 'Recorded phone call (<5MBs)',
+            'photo' => 'Photo of phone call data entry form',
             'usage' => 'Usage',
             'condition' => 'Condition',
             'recommendation' => 'Recommendation',

@@ -8,7 +8,7 @@ use yii\helpers\Html;
 
 // $this->title = 'Create Activity Report';
 $beneficiaryId = Yii::$app->request->get('beneficiary_id');
-$beneficiaryName = Beneficiary::findOne($beneficiaryId)->name;
+$beneficiaryName = Beneficiary::findOne($beneficiaryId)->name ?? '';
 
 $this->title = 'Create Activity Report for: ' . $beneficiaryName;
 

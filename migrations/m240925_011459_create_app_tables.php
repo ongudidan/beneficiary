@@ -112,6 +112,10 @@ class m240925_011459_create_app_tables extends Migration
             'beneficiary_id' => $this->string()->defaultValue(null),
             'usage' => $this->string()->defaultValue(null),
             'condition' => $this->string()->defaultValue(null),
+            'action' => $this->string()->defaultValue(null),
+            'audio' => $this->string()->defaultValue(null),
+            'photo' => $this->string()->defaultValue(null),
+
             'recommendation' => $this->string()->defaultValue(null),
             'remarks' => $this->string()->defaultValue(null),
             'created_at' => $this->integer()->defaultValue(null),

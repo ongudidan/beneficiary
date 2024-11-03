@@ -7,6 +7,8 @@ use app\modules\dashboard\models\Activity;
 use app\modules\dashboard\models\ActivityReport;
 use app\modules\dashboard\models\ActivityReportSearch;
 use app\modules\dashboard\models\ActivitySearch;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -274,4 +276,94 @@ class ActivityController extends Controller
 
         return $this->redirect(['/activity-report/index']);
     }
+
+    public function actionExport($id)
+    {
+        ini_set('memory_limit', '512M'); // Increase memory limit if necessary
+        set_time_limit(300); // Increase execution time
+
+        // Fetch data for export (modify as needed)
+        $dataProvider = ActivityReport::find()->where(['activity_id' => $id])->all(); // Adjust query to fit your needs
+
+        // Create a new Spreadsheet object
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Set the header row (customize as needed)
+        $headers = [
+            // 'ID',
+            'Activity ID',
+            'Beneficiary ID',
+            'Usage',
+            'Condition',
+            'Action',
+            'Audio',
+            'Photo',
+            'Recommendation',
+            'Remarks',
+            'Created At',
+            'Updated At',
+            'Created By',
+            'Updated By',
+        ];
+        $sheet->fromArray($headers, NULL, 'A1');
+
+        // Fill the sheet with data
+        $row = 2; // Start from the second row
+        foreach ($dataProvider as $model) {
+            $sheet->fromArray([
+                // $model->id,
+                $model->activity->name,
+                $model->beneficiary->name,
+                $model->usage,
+                $model->condition,
+                $model->action,
+                $model->audio,
+                $model->photo,
+                $model->recommendation,
+                $model->remarks,
+                date('Y-m-d H:i:s', $model->created_at), // Format timestamps
+                date('Y-m-d H:i:s', $model->updated_at), // Format timestamps
+                $model->created_by,
+                $model->updated_by,
+            ], NULL, 'A' . $row++);
+        }
+
+        // Save the spreadsheet to a file on the server
+        $uploadDir = Yii::getAlias('@webroot/exports/'); // Specify your directory to save the file
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true); // Create directory if it doesn't exist
+        }
+        $filename = 'Activity_Reports_' . date('Y-m-d_H-i-s') . '.xlsx'; // Generate a unique filename
+        $filepath = $uploadDir . $filename;
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save($filepath);
+
+        // Return the filename for the download link
+        return $this->redirect(['download', 'filename' => $filename]);
+    }
+
+    // New action for downloading the file
+    public function actionDownload($filename)
+    {
+        $filepath = Yii::getAlias('@webroot/exports/' . $filename);
+
+        if (file_exists($filepath)) {
+            // Set headers for download
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment; filename="' . basename($filepath) . '"');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize($filepath));
+            flush(); // Flush system output buffer
+            readfile($filepath); // Read the file
+            exit; // Terminate the script
+        } else {
+            throw new NotFoundHttpException("The requested file does not exist.");
+        }
+    }
+
 }

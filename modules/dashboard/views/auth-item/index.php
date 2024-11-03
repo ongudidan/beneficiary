@@ -78,8 +78,10 @@ $this->registerCss("
                             <a href="<?= Url::to(['/dashboard/auth-item/item-generator']) ?>" class="btn gradient-button btn-gradient-1">Regenerate Items</a>
                             <a href="<?= Url::to(['/dashboard/auth-item/import-ambassadors']) ?>" class="btn gradient-button btn-gradient-2">import-ambassadors</a>
                             <a href="<?= Url::to(['/dashboard/auth-item/assign-roles']) ?>" class="btn gradient-button btn-gradient-3">assign roles</a>
-                            <a href="<?= Url::to(['/dashboard/auth-item/action4']) ?>" class="btn gradient-button btn-gradient-4">Action 4</a>
-                            <a href="<?= Url::to(['/dashboard/auth-item/action5']) ?>" class="btn gradient-button btn-gradient-5">Action 5</a>
+                            <a href="<?= Url::to(['/dashboard/auth-item/export']) ?>" class="btn gradient-button btn-gradient-4">export beneficiaries</a>
+                            <a href="<?= Url::to(['/dashboard/auth-item/clear-exports']) ?>" class="btn gradient-button btn-gradient-5" data-method="post" data-confirm="Are you sure you want to clear the exports folder?">
+                                Clear Exports Folder
+                            </a>
                         </div>
                     </div>
 

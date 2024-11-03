@@ -12,12 +12,12 @@ use yii\helpers\ArrayHelper;
 
 $beneficiaryId = Yii::$app->request->get('beneficiary_id');
 
-if(Yii::$app->controller->id === 'beneficiary'){
-$formAction = Yii::$app->controller->action->id === 'report-update'
-    ? ['beneficiary/report-update', 'id' => $model->id]
-    : ['beneficiary/report-create']; // Use 'create' action if it's not update
-    
-} elseif(Yii::$app->controller->id === 'activity-report'){
+if (Yii::$app->controller->id === 'beneficiary') {
+    $formAction = Yii::$app->controller->action->id === 'report-update'
+        ? ['beneficiary/report-update', 'id' => $model->id]
+        : ['beneficiary/report-create']; // Use 'create' action if it's not update
+
+} elseif (Yii::$app->controller->id === 'activity-report') {
     $formAction = Yii::$app->controller->action->id === 'update'
         ? ['activity-report/update', 'id' => $model->id]
         : ['activity-report/create']; // Use 'create' action if it's not update
@@ -28,7 +28,7 @@ $formAction = Yii::$app->controller->action->id === 'report-update'
     'id' => 'main-form',
     'enableAjaxValidation' => false,
     'action' => $formAction,
-    'method' => 'post',
+    'method' => 'post','options' => ['enctype' => 'multipart/form-data'] // Enable file uploads
 ]); ?>
 
 <?= $form->field($model, 'beneficiary_id')->hiddenInput(['value' => $beneficiaryId])->label(false) ?>
@@ -62,13 +62,45 @@ $formAction = Yii::$app->controller->action->id === 'report-update'
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'condition')->dropDownList([
                                 'Good' => 'Good',
-                                'Bad' => 'Bad',
+                                'Damaged' => 'Damaged',
+                                'Not Confirmed(Beneficiary not reachable)' => 'Not Confirmed(Beneficiary not reachable)',
+                                'Not Confirmed(Beneficiary did not answer call)' => 'Not Confirmed(Beneficiary did not answer call)',
+
+
                             ]) ?>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group local-forms">
-                            <?= $form->field($model, 'recommendation')->textarea(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'recommendation')->dropDownList([
+                                'Repair' => 'Repair',
+                                'Replacement' => 'Replacement',
+                                'Not applicable' => 'Not applicable',
+
+                            ]) ?>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group local-forms">
+                            <?= $form->field($model, 'action')->dropDownList([
+                                'Issue has been resolved' => 'Issue has been resolved',
+                                'Issue has been reported for action' => 'Issue has been reported for action',
+                                'Issue yet to be reported' => 'Issue yet to be reported',
+                                'Not applicable(the cookstove has been reported to be in good condition)' => 'Not applicable(the cookstove has been reported to be in good condition)',
+                                'Not applicable(beneficiary not reachable/did not answer call)' => 'Not applicable(beneficiary not reachable/did not answer call)',
+
+
+                            ]) ?>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group local-forms">
+                            <?= $form->field($model, 'audioFile')->fileInput(['maxlength' => true]) ?>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group local-forms">
+                            <?= $form->field($model, 'photoFile')->fileInput() ?>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">

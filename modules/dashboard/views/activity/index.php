@@ -117,6 +117,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity/report-index', 'activity_id' => $activity->id]) ?>">
                                                             <i class="feather-message-square"></i> View Activity reports
                                                         </a>
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/dashboard/activity/export', 'id' => $activity->id]) ?>">
+                                                            <i class="feather-message-square"></i> Export to Exel
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </td>
