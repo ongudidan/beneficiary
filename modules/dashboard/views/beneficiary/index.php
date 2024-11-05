@@ -96,8 +96,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <td><?= Html::encode($beneficiary->national_id) ?></td>
                                             <td><?= Html::encode($beneficiary->contact) ?></td>
                                             <td><?= Html::encode($beneficiary->stove_no) ?></td>
-                                            <td><?= Html::encode($beneficiary->sub_location) ?></td>
-                                            <td><?= Html::encode($beneficiary->village) ?></td>
+                                            <td><?= Html::encode($beneficiary->subLocation->name) ?></td>
+                                            <td><?= Html::encode($beneficiary->villages->name) ?? '' ?></td>
                                             <td><?= Yii::$app->formatter->asDatetime($beneficiary->created_at) ?></td>
 
                                             <td class="text-end">

@@ -1,8 +1,12 @@
 <?php
 
+use app\modules\dashboard\models\SubLocation;
+use app\modules\dashboard\models\Village;
 use kartik\datetime\DateTimePicker;
+use kartik\select2\Select2;
 use yii\helpers\Html;
 use yii\bootstrap5\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 /** @var yii\web\View $this */
 /** @var app\modules\dashboard\models\Beneficiary $model */
@@ -33,37 +37,53 @@ $formAction = Yii::$app->controller->action->id === 'update'
                     </div> -->
 
 
-                    <div class="col-12 col-sm-3">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'national_id')->textInput(['maxlength' => true]) ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'contact')->textInput(['maxlength' => true]) ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3">
+  
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
-                            <?= $form->field($model, 'sub_location')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'sub_location_id')->widget(Select2::classname(), [
+                                'data' => ArrayHelper::map(SubLocation::find()->all(), 'id', 'name'),
+                                'language' => 'en',
+                                'options' => ['placeholder' => 'Select sub-location ...'],
+                                'pluginOptions' => [
+                                    'allowClear' => true
+                                ],
+                            ]); ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3">
+     
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
-                            <?= $form->field($model, 'village')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'village_id')->widget(Select2::classname(), [
+                                'data' => ArrayHelper::map(Village::find()->all(), 'id', 'name'),
+                                'language' => 'en',
+                                'options' => ['placeholder' => 'Select village ...'],
+                                'pluginOptions' => [
+                                    'allowClear' => true
+                                ],
+                            ]); ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'stove_no')->textInput(['maxlength' => true]) ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
 
                             <?= $form->field($model, 'issue_date')->widget(DateTimePicker::classname(), [
@@ -80,19 +100,19 @@ $formAction = Yii::$app->controller->action->id === 'update'
                             ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'lat')->textInput(['maxlength' => true]) ?>
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-3">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'long')->textInput(['maxlength' => true]) ?>
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-3">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'status')->dropDownList([
                                 '10' => 'Active',

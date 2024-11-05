@@ -72,25 +72,7 @@ class m240925_011459_create_app_tables extends Migration
             'updated_by' => $this->string()->defaultValue(null),
         ]);
 
-        $this->createTable('{{%beneficiary}}', [
-            'id' => $this->string()->notNull()->unique(), // Custom string ID
-            'sub_location_id' => $this->string()->defaultValue(null),
-            'village_id' => $this->string()->defaultValue(null),
-            'name' => $this->string()->notNull(),
-            'national_id' => $this->string()->defaultValue(null),
-            'contact' => $this->string()->notNull(),
-            'sub_location' => $this->string()->notNull(),
-            'village' => $this->string()->notNull(),
-            'stove_no' => $this->string()->notNull(),
-            'issue_date' => $this->string(),
-            'lat' => $this->string()->notNull(),
-            'long' => $this->string()->notNull(),
-            'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),
-            'created_by' => $this->string()->defaultValue(null),
-            'updated_by' => $this->string()->defaultValue(null),
-        ]);
+
 
         $this->createTable('{{%activity}}', [
             'id' => $this->string()->notNull()->unique(), // Custom string ID
@@ -109,6 +91,7 @@ class m240925_011459_create_app_tables extends Migration
         $this->createTable('{{%activity_report}}', [
             'id' => $this->string()->notNull()->unique(), // Custom string ID
             'activity_id' => $this->string()->defaultValue(null),
+            'activity_type' => $this->string()->defaultValue(null),
             'beneficiary_id' => $this->string()->defaultValue(null),
             'usage' => $this->string()->defaultValue(null),
             'condition' => $this->string()->defaultValue(null),
@@ -204,6 +187,30 @@ class m240925_011459_create_app_tables extends Migration
             'FOREIGN KEY ([[ambassador_id]]) REFERENCES {{%coordinator}} ([[id]])' .
             $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
             'FOREIGN KEY ([[village_id]]) REFERENCES {{%village}} ([[id]])' .
+            $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+        ]);
+
+        $this->createTable('{{%beneficiary}}', [
+            'id' => $this->string()->notNull()->unique(), // Custom string ID
+            'sub_location_id' => $this->string()->defaultValue(null),
+            'village_id' => $this->string()->defaultValue(null),
+            'name' => $this->string()->notNull(),
+            'national_id' => $this->string()->defaultValue(null),
+            'contact' => $this->string()->notNull(),
+            'sub_location' => $this->string()->notNull(),
+            'village' => $this->string()->notNull(),
+            'stove_no' => $this->string()->notNull(),
+            'issue_date' => $this->string(),
+            'lat' => $this->string()->notNull(),
+            'long' => $this->string()->notNull(),
+            'status' => $this->smallInteger()->notNull()->defaultValue(10),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
+            'created_by' => $this->string()->defaultValue(null),
+            'updated_by' => $this->string()->defaultValue(null),
+            'FOREIGN KEY ([[village_id]]) REFERENCES {{%village}} ([[id]])' .
+            $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+            'FOREIGN KEY ([[sub_location_id]]) REFERENCES {{%sub_location}} ([[id]])' .
             $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
         ]);
 

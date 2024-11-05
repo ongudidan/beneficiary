@@ -32,17 +32,17 @@ $formAction = Yii::$app->controller->action->id === 'update'
                         <h4><i class="glyphicon glyphicon-envelope"></i> Activity Details</h4>
                     </div> -->
 
-                    <div class="col-12 col-sm-12">
+                    <div class="col-12 col-sm-6">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12">
+                    <div class="col-12 col-sm-6">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12">
+                    <div class="col-12 col-sm-6">
                         <div class="form-group local-forms">
 
                             <?= $form->field($model, 'start_date')->widget(DateTimePicker::classname(), [
@@ -60,7 +60,7 @@ $formAction = Yii::$app->controller->action->id === 'update'
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-12">
+                    <div class="col-12 col-sm-6">
                         <div class="form-group local-forms">
 
                             <?= $form->field($model, 'end_date')->widget(DateTimePicker::classname(), [
@@ -78,7 +78,7 @@ $formAction = Yii::$app->controller->action->id === 'update'
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-12">
+                    <div class="col-12 col-sm-6">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'status')->dropDownList([
                                 '10' => 'Active',

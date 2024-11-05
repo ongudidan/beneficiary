@@ -3,10 +3,14 @@
 namespace app\modules\dashboard\controllers;
 
 use app\components\IdGenerator;
+use app\models\User;
 use app\modules\dashboard\models\Activity;
 use app\modules\dashboard\models\ActivityReport;
 use app\modules\dashboard\models\ActivityReportSearch;
 use app\modules\dashboard\models\ActivitySearch;
+use app\modules\dashboard\models\Ambassador;
+use app\modules\dashboard\models\Coordinator;
+use app\modules\dashboard\models\FieldOfficer;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use Yii;
@@ -292,8 +296,14 @@ class ActivityController extends Controller
         // Set the header row (customize as needed)
         $headers = [
             // 'ID',
-            'Activity ID',
-            'Beneficiary ID',
+            'Activity name',
+            'Activity Reference No',
+            'Activity Type',
+            'Beneficiary name',
+            'phone number',
+            'Sub-location',
+            'Village',
+            'Stove number',
             'Usage',
             'Condition',
             'Action',
@@ -314,18 +324,28 @@ class ActivityController extends Controller
             $sheet->fromArray([
                 // $model->id,
                 $model->activity->name,
+                $model->activity->reference_no,
+                $model->activity_type,
                 $model->beneficiary->name,
+                $model->beneficiary->contact,
+                $model->beneficiary->sub_location,
+                $model->beneficiary->village,
+                $model->beneficiary->stove_no,
                 $model->usage,
                 $model->condition,
                 $model->action,
-                $model->audio,
-                $model->photo,
+                $model->audio ? 'Available' : 'N/A',
+                $model->photo ? 'Available' : 'N/A',
                 $model->recommendation,
                 $model->remarks,
                 date('Y-m-d H:i:s', $model->created_at), // Format timestamps
                 date('Y-m-d H:i:s', $model->updated_at), // Format timestamps
-                $model->created_by,
-                $model->updated_by,
+                // User::findOne($model->created_by)->username,
+                // User::findOne($model->updated_by)->username,
+                $this->getPersonNameById($model->created_by),
+                $this->getPersonNameById($model->updated_by),
+
+                
             ], NULL, 'A' . $row++);
         }
 
@@ -343,6 +363,30 @@ class ActivityController extends Controller
         // Return the filename for the download link
         return $this->redirect(['download', 'filename' => $filename]);
     }
+
+    private function getPersonNameById($id)
+    {
+        $coordinator = Coordinator::findOne($id);
+        if ($coordinator) {
+            return $coordinator->name; // Adjust field name as necessary
+        }
+
+        $ambassador = Ambassador::findOne($id);
+        if ($ambassador) {
+            return $ambassador->name; // Adjust field name as necessary
+        }
+
+        $fieldOfficer = FieldOfficer::findOne($id);
+        if ($fieldOfficer) {
+            return $fieldOfficer->name; // Adjust field name as necessary
+        }
+
+        // If no match is found, check the User table
+        $user = User::findOne($id);
+        return $user ? $user->username : null; // Adjust field name as necessary
+    }
+
+
 
     // New action for downloading the file
     public function actionDownload($filename)
@@ -365,5 +409,7 @@ class ActivityController extends Controller
             throw new NotFoundHttpException("The requested file does not exist.");
         }
     }
+
+
 
 }

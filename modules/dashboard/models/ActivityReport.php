@@ -29,7 +29,7 @@ class ActivityReport extends ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'usage', 'condition', 'beneficiary_id', 'photoFile', 'activity_id'], 'required'],
+            [['id', 'usage', 'condition', 'beneficiary_id', 'photoFile', 'activity_id', 'activity_type',], 'required'],
             [['created_at', 'updated_at'], 'integer'],
             [['id', 'activity_id', 'audio', 'photo', 'beneficiary_id', 'usage', 'condition', 'recommendation', 'remarks', 'created_by', 'updated_by'], 'string', 'max' => 255],
             [['id'], 'unique'],
@@ -52,6 +52,7 @@ class ActivityReport extends ActiveRecord
             'photo' => 'Photo of phone call data entry form',
             'usage' => 'Usage',
             'condition' => 'Condition',
+            'activity_type' => 'Activity type',
             'recommendation' => 'Recommendation',
             'remarks' => 'Remarks',
             'created_at' => 'Created At',

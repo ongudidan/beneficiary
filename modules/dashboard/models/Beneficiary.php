@@ -58,9 +58,9 @@ class Beneficiary extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name', 'contact', 'sub_location', 'village', 'stove_no', 'lat', 'long'], 'required'],
+            [['id', 'name', 'contact', 'stove_no', 'lat', 'long'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
-            [['id', 'name', 'national_id', 'contact', 'sub_location', 'village', 'stove_no', 'issue_date', 'lat', 'long'], 'string', 'max' => 255],
+            [['id', 'name', 'national_id', 'contact', 'sub_location', 'stove_no', 'issue_date', 'lat', 'long'], 'string', 'max' => 255],
             [['id'], 'unique'],
         ];
     }
@@ -75,12 +75,13 @@ class Beneficiary extends \yii\db\ActiveRecord
             'name' => 'Name',
             'national_id' => 'National ID',
             'contact' => 'Contact',
-            'sub_location' => 'Sub Location',
-            'village' => 'Village',
+            // 'sub_location_id' => 'Sub Location',
+            'sub_location_id' => 'Sub Location',
+            // 'village_id' => 'Village',
+            'village_id' => 'Village',
             'stove_no' => 'Stove No',
             'issue_date' => 'Issue Date',
             'reference_no' => 'Activity Reference No',
-
             'lat' => 'Lat',
             'long' => 'Long',
             'status' => 'Status',
@@ -89,5 +90,15 @@ class Beneficiary extends \yii\db\ActiveRecord
             'created_by' => 'Created By',
             'updated_by' => 'Updated By',
         ];
+    }
+
+    public function getSubLocation()
+    {
+        return $this->hasOne(SubLocation::class, ['id' => 'sub_location_id']);
+    }
+
+    public function getVillages()
+    {
+        return $this->hasOne(Village::class, ['id' => 'village_id']);
     }
 }

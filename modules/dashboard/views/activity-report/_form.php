@@ -28,7 +28,8 @@ if (Yii::$app->controller->id === 'beneficiary') {
     'id' => 'main-form',
     'enableAjaxValidation' => false,
     'action' => $formAction,
-    'method' => 'post','options' => ['enctype' => 'multipart/form-data'] // Enable file uploads
+    'method' => 'post',
+    'options' => ['enctype' => 'multipart/form-data'] // Enable file uploads
 ]); ?>
 
 <?= $form->field($model, 'beneficiary_id')->hiddenInput(['value' => $beneficiaryId])->label(false) ?>
@@ -52,6 +53,14 @@ if (Yii::$app->controller->id === 'beneficiary') {
                     </div>
                     <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
+                            <?= $form->field($model, 'activity_type')->dropDownList([
+                                'Physical visit' => 'Physical visit',
+                                'Phone call' => 'Phone call',
+                            ]) ?>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group local-forms">
                             <?= $form->field($model, 'usage')->dropDownList([
                                 'In Use' => 'In Use',
                                 'Not In Use' => 'Not In Use',
@@ -70,7 +79,7 @@ if (Yii::$app->controller->id === 'beneficiary') {
                             ]) ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'recommendation')->dropDownList([
                                 'Repair' => 'Repair',
@@ -80,7 +89,7 @@ if (Yii::$app->controller->id === 'beneficiary') {
                             ]) ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'action')->dropDownList([
                                 'Issue has been resolved' => 'Issue has been resolved',
@@ -103,7 +112,7 @@ if (Yii::$app->controller->id === 'beneficiary') {
                             <?= $form->field($model, 'photoFile')->fileInput() ?>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-12">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'remarks')->textarea(['maxlength' => true]) ?>
                         </div>
