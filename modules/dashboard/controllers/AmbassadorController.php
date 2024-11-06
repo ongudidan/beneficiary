@@ -100,13 +100,15 @@ class AmbassadorController extends Controller
                 // Extract national ID as username
                 $username = $model->national_id;
 
+                $password = 'ambassador';
+
                 // Set User attributes
                 $user->id = $id;
                 $user->username = $username;
                 $user->auth_key = Yii::$app->security->generateRandomString();
                 $user->email = $model->email;
                 $user->status = 10;
-                $user->password_hash = Yii::$app->security->generatePasswordHash($username);  // Set password to hashed username
+                $user->password_hash = Yii::$app->security->generatePasswordHash($password);  // Set password to hashed username
 
                 // Start a transaction to ensure atomicity
                 $transaction = Yii::$app->db->beginTransaction();
@@ -170,17 +172,34 @@ class AmbassadorController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $user = User::findOne($model->user_id);  // Load the related User model
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Ambassador updated successfully.');
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $transaction = Yii::$app->db->beginTransaction();
+            try {
+                // Update the email in the User model
+                $user->email = $model->email;
 
-            return $this->redirect(['view', 'id' => $model->id]);
+                // Save both models in a transaction
+                if ($model->save() && $user->save()) {
+                    $transaction->commit();
+                    Yii::$app->session->setFlash('success', 'Ambassador and user email updated successfully.');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    $transaction->rollBack();
+                    Yii::$app->session->setFlash('error', 'Failed to update ambassador or user email.');
+                }
+            } catch (\Exception $e) {
+                $transaction->rollBack();
+                Yii::$app->session->setFlash('error', 'An error occurred: ' . $e->getMessage());
+            }
         }
 
         return $this->render('update', [
             'model' => $model,
         ]);
     }
+
 
     /**
      * Deletes an existing Ambassador model.

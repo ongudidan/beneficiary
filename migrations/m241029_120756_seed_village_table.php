@@ -31,8 +31,9 @@ class m241029_120756_seed_village_table extends Migration
                 continue;
             }
 
-            $village = $row[5] ?? 'Undefined ';
-            $subLocation = $row[4] ?? 'Undefined ';
+            $village = strtoupper($row[5] ?? 'Undefined');
+            $subLocation = strtoupper($row[4] ?? 'Undefined');
+
             $subLocationId = SubLocation::findOne(['name' => $subLocation])->id;
 
 

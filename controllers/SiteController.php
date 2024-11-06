@@ -12,7 +12,7 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
-    // public $layout = 'LoginLayout';
+    public $layout = 'LoginLayout';
 
     /**
      * {@inheritdoc}
@@ -90,8 +90,54 @@ class SiteController extends Controller
     //     ]);
     // }
 
+    // public function actionLogin()
+    // {
+    //     $this->layout = 'LoginLayout';
+
+    //     $model = new LoginForm();
+    //     if ($model->load(Yii::$app->request->post()) && $model->login()) {
+    //         // Check user roles and redirect accordingly
+    //         $user = Yii::$app->user;
+    //         if ($user->can('coordinator')) {
+    //             return $this->redirect(['/coordinator/default/index']);
+    //         } elseif ($user->can('admin')) {
+    //             return $this->redirect(['/dashboard/default/index']);
+    //         } elseif ($user->can('officer')) {
+    //             return $this->redirect(['/officer/default/index']);
+    //         } elseif ($user->can('ambassador')) {
+    //             return $this->redirect(['/ambassador/default/index']);
+    //         } else {
+    //             // Default redirection if no specific role is found
+    //             // return $this->goHome();
+    //             return $this->redirect(['/site/index']);
+
+    //         }
+    //     }
+
+    //     return $this->render('login', [
+    //         'model' => $model,
+    //     ]);
+    // }
+
     public function actionLogin()
     {
+        // Redirect to the appropriate page if the user is already logged in
+        if (!Yii::$app->user->isGuest) {
+            $user = Yii::$app->user;
+            if ($user->can('coordinator')) {
+                return $this->redirect(['/coordinator/default/index']);
+            } elseif ($user->can('admin')) {
+                return $this->redirect(['/dashboard/default/index']);
+            } elseif ($user->can('officer')) {
+                return $this->redirect(['/officer/default/index']);
+            } elseif ($user->can('ambassador')) {
+                return $this->redirect(['/ambassador/default/index']);
+            } else {
+                // Default redirection if no specific role is found
+                return $this->redirect(['/site/index']);
+            }
+        }
+
         $this->layout = 'LoginLayout';
 
         $model = new LoginForm();
@@ -108,9 +154,7 @@ class SiteController extends Controller
                 return $this->redirect(['/ambassador/default/index']);
             } else {
                 // Default redirection if no specific role is found
-                // return $this->goHome();
                 return $this->redirect(['/site/index']);
-
             }
         }
 
@@ -118,6 +162,7 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
 
 
     /**

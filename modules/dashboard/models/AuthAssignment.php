@@ -2,6 +2,7 @@
 
 namespace app\modules\dashboard\models;
 
+use app\models\User;
 use Yii;
 
 /**
@@ -44,7 +45,7 @@ class AuthAssignment extends \yii\db\ActiveRecord
     {
         return [
             'item_name' => 'Item Name',
-            'user_id' => 'User ID',
+            'user_id' => 'User username',
             'created_at' => 'Created At',
         ];
     }
@@ -57,5 +58,10 @@ class AuthAssignment extends \yii\db\ActiveRecord
     public function getItemName()
     {
         return $this->hasOne(AuthItem::class, ['name' => 'item_name']);
+    }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::class, ['id' => 'user_id']);
     }
 }

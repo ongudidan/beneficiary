@@ -28,7 +28,7 @@ class AuthAssignmentController extends Controller
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
-                        'delete' => ['POST'],
+                        // 'delete' => ['POST'],
                     ],
                 ],
             ]
@@ -56,13 +56,13 @@ class AuthAssignmentController extends Controller
         // Create an instance of AuthAssignmentManager
         $authAssignmentManager = new AuthAssignmentManager();
 
-        try {
-            // Assign all parent permissions to the 'admin' user
-            $authAssignmentManager->assignAdminPermissions();
-            Yii::$app->session->setFlash('success', 'Admin permissions have been assigned.');
-        } catch (\Exception $e) {
-            Yii::$app->session->setFlash('error', 'Error assigning permissions: ' . $e->getMessage());
-        }
+        // try {
+        //     // Assign all parent permissions to the 'admin' user
+        //     $authAssignmentManager->assignAdminPermissions();
+        //     Yii::$app->session->setFlash('success', 'Admin permissions have been assigned.');
+        // } catch (\Exception $e) {
+        //     Yii::$app->session->setFlash('error', 'Error assigning permissions: ' . $e->getMessage());
+        // }
 
         $searchModel = new AuthAssignmentSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
@@ -98,7 +98,10 @@ class AuthAssignmentController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'item_name' => $model->item_name, 'user_id' => $model->user_id]);
+        Yii::
+                $app->session->setFlash('success', 'Auth assignment created successfully.');
+
+                return $this->redirect(['index', 'item_name' => $model->item_name, 'user_id' => $model->user_id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -122,7 +125,9 @@ class AuthAssignmentController extends Controller
         $model = $this->findModel($item_name, $user_id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'item_name' => $model->item_name, 'user_id' => $model->user_id]);
+        Yii::$app->session->setFlash('success', 'Auth assignment deletupdated successfully.');
+
+            return $this->redirect(['index', 'item_name' => $model->item_name, 'user_id' => $model->user_id]);
         }
 
         return $this->render('update', [
@@ -141,6 +146,9 @@ class AuthAssignmentController extends Controller
     public function actionDelete($item_name, $user_id)
     {
         $this->findModel($item_name, $user_id)->delete();
+
+        Yii::$app->session->setFlash('success', 'Auth assignment deleted successfully.');
+
 
         return $this->redirect(['index']);
     }

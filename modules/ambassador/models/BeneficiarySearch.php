@@ -11,6 +11,8 @@ use app\modules\dashboard\models\Beneficiary;
  */
 class BeneficiarySearch extends Beneficiary
 {
+    public $villages;
+    public $subLocations;
     /**
      * {@inheritdoc}
      */
@@ -19,6 +21,7 @@ class BeneficiarySearch extends Beneficiary
         return [
             [['id', 'sub_location_id', 'village_id', 'name', 'national_id', 'contact', 'sub_location', 'village', 'stove_no', 'issue_date', 'lat', 'long', 'created_by', 'updated_by'], 'safe'],
             [['status', 'created_at', 'updated_at'], 'integer'],
+            [['villages', 'subLocations'], 'safe'],
         ];
     }
 
@@ -56,6 +59,12 @@ class BeneficiarySearch extends Beneficiary
             return $dataProvider;
         }
 
+        $query->joinWith('subLocation');
+
+        $query->joinWith('villages');
+
+
+
         // grid filtering conditions
         $query->andFilterWhere([
             'status' => $this->status,
@@ -64,13 +73,13 @@ class BeneficiarySearch extends Beneficiary
         ]);
 
         $query->andFilterWhere(['like', 'id', $this->id])
-            ->andFilterWhere(['like', 'sub_location_id', $this->sub_location_id])
-            ->andFilterWhere(['like', 'village_id', $this->village_id])
-            ->andFilterWhere(['like', 'name', $this->name])
+            // ->andFilterWhere(['like', 'sub_location_id', $this->sub_location_id])
+            ->andFilterWhere(['like', 'village.name', $this->village])
+            // ->andFilterWhere(['like', 'village', $this->village])
             ->andFilterWhere(['like', 'national_id', $this->national_id])
             ->andFilterWhere(['like', 'contact', $this->contact])
-            ->andFilterWhere(['like', 'sub_location', $this->sub_location])
-            ->andFilterWhere(['like', 'village', $this->village])
+            ->andFilterWhere(['like', 'sub_location.name', $this->sub_location])
+            // ->andFilterWhere(['like', 'village', $this->village])
             ->andFilterWhere(['like', 'stove_no', $this->stove_no])
             ->andFilterWhere(['like', 'issue_date', $this->issue_date])
             ->andFilterWhere(['like', 'lat', $this->lat])

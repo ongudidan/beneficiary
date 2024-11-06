@@ -201,14 +201,14 @@ $sidebarMenus = [
     //         ],
     //     ]
     // ],
-    // [
-    //     'label' => 'Auth Assignment',
-    //     'url' => Url::to(['/dashboard/auth-assignment/index']),
-    //     'icon' => 'fas fa-user-shield',  // Auth Assignment icon
-    //     'module' => 'dashboard',
-    //     'controller' => 'auth-assignment',
-    //     'action' => 'index',
-    // ],
+    [
+        'label' => 'Auth Assignment',
+        'url' => Url::to(['/dashboard/auth-assignment/index']),
+        'icon' => 'fas fa-user-shield',  // Auth Assignment icon
+        'module' => 'dashboard',
+        'controller' => 'auth-assignment',
+        'action' => 'index',
+    ],
 ];
 
 

@@ -141,8 +141,9 @@ class AuthItemController extends Controller
                 continue;
             }
 
-            $fieldOfficer = $row[13] ?? 'Undefined';
-            $ambassador = $row[12] ?? 'Undefined';
+            $fieldOfficer = strtoupper($row[13] ?? 'Undefined');
+            $ambassador = strtoupper($row[12] ?? 'Undefined');
+
 
             $fieldOfficerId = FieldOfficer::findOne(['name' => $fieldOfficer])->id;
 
@@ -158,6 +159,8 @@ class AuthItemController extends Controller
                 $updatedAt = time();
                 $createdBy = User::find()->where(['username' => 'admin'])->one()->id;
                 $updatedBy = $createdBy;
+                $password = 'password';
+
 
                 // Insert user record
                 $user = new User();
@@ -165,7 +168,7 @@ class AuthItemController extends Controller
                 $user->username = $nationalId;
                 $user->email = $email;
                 $user->auth_key = Yii::$app->security->generateRandomString();
-                $user->password_hash = Yii::$app->security->generatePasswordHash($nationalId);
+                $user->password_hash = Yii::$app->security->generatePasswordHash($password);
                 $user->status = 10;
                 $user->created_at = $createdAt;
                 $user->updated_at = $updatedAt;

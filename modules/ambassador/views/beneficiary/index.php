@@ -33,9 +33,14 @@ $this->params['breadcrumbs'][] = $this->title;
                             <input type="text" name="BeneficiarySearch[national_id]" class="form-control" placeholder="national ID ..." value="<?= Html::encode($searchModel->national_id) ?>">
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-6">
+                    <div class="col-lg-1 col-md-6">
                         <div class="form-group">
                             <input type="text" name="BeneficiarySearch[contact]" class="form-control" placeholder=" Contact ..." value="<?= Html::encode($searchModel->contact) ?>">
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="BeneficiarySearch[stove_no]" class="form-control" placeholder=" stove_no ..." value="<?= Html::encode($searchModel->stove_no) ?>">
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6">

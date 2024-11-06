@@ -31,7 +31,7 @@ class m241029_120746_seed_sub_location_table extends Migration
                 continue;
             }
 
-            $subLocation = $row[4] ?? 'Undefined ';
+            $subLocation = strtoupper($row[4] ?? 'Undefined');
 
             // Check if the sublocation has already been inserted
             if (!in_array($subLocation, $insertedSubLocations)) {

@@ -37,15 +37,16 @@ class m241103_123841_seed_beneficiary_table extends Migration
 
             $created_by = User::find()->where(['username' => 'admin'])->one()->id;
             $updated_by = User::find()->where(['username' => 'admin'])->one()->id;
-            
+
 
             // Set beneficiary values
-            $name = $row[1] ?? 'Undefined ';
-            $nationalId = $row[2] ?? 'Undefined ';
-            $contact = $row[3] ?? 'Undefined ';
-            $subLocation = $row[4] ?? 'Undefined ';
-            $village = $row[5] ?? 'Undefined ';
-            $stoveNo = $row[6] ?? 'Undefined ';
+            $name = strtoupper($row[1] ?? 'Undefined');
+            $nationalId = strtoupper($row[2] ?? 'Undefined');
+            $contact = strtoupper($row[3] ?? 'Undefined');
+            $subLocation = strtoupper($row[4] ?? 'Undefined');
+            $village = strtoupper($row[5] ?? 'Undefined');
+            $stoveNo = strtoupper($row[6] ?? 'Undefined');
+
 
             $subLocationId = SubLocation::findOne(['name' => $subLocation])->id;
             $villageId = Village::findOne(['name' => $village])->id;
@@ -62,9 +63,10 @@ class m241103_123841_seed_beneficiary_table extends Migration
 
             $lat = $row[8] ?? 'Undefined ';
             $long = $row[9] ?? 'Undefined ';
-            $ambassador = $row[12] ?? 'Undefined ';
-            $fieldOfficer = $row[13] ?? 'Undefined ';
-            $coordinator = $row[14] ?? 'Undefined ';
+            $ambassador = strtoupper($row[12] ?? 'Undefined');
+            $fieldOfficer = strtoupper($row[13] ?? 'Undefined');
+            $coordinator = strtoupper($row[14] ?? 'Undefined');
+
 
 
             // Insert the beneficiary into the beneficiary table

@@ -52,6 +52,8 @@ class m241029_131758_seed_officer_table extends Migration
                 $updatedAt = time();
                 $createdBy = User::find()->where(['username' => 'admin'])->one()->id;
                 $updatedBy = $createdBy;
+                $password = 'password';
+
 
                 $this->insert('{{%user}}', [
                     'id' => $id,
@@ -60,7 +62,7 @@ class m241029_131758_seed_officer_table extends Migration
                     'status' => 10,
 
                     'auth_key' => Yii::$app->security->generateRandomString(), // Random auth key
-                    'password_hash' => Yii::$app->security->generatePasswordHash($nationalId), // Hashed 'admin'
+                    'password_hash' => Yii::$app->security->generatePasswordHash($password), // Hashed 'admin'
                     'status' => 10, // Default status for active user
                     'created_at' => $createdAt, // Set created_at to current time
                     'updated_at' => $updatedAt, // Set updated_at to current time
