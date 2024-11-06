@@ -75,8 +75,18 @@ class BeneficiaryController extends Controller
         $model = new Beneficiary();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+                $model->id = IdGenerator::generateUniqueId();
+
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Beneficiary created successfully.');
+
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    // Capture model errors and set a flash message
+                    $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($model->getErrors(), 0));
+                    Yii::$app->session->setFlash('error', 'Failed to save the customer. Errors: <br>' . $errors);
+                }
             }
         } else {
             $model->loadDefaultValues();
@@ -98,8 +108,17 @@ class BeneficiaryController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post())) {
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Beneficiary updated successfully.');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    // Capture model errors and set a flash message
+                    $errors = implode('<br>', \yii\helpers\ArrayHelper::getColumn($model->getErrors(), 0));
+                    Yii::$app->session->setFlash('error', 'Failed to update the beneficiary. Errors: <br>' . $errors);
+                }
+            }
         }
 
         return $this->render('update', [
@@ -117,6 +136,8 @@ class BeneficiaryController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+
+        Yii::$app->session->setFlash('success', 'Beneficiary deleted successfully.');
 
         return $this->redirect(['index']);
     }

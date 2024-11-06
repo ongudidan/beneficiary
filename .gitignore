@@ -32,3 +32,5 @@
 # #vagrant folder
 # /.vagrant
 vendor/maennchen/zipstream-php
+
+/.git

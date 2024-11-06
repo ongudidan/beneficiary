@@ -33,6 +33,22 @@ $sidebarMenus = [
         'controller' => 'activity-report',
         'action' => 'index',
     ],
+    [
+        'label' => 'Sub-locations',
+        'url' => Url::to(['/ambassador/sub-location/index']),
+        'icon' => 'fas fa-file-alt',  // My Reports icon
+        'module' => 'ambassador',
+        'controller' => 'sub-location',
+        'action' => 'index',
+    ],
+    [
+        'label' => 'Villages',
+        'url' => Url::to(['/ambassador/village/index']),
+        'icon' => 'fas fa-file-alt',  // My Reports icon
+        'module' => 'ambassador',
+        'controller' => 'village',
+        'action' => 'index',
+    ],
 ];
 
 

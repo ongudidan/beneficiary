@@ -110,6 +110,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         <a class="dropdown-item has-icon" href="<?= Url::to(['/ambassador/beneficiary/view', 'id' => $beneficiary->id]) ?>">
                                                             <i class="feather-eye"></i> View
                                                         </a>
+                                                        <a class="dropdown-item has-icon" href="<?= Url::to(['/ambassador/beneficiary/update', 'id' => $beneficiary->id]) ?>">
+                                                            <i class="feather-eye"></i> Update
+                                                        </a>
+                                                        <a class="dropdown-item has-icon delete-btn" href="#" data-url="<?= Url::to(['/ambassador/beneficiary/delete', 'id' => $beneficiary->id]) ?>">
+                                                            <i class="feather-trash"></i> Delete
+                                                        </a>
                                                         <div class="dropdown-divider"></div>
                                                         <a class="dropdown-item has-icon" href="<?= Url::to(['/ambassador/beneficiary/report-create', 'beneficiary_id' => $beneficiary->id]) ?>">
                                                             <i class="feather-message-square"></i> Create report
