@@ -2,6 +2,7 @@
 
 use app\modules\dashboard\models\SubLocation;
 use app\modules\dashboard\models\Village;
+use kartik\date\DatePicker;
 use kartik\datetime\DateTimePicker;
 use kartik\select2\Select2;
 use yii\helpers\Html;
@@ -52,7 +53,7 @@ $formAction = Yii::$app->controller->action->id === 'update'
                             <?= $form->field($model, 'contact')->textInput(['maxlength' => true]) ?>
                         </div>
                     </div>
-  
+
                     <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'sub_location_id')->widget(Select2::classname(), [
@@ -65,7 +66,7 @@ $formAction = Yii::$app->controller->action->id === 'update'
                             ]); ?>
                         </div>
                     </div>
-     
+
                     <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
                             <?= $form->field($model, 'village_id')->widget(Select2::classname(), [
@@ -86,18 +87,15 @@ $formAction = Yii::$app->controller->action->id === 'update'
                     <div class="col-12 col-sm-4">
                         <div class="form-group local-forms">
 
-                            <?= $form->field($model, 'issue_date')->widget(DateTimePicker::classname(), [
-                                'options' => ['placeholder' => 'Select issue date...'],
-                                // 'value' => date('d/m/Y H:i'), // Set current date and time as default in the correct format
+                            <?= $form->field($model, 'issue_date')->widget(DatePicker::classname(), [
+                                'options' => ['placeholder' => 'Enter issue date ...'],
                                 'pluginOptions' => [
                                     'autoclose' => true,
-                                    'format' => 'dd/m/yyyy hh:ii', // Set the date format to 'dd-M-yyyy' and include time
-                                    'todayHighlight' => true, // Highlight today's date
-                                    'todayBtn' => true, // Add a button to quickly select today's date and time
-                                    'minuteStep' => 1, // Optional: set minute interval for time picker
+                                    'format' => 'dd/mm/yyyy',
+                                    'orientation' => 'bottom' // Set the orientation to bottom
                                 ]
-                            ]);
-                            ?>
+                            ]); ?>
+
                         </div>
                     </div>
                     <div class="col-12 col-sm-4">
