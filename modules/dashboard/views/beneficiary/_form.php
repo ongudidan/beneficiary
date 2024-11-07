@@ -87,11 +87,11 @@ $formAction = Yii::$app->controller->action->id === 'update'
                         <div class="form-group local-forms">
 
                             <?= $form->field($model, 'issue_date')->widget(DateTimePicker::classname(), [
-                                'options' => ['placeholder' => 'Enter time in...'],
-                                'value' => date('d-M-Y H:i'), // Set current date and time as default in the correct format
+                                'options' => ['placeholder' => 'Select issue date...'],
+                                // 'value' => date('d/m/Y H:i'), // Set current date and time as default in the correct format
                                 'pluginOptions' => [
                                     'autoclose' => true,
-                                    'format' => 'dd-M-yyyy hh:ii', // Set the date format to 'dd-M-yyyy' and include time
+                                    'format' => 'dd/m/yyyy hh:ii', // Set the date format to 'dd-M-yyyy' and include time
                                     'todayHighlight' => true, // Highlight today's date
                                     'todayBtn' => true, // Add a button to quickly select today's date and time
                                     'minuteStep' => 1, // Optional: set minute interval for time picker

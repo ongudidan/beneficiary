@@ -21,19 +21,19 @@ $activityId = Yii::$app->request->get('id');
 
     <div class="product-group-form">
         <div class="row">
-            <form method="get" action="<?= Url::to(['/dashboard/activityReport/index']) ?>">
+            <form method="get" action="<?= Url::to(['/dashboard/activity-report/index']) ?>">
                 <div class="row">
 
                     <div class="col-lg-5 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="ActivityReportSearch[activity_id]" class="form-control" placeholder="Search by activityReport activity_id ..." value="<?= Html::encode($searchModel->activity_id) ?>">
+                            <input type="text" name="ActivityReportSearch[activity_id]" class="form-control" placeholder="Search by activity reference no ..." value="<?= Html::encode($searchModel->activity_id) ?>">
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6">
                         <div class="form-group">
                             <input type="text" name="ActivityReportSearch[created_by]" class="form-control" placeholder="Search by creator ..." value="<?= Html::encode($searchModel->created_by) ?>">
                         </div>
-                    </div>
+                    </div>u
                     <div class="col-lg-2">
                         <div class="search-student-btn">
                             <button type="submit" class="btn btn-primary">Search</button>
@@ -48,14 +48,6 @@ $activityId = Yii::$app->request->get('id');
         <div class="col-sm-12">
             <div class="card card-table comman-shadow">
                 <div class="card-body">
-                    <div class="page-header">
-                        <div class="row align-items-center">
-                            <div class="col-auto text-end float-end ms-auto download-grp">
-                                <a href="<?= Url::to(['/dashboard/activity-report/create', 'activity_id' => $activityId]) ?>" class="btn btn-primary"><i
-                                        class="fas fa-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="table-responsive">
                         <table class="table table-striped mb-0">

@@ -21,12 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="authAssignmentSearch[item_name]" class="form-control" placeholder="authAssignment item_name ..." value="<?= Html::encode($searchModel->item_name) ?>">
+                            <input type="text" name="AuthAssignmentSearch[item_name]" class="form-control" placeholder="Auth item name ..." value="<?= Html::encode($searchModel->item_name) ?>">
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="authAssignmentSearch[user_id]" class="form-control" placeholder="authAssignment user_id ..." value="<?= Html::encode($searchModel->user_id) ?>">
+                            <input type="text" name="AuthAssignmentSearch[user_id]" class="form-control" placeholder="User username ..." value="<?= Html::encode($searchModel->user_id) ?>">
                         </div>
                     </div>
 

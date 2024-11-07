@@ -73,13 +73,10 @@ class BeneficiarySearch extends Beneficiary
         ]);
 
         $query->andFilterWhere(['like', 'id', $this->id])
-            // ->andFilterWhere(['like', 'sub_location_id', $this->sub_location_id])
             ->andFilterWhere(['like', 'village.name', $this->village])
-            // ->andFilterWhere(['like', 'village', $this->village])
             ->andFilterWhere(['like', 'national_id', $this->national_id])
             ->andFilterWhere(['like', 'contact', $this->contact])
             ->andFilterWhere(['like', 'sub_location.name', $this->sub_location])
-            // ->andFilterWhere(['like', 'village', $this->village])
             ->andFilterWhere(['like', 'stove_no', $this->stove_no])
             ->andFilterWhere(['like', 'issue_date', $this->issue_date])
             ->andFilterWhere(['like', 'lat', $this->lat])

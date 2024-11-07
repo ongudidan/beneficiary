@@ -120,6 +120,8 @@ class AuthItemController extends Controller
     public function actionImportAmbassadors()
     {
         ini_set('memory_limit', '5120M'); // Adjust this limit based on your system
+        set_time_limit(300); // Set maximum execution time to 300 seconds (5 minutes), adjust as needed
+
 
         Yii::$app->db->createCommand()->delete('ambassador')->execute();
 
@@ -325,8 +327,14 @@ class AuthItemController extends Controller
 
     public function actionExport()
     {
+
+        $uploadDir = Yii::getAlias('@webroot/exports/'); // Define the path to the exports folder
+
+        // Clear the exports folder
+        $this->clearExportsFolder($uploadDir);
+
         ini_set('memory_limit', '512M'); // Increase memory limit if necessary
-        set_time_limit(300); // Increase execution time
+        set_time_limit(0); // Increase execution time
 
         // Fetch data for export (modify as needed)
         $dataProvider = Beneficiary::find()->all(); // Adjust query to fit your needs
@@ -337,8 +345,7 @@ class AuthItemController extends Controller
 
         // Set the header row (customize as needed)
         $headers = [
-            'ID',
-            'Sub Location ID',
+            'Sub Location',
             'Village ID',
             'Name',
             'National ID',
@@ -347,8 +354,8 @@ class AuthItemController extends Controller
             'Village',
             'Stove No',
             'Issue Date',
-            'Lat',
-            'Long',
+            'Latitude',
+            'Longitude',
             'Status',
             'Created At',
             'Updated At',
@@ -361,23 +368,20 @@ class AuthItemController extends Controller
         $row = 2; // Start from the second row
         foreach ($dataProvider as $model) {
             $sheet->fromArray([
-                $model->id,
-                $model->sub_location_id,
-                $model->village_id,
+                $model->subLocation->name,
+                $model->villages->name,
                 $model->name,
                 $model->national_id,
                 $model->contact,
-                $model->sub_location,
-                $model->village,
                 $model->stove_no,
                 $model->issue_date,
                 $model->lat,
                 $model->long,
                 $model->status,
-                $model->created_at,
-                $model->updated_at,
-                $model->created_by,
-                $model->updated_by,
+                date('Y-m-d H:i:s', $model->created_at), // Format timestamps
+                date('Y-m-d H:i:s', $model->updated_at), // Format timestamps
+                $this->getPersonNameById($model->created_by),
+                $this->getPersonNameById($model->updated_by),
             ], NULL, 'A' . $row++);
         }
 
@@ -394,6 +398,28 @@ class AuthItemController extends Controller
 
         // Return the filename for the download link
         return $this->redirect(['download', 'filename' => $filename]);
+    }
+
+    private function getPersonNameById($id)
+    {
+        $coordinator = Coordinator::findOne($id);
+        if ($coordinator) {
+            return $coordinator->name; // Adjust field name as necessary
+        }
+
+        $ambassador = Ambassador::findOne($id);
+        if ($ambassador) {
+            return $ambassador->name; // Adjust field name as necessary
+        }
+
+        $fieldOfficer = FieldOfficer::findOne($id);
+        if ($fieldOfficer) {
+            return $fieldOfficer->name; // Adjust field name as necessary
+        }
+
+        // If no match is found, check the User table
+        $user = User::findOne($id);
+        return $user ? $user->username : null; // Adjust field name as necessary
     }
 
     // New action for downloading the file
@@ -619,6 +645,9 @@ class AuthItemController extends Controller
     public function actionDelete($name)
     {
         $this->findModel($name)->delete();
+
+        Yii::$app->session->setFlash('success', 'Role updated successfully.');
+
 
         return $this->redirect(['index']);
     }

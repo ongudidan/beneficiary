@@ -38,7 +38,7 @@ class CustomLinkPager extends LinkPager
 
         // Show the first 10 pages as a sliding window
         $startPage = max(0, min($currentPage - 5, $totalPages - 12));
-        $endPage = min($startPage + 10, $totalPages - 2);
+        $endPage = min($startPage + 5, $totalPages - 2);
 
         for ($i = $startPage; $i < $endPage; $i++) {
             $buttons[] = $this->renderPageButton(

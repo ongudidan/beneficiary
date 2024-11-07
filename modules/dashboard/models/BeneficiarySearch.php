@@ -56,6 +56,11 @@ class BeneficiarySearch extends Beneficiary
             return $dataProvider;
         }
 
+
+        $query->joinWith('subLocation');
+
+        $query->joinWith('villages');
+
         // grid filtering conditions
         $query->andFilterWhere([
             'status' => $this->status,
@@ -69,8 +74,8 @@ class BeneficiarySearch extends Beneficiary
             ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'national_id', $this->national_id])
             ->andFilterWhere(['like', 'contact', $this->contact])
-            ->andFilterWhere(['like', 'sub_location', $this->sub_location])
-            ->andFilterWhere(['like', 'village', $this->village])
+            ->andFilterWhere(['like', 'sub_location.name', $this->sub_location])
+            ->andFilterWhere(['like', 'village.name', $this->village])
             ->andFilterWhere(['like', 'stove_no', $this->stove_no])
             ->andFilterWhere(['like', 'issue_date', $this->issue_date])
             ->andFilterWhere(['like', 'lat', $this->lat])

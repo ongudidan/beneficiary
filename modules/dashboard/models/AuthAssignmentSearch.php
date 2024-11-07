@@ -56,13 +56,16 @@ class AuthAssignmentSearch extends AuthAssignment
             return $dataProvider;
         }
 
+        $query->joinWith('user');
+
+
         // grid filtering conditions
         $query->andFilterWhere([
             'created_at' => $this->created_at,
         ]);
 
         $query->andFilterWhere(['like', 'item_name', $this->item_name])
-            ->andFilterWhere(['like', 'user_id', $this->user_id]);
+            ->andFilterWhere(['like', 'user.username', $this->user_id]);
 
         return $dataProvider;
     }

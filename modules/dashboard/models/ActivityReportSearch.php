@@ -56,6 +56,9 @@ class ActivityReportSearch extends ActivityReport
             return $dataProvider;
         }
 
+        // $query->joinWith('activity');
+        // $query->joinWith('beneficiary');
+
         // grid filtering conditions
         $query->andFilterWhere([
             'created_at' => $this->created_at,

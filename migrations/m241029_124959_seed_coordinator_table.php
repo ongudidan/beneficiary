@@ -4,6 +4,8 @@ use app\components\IdGenerator;
 use app\models\User;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use yii\db\Migration;
+use Faker\Factory as Faker;
+
 
 /**
  * Class m241029_124959_seed_coordinator_table
@@ -32,15 +34,19 @@ class m241029_124959_seed_coordinator_table extends Migration
                 continue;
             }
 
-            $coordinator = $row[14] ?? 'Undefined ';
+            $coordinator = strtoupper($row[14] ?? 'Undefined ');
 
             // Check if the coordinator has already been inserted
             if (!in_array($coordinator, $insertedCoordinators)) {
                 $id = IdGenerator::generateUniqueId();
 
+                $faker = Faker::create();
+
                 // Generate unique values for additional fields
                 $nationalId = uniqid('NID-', true);
-                $email = strtolower(str_replace(' ', '.', $coordinator)) . '@example.com';
+                // $email = strtolower(str_replace(' ', '.', $coordinator)) . '@example.com';
+                $email = $faker->unique()->safeEmail; // Generate unique email using Faker
+
                 $phoneNo = '+254' . rand(700000000, 799999999); // Random phone number
                 $createdAt = time();
                 $updatedAt = time();
@@ -53,7 +59,7 @@ class m241029_124959_seed_coordinator_table extends Migration
                     'id' => $id,
                     'username' => $nationalId,
                     'email' => $email,
-                    'status'=> 10,
+                    'status' => 10,
                     'auth_key' => Yii::$app->security->generateRandomString(), // Random auth key
                     'password_hash' => Yii::$app->security->generatePasswordHash($password), // Hashed 'admin'
                     'status' => 10, // Default status for active user

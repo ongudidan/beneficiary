@@ -110,4 +110,14 @@ class AuthItem extends \yii\db\ActiveRecord
     {
         return $this->hasMany(AuthItem::class, ['name' => 'parent'])->viaTable('auth_item_child', ['child' => 'name']);
     }
+
+    public function getVillages()
+    {
+        return $this->hasOne(Village::class, ['id' => 'village_id']);
+    }
+
+    public function getSubLocation()
+    {
+        return $this->hasOne(SubLocation::class, ['id' => 'sub_location_id']);
+    }
 }

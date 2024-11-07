@@ -53,14 +53,15 @@ class m241103_123841_seed_beneficiary_table extends Migration
 
 
 
-            $issueDate = null;
-            if (isset($row[7]) && $row[7] !== 'Undefined') {
-                $dateTime = DateTime::createFromFormat('d/m/Y', $row[7]);
-                if ($dateTime) {
-                    $issueDate = $dateTime->getTimestamp();
-                }
-            }
+            // $issueDate = null;
+            // if (isset($row[7]) && $row[7] !== 'Undefined') {
+            //     $dateTime = DateTime::createFromFormat('d/m/Y', $row[7]);
+            //     if ($dateTime) {
+            //         $issueDate = $dateTime->getTimestamp();
+            //     }
+            // }
 
+            $issueDate = $row[7] ?? 'Undefined ';
             $lat = $row[8] ?? 'Undefined ';
             $long = $row[9] ?? 'Undefined ';
             $ambassador = strtoupper($row[12] ?? 'Undefined');

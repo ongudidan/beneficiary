@@ -5,6 +5,8 @@ use app\models\User;
 use app\modules\dashboard\models\Coordinator;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use yii\db\Migration;
+use Faker\Factory as Faker;
+
 
 /**
  * Class m241029_131758_seed_officer_table
@@ -32,8 +34,8 @@ class m241029_131758_seed_officer_table extends Migration
                 continue;
             }
 
-            $fieldOfficer = $row[13] ?? 'Undefined ';
-            $coordinator = $row[14] ?? 'Undefined ';
+            $fieldOfficer = strtoupper($row[13] ?? 'Undefined ');
+            $coordinator = strtoupper($row[14] ?? 'Undefined ');
 
 
             $CoordinatorId = Coordinator::findOne(['name' => $coordinator])->id;
@@ -45,8 +47,12 @@ class m241029_131758_seed_officer_table extends Migration
                 // Generate unique values for additional fields
                 $id = IdGenerator::generateUniqueId();
 
+                $faker = Faker::create();
+
                 $nationalId = uniqid('NID-', true);
-                $email = strtolower(str_replace(' ', '.', $fieldOfficer)) . '@gmail.com';
+                // $email = strtolower(str_replace(' ', '.', $fieldOfficer)) . '@gmail.com';
+                $email = $faker->unique()->safeEmail; // Generate unique email using Faker
+
                 $phoneNo = '+254' . rand(700000000, 799999999); // Random phone number
                 $createdAt = time();
                 $updatedAt = time();

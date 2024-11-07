@@ -29,7 +29,7 @@ class ActivityReport extends ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'usage', 'condition', 'beneficiary_id', 'photoFile', 'activity_id', 'activity_type',], 'required'],
+            [['id', 'usage', 'condition', 'beneficiary_id', 'activity_id', 'activity_type',], 'required'],
             [['created_at', 'updated_at'], 'integer'],
             [['id', 'activity_id', 'audio', 'photo', 'beneficiary_id', 'usage', 'condition', 'recommendation', 'remarks', 'created_by', 'updated_by'], 'string', 'max' => 255],
             [['id'], 'unique'],

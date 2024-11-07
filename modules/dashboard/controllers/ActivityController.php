@@ -283,6 +283,12 @@ class ActivityController extends Controller
 
     public function actionExport($id)
     {
+
+        $uploadDir = Yii::getAlias('@webroot/exports/'); // Define the path to the exports folder
+
+        // Clear the exports folder
+        $this->clearExportsFolder($uploadDir);
+        
         ini_set('memory_limit', '512M'); // Increase memory limit if necessary
         set_time_limit(300); // Increase execution time
 
@@ -384,6 +390,30 @@ class ActivityController extends Controller
         // If no match is found, check the User table
         $user = User::findOne($id);
         return $user ? $user->username : null; // Adjust field name as necessary
+    }
+
+    public function actionClearExports()
+    {
+        $uploadDir = Yii::getAlias('@webroot/exports/'); // Define the path to the exports folder
+
+        // Clear the exports folder
+        $this->clearExportsFolder($uploadDir);
+
+        // Set a flash message to notify the user
+        Yii::$app->session->setFlash('success', 'The exports folder has been cleared successfully.');
+
+        return $this->redirect(['index']); // Redirect to the index or desired page
+    }
+
+    // Function to clear all files in the exports directory
+    private function clearExportsFolder($path)
+    {
+        $files = glob($path . '*'); // Get all files in the directory
+        foreach ($files as $file) {
+            if (is_file($file)) {
+                unlink($file); // Delete the file
+            }
+        }
     }
 
 
