@@ -29,7 +29,7 @@ class m241103_123841_seed_beneficiary_table extends Migration
         // Iterate through the rows and insert them into the beneficiary table
         foreach ($data as $index => $row) {
             // Skip rows before row 5 (index 4)
-            if ($index < 4) {
+            if ($index < 1) {
                 continue;
             }
 

@@ -27,7 +27,7 @@ class m241029_120746_seed_sub_location_table extends Migration
         // Iterate through the rows and insert sublocations
         foreach ($data as $index => $row) {
             // Skip rows before row 5 (index 4)
-            if ($index < 4) {
+            if ($index < 1) {
                 continue;
             }
 

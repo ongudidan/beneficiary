@@ -46,6 +46,9 @@ class BeneficiarySearch extends Beneficiary
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 30, // Set default page size to 30
+            ],
         ]);
 
         $this->load($params);
@@ -71,7 +74,7 @@ class BeneficiarySearch extends Beneficiary
         ]);
 
         $query->andFilterWhere(['like', 'id', $this->id])
-            ->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'beneficiary.name', $this->name])
             ->andFilterWhere(['like', 'national_id', $this->national_id])
             ->andFilterWhere(['like', 'contact', $this->contact])
             ->andFilterWhere(['like', 'sub_location.name', $this->sub_location])

@@ -30,7 +30,7 @@ class m241029_124959_seed_coordinator_table extends Migration
         // Iterate through the rows and insert coordinators
         foreach ($data as $index => $row) {
             // Skip rows before row 5 (index 4)
-            if ($index < 4) {
+            if ($index < 1) {
                 continue;
             }
 

@@ -11,6 +11,7 @@ use app\modules\dashboard\models\ActivitySearch;
 use app\modules\dashboard\models\Ambassador;
 use app\modules\dashboard\models\Coordinator;
 use app\modules\dashboard\models\FieldOfficer;
+use app\modules\dashboard\models\UserActivity;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use Yii;
@@ -174,13 +175,45 @@ class ActivityController extends Controller
     }
 
     /////////////////////////////////////////////
+    // public function actionReportIndex()
+    // {
+    //     $searchModel = new ActivityReportSearch();
+    //     $dataProvider = $searchModel->search($this->request->queryParams);
+
+    //     // Check if activity_id is present in the query parameters and apply the filter
+    //     if ($activityId = $this->request->get('activity_id')) {
+    //         $dataProvider->query->andWhere(['activity_id' => $activityId]);
+    //     }
+
+    //     return $this->render('/activity-report/index', [
+    //         'searchModel' => $searchModel,
+    //         'dataProvider' => $dataProvider,
+    //     ]);
+    // }
+
     public function actionReportIndex()
     {
+        $userId = Yii::$app->user->id; // Assuming the user is logged in
         $searchModel = new ActivityReportSearch();
+
+        // Check if activity_id is provided in the URL
+        $activityId = $this->request->get('activity_id');
+        if ($activityId) {
+            // Save or update the activity_id in the user_activity table
+            $userActivity = UserActivity::findOne(['user_id' => $userId]) ?? new UserActivity();
+            $userActivity->user_id = $userId;
+            $userActivity->activity_id = $activityId;
+            $userActivity->save();
+        } else {
+            // Retrieve the saved activity_id for the user if not in the URL
+            $userActivity = UserActivity::findOne(['user_id' => $userId]);
+            $activityId = $userActivity ? $userActivity->activity_id : null;
+        }
+
+        // Filter directly in the query without passing to queryParams
         $dataProvider = $searchModel->search($this->request->queryParams);
 
-        // Check if activity_id is present in the query parameters and apply the filter
-        if ($activityId = $this->request->get('activity_id')) {
+        if ($activityId) {
             $dataProvider->query->andWhere(['activity_id' => $activityId]);
         }
 
@@ -189,6 +222,8 @@ class ActivityController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
+
 
     /**
      * Displays a single ActivityReport model.
@@ -255,7 +290,7 @@ class ActivityController extends Controller
 
             Yii::$app->session->setFlash('success', 'Activity report updated successfully.');
 
-            return $this->redirect(['activity-report/view', 'id' => $model->id]);
+            return $this->redirect(['activity/report-view', 'id' => $model->id]);
         }
 
         return $this->render('/activity-report/update', [
@@ -278,7 +313,7 @@ class ActivityController extends Controller
         Yii::$app->session->setFlash('success', 'Activity report deleted successfully.');
 
 
-        return $this->redirect(['/activity-report/index']);
+        return $this->redirect(['activity/index']);
     }
 
     public function actionExport($id)
@@ -288,9 +323,9 @@ class ActivityController extends Controller
 
         // Clear the exports folder
         $this->clearExportsFolder($uploadDir);
-        
-        ini_set('memory_limit', '512M'); // Increase memory limit if necessary
-        set_time_limit(300); // Increase execution time
+
+        ini_set('memory_limit', '51200M'); // Increase memory limit if necessary
+        set_time_limit(300000); // Increase execution time
 
         // Fetch data for export (modify as needed)
         $dataProvider = ActivityReport::find()->where(['activity_id' => $id])->all(); // Adjust query to fit your needs
@@ -301,45 +336,45 @@ class ActivityController extends Controller
 
         // Set the header row (customize as needed)
         $headers = [
-            // 'ID',
-            'Activity name',
-            'Activity Reference No',
-            'Activity Type',
-            'Beneficiary name',
-            'phone number',
-            'Sub-location',
-            'Village',
-            'Stove number',
-            'Usage',
-            'Condition',
-            'Action',
-            'Audio',
-            'Photo',
-            'Recommendation',
-            'Remarks',
-            'Created At',
-            'Updated At',
-            'Created By',
-            'Updated By',
+            'NO',
+            'NAME',
+            'ID NO',
+            'TEL NO',
+            'SUB-LOCATION',
+            'VILLAGE',
+            'STOVE NO',
+            'DATE OF ISSUE',
+            'LAT',
+            'LONG',
+            'IN USE/NOT IN USE',
+            // 'REASON FOR NOT IN USE',
+            'AUDIO',
+            'PHOTO',
+            'RECOMMENDATION',
+            'REMARKS',
+            'CREATED AT',
+            'UPDATED AT',
+            'CREATED BY',
+            'UPDATED BY',
         ];
         $sheet->fromArray($headers, NULL, 'A1');
-
+        $no = 1;
         // Fill the sheet with data
         $row = 2; // Start from the second row
         foreach ($dataProvider as $model) {
+            // $no++;
             $sheet->fromArray([
-                // $model->id,
-                $model->activity->name,
-                $model->activity->reference_no,
-                $model->activity_type,
+                $no,
                 $model->beneficiary->name,
+                $model->beneficiary->national_id,
                 $model->beneficiary->contact,
-                $model->beneficiary->sub_location,
-                $model->beneficiary->village,
+                $model->beneficiary->subLocation->name,
+                $model->beneficiary->villages->name,
                 $model->beneficiary->stove_no,
+                $model->beneficiary->issue_date,
+                $model->beneficiary->lat,
+                $model->beneficiary->long,
                 $model->usage,
-                $model->condition,
-                $model->action,
                 $model->audio ? 'Available' : 'N/A',
                 $model->photo ? 'Available' : 'N/A',
                 $model->recommendation,
@@ -351,8 +386,9 @@ class ActivityController extends Controller
                 $this->getPersonNameById($model->created_by),
                 $this->getPersonNameById($model->updated_by),
 
-                
+
             ], NULL, 'A' . $row++);
+            $no++;
         }
 
         // Save the spreadsheet to a file on the server
@@ -369,6 +405,7 @@ class ActivityController extends Controller
         // Return the filename for the download link
         return $this->redirect(['download', 'filename' => $filename]);
     }
+
 
     private function getPersonNameById($id)
     {
@@ -416,8 +453,6 @@ class ActivityController extends Controller
         }
     }
 
-
-
     // New action for downloading the file
     public function actionDownload($filename)
     {
@@ -439,7 +474,6 @@ class ActivityController extends Controller
             throw new NotFoundHttpException("The requested file does not exist.");
         }
     }
-
 
 
 }

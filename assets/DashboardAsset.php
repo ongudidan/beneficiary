@@ -56,6 +56,8 @@ class DashboardAsset extends AssetBundle
         "/web/js/custom.js",
         // "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js",
         // "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js",
+    //    "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js",
+
 
         "/web/js/toastr.min.js",
         "/web/js/toastr.js",

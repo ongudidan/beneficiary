@@ -27,7 +27,7 @@ class m241029_120756_seed_village_table extends Migration
 
         // Second pass to insert villages
         foreach ($data as $index => $row) {
-            if ($index < 4) {
+            if ($index < 1) {
                 continue;
             }
 

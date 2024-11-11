@@ -23,12 +23,21 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row align-items-center">
                         <div class="col-auto text-end float-end ms-auto download-grp">
                             <p>
-                                <a href="<?= Url::to(['/dashboard/activity-report/update', 'id' => $model->id]) ?>" class="btn btn-sm bg-danger-light">
-                                    <i class="feather-edit"></i>
-                                </a>
-                                <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity-report/delete', 'id' => $model->id]) ?>">
-                                    <i class="feather-trash"></i>
-                                </a>
+                                <?php if (Yii::$app->controller->id === 'activity-report') { ?>
+                                    <a href="<?= Url::to(['/dashboard/activity-report/update', 'id' => $model->id]) ?>" class="btn btn-sm bg-danger-light">
+                                        <i class="feather-edit"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity-report/delete', 'id' => $model->id]) ?>">
+                                        <i class="feather-trash"></i>
+                                    </a>
+                                <?php  } elseif (Yii::$app->controller->id === 'activity') { ?>
+                                    <a href="<?= Url::to(['/dashboard/activity/report-update', 'id' => $model->id]) ?>" class="btn btn-sm bg-danger-light">
+                                        <i class="feather-edit"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity/report-delete', 'id' => $model->id]) ?>">
+                                        <i class="feather-trash"></i>
+                                    </a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>

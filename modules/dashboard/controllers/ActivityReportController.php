@@ -68,21 +68,23 @@ class ActivityReportController extends Controller
         ]);
     }
 
-    public function actionMyReport()
-    {
-        $searchModel = new ActivityReportSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+public function actionMyReport()
+{
+    $searchModel = new ActivityReportSearch();
+    $dataProvider = $searchModel->search($this->request->queryParams);
 
-        // Check if logged in user_id is present in the query parameters and apply the filter
-        if ($userId = Yii::$app->user->id) {
-            $dataProvider->query->andWhere(['created_by' => $userId]);
-        }
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+    // Check if logged-in user_id is present in the query parameters and apply the filter
+    if ($userId = Yii::$app->user->id) {
+        // Explicitly reference the 'created_by' field from the 'activity_report' table to avoid ambiguity
+        $dataProvider->query->andWhere(['activity_report.created_by' => $userId]);
     }
+
+    return $this->render('index', [
+        'searchModel' => $searchModel,
+        'dataProvider' => $dataProvider,
+    ]);
+}
+
 
 
     /**

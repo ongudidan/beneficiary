@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap5\ActiveForm;
 
 /** @var yii\web\View $this */
 /** @var app\modules\dashboard\models\AuthItem $model */
@@ -41,7 +41,7 @@ JS);
 
     <div class="card p-3 mb-4">
         <div class="mb-3">
-            <label class="form-label">Auth Rule Name</label>
+            <label class="form-label">Rule Name</label>
             <?= $form->field($model, 'name')->textInput(['placeholder' => 'Rule Name'])->label(false) ?>
         </div>
 
@@ -54,7 +54,7 @@ JS);
                         <tr>
                             <th>Section</th>
                             <th>All</th>
-                            <th>Index</th>
+                            <th>View</th>
                             <th>Create</th>
                             <th>Edit</th>
                             <th>Delete</th>

@@ -21,6 +21,11 @@ if (Yii::$app->controller->id === 'beneficiary') {
     $formAction = Yii::$app->controller->action->id === 'update'
         ? ['activity-report/update', 'id' => $model->id]
         : ['activity-report/create']; // Use 'create' action if it's not update
+
+} elseif (Yii::$app->controller->id === 'activity') {
+    $formAction = Yii::$app->controller->action->id === 'report-update'
+    ? ['activity/report-update', 'id' => $model->id]
+        : ['activity/report-create']; // Use 'create' action if it's not update
 }
 ?>
 

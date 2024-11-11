@@ -1,6 +1,7 @@
 <?php
 
 use app\modules\dashboard\models\Activity;
+use kartik\date\DatePicker;
 use yii\bootstrap5\LinkPager;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -21,29 +22,40 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <form method="get" action="<?= Url::to(['/dashboard/activity/index']) ?>">
                 <div class="row">
-
                     <div class="col-lg-4 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="ActivitySearch[name]" class="form-control" placeholder="Search by activity title ..." value="<?= Html::encode($searchModel->name) ?>">
+                            <input type="text" name="ActivitySearch[reference_no]" class="form-control form-control-lg" placeholder="Search by reference no ..." value="<?= Html::encode($searchModel->reference_no) ?>">
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="ActivitySearch[reference_no]" class="form-control" placeholder="Search by reference no ..." value="<?= Html::encode($searchModel->reference_no) ?>">
+                            <input type="text" name="ActivitySearch[name]" class="form-control form-control-lg" placeholder="Search by name ..." value="<?= Html::encode($searchModel->name) ?>">
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="ActivitySearch[start_date]" class="form-control" placeholder="Search by  start_date ..." value="<?= Html::encode($searchModel->start_date) ?>">
+                            <?= DatePicker::widget([
+                                'name' => 'ActivitySearch[start_date]',
+                                'pluginOptions' => [
+                                    'autoclose' => true,
+                                    'format' => 'dd/mm/yyyy',  // Date format
+                                ],
+                                'options' => [
+                                    'class' => 'form-control form-control-lg',  // Ensuring same height as other inputs
+                                    'placeholder' => 'Search by start date'
+                                ]
+                            ]); ?>
                         </div>
                     </div>
+
                     <div class="col-lg-2">
                         <div class="search-student-btn">
-                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Search</button> <!-- Ensure button is the same height -->
                         </div>
                     </div>
                 </div>
             </form>
+
 
         </div>
     </div>
@@ -67,7 +79,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <th>#</th>
                                     <th>Reference No</th>
                                     <th>Name</th>
-                                    <th>Date</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
                                     <th>Created At</th>
                                     <th>Action</th>
                                     <th>Status</th>
@@ -83,21 +96,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <td><?= $activity->reference_no ?></td>
                                             <td><?= $activity->name ?></td>
                                             <td><?= $activity->start_date ?></td>
+                                            <td><?= $activity->end_date ?></td>
                                             <td><?= Yii::$app->formatter->asDatetime($activity->created_at) ?></td>
-
-                                            <!-- <td class="text-end">
-                                                <div class="actions ">
-                                                    <a href="<?= Url::to(['/dashboard/activity/view', 'id' => $activity->id]) ?>" class="btn btn-sm bg-success-light me-2 ">
-                                                        <i class="feather-eye"></i>
-                                                    </a>
-                                                    <a href="<?= Url::to(['/dashboard/activity/update', 'id' => $activity->id]) ?>" class="btn btn-sm bg-danger-light">
-                                                        <i class="feather-edit"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-sm bg-danger-light delete-btn" data-url="<?= Url::to(['/dashboard/activity/delete', 'id' => $activity->id]) ?>">
-                                                        <i class="feather-trash"></i>
-                                                    </a>
-                                                </div>
-                                            </td> -->
+                                                                                     
                                             <td>
                                                 <div class="dropdown d-inline">
                                                     <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -184,3 +185,65 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 </div>
+
+<script>
+    async function exportLargeFile(activityId) {
+        // Create a new workbook and add headers
+        const workbook = XLSX.utils.book_new();
+        const worksheet = XLSX.utils.aoa_to_sheet([
+            [
+                'NO', 'NAME', 'ID NO', 'TEL NO', 'SUB-LOCATION', 'VILLAGE',
+                'STOVE NO', 'DATE OF ISSUE', 'LAT', 'LONG', 'IN USE/NOT IN USE',
+                'AUDIO', 'PHOTO', 'RECOMMENDATION', 'REMARKS',
+                'CREATED AT', 'UPDATED AT', 'CREATED BY', 'UPDATED BY'
+            ]
+        ]);
+        XLSX.utils.book_append_sheet(workbook, worksheet, "ActivityReport");
+
+        let offset = 0;
+        const chunkSize = 1000;
+
+        // Fetch data in chunks
+        while (true) {
+            try {
+                const response = await fetch(`/controller/get-activity-data-chunk?id=${activityId}&offset=${offset}&limit=${chunkSize}`);
+                const data = await response.json();
+
+                if (data.length === 0) break;
+
+                const rows = data.map(row => [
+                    row.no,
+                    row.name,
+                    row.national_id,
+                    row.contact,
+                    row.sub_location,
+                    row.village,
+                    row.stove_no,
+                    row.issue_date,
+                    row.lat,
+                    row.long,
+                    row.usage,
+                    row.audio,
+                    row.photo,
+                    row.recommendation,
+                    row.remarks,
+                    row.created_at,
+                    row.updated_at,
+                    row.created_by,
+                    row.updated_by
+                ]);
+
+                XLSX.utils.sheet_add_aoa(worksheet, rows, {
+                    origin: -1
+                });
+                offset += chunkSize;
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                break;
+            }
+        }
+
+        // Export workbook as Excel file
+        XLSX.writeFile(workbook, `Activity_Report_${activityId}.xlsx`);
+    }
+</script>

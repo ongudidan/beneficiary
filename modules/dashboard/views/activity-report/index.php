@@ -21,27 +21,36 @@ $activityId = Yii::$app->request->get('id');
 
     <div class="product-group-form">
         <div class="row">
-            <form method="get" action="<?= Url::to(['/dashboard/activity-report/index']) ?>">
+            <form method="get" action="
+            <?= Yii::$app->controller->action->id === 'report-index'
+                ? Url::to(['/dashboard/activity/report-index'])
+                : Url::to(['/dashboard/activity-report/my-report']); ?>">
+
                 <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="ActivityReportSearch[activity_id]" class="form-control"
+                                placeholder="Search by activity reference no ..."
+                                value="<?= Html::encode($searchModel->activity_id) ?>">
+                        </div>
+                    </div>
 
                     <div class="col-lg-5 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="ActivityReportSearch[activity_id]" class="form-control" placeholder="Search by activity reference no ..." value="<?= Html::encode($searchModel->activity_id) ?>">
+                            <input type="text" name="ActivityReportSearch[beneficiary_id]" class="form-control"
+                                placeholder="Search by beneficiary name ..."
+                                value="<?= Html::encode($searchModel->beneficiary_id) ?>">
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-6">
-                        <div class="form-group">
-                            <input type="text" name="ActivityReportSearch[created_by]" class="form-control" placeholder="Search by creator ..." value="<?= Html::encode($searchModel->created_by) ?>">
-                        </div>
-                    </div>u
+
                     <div class="col-lg-2">
                         <div class="search-student-btn">
                             <button type="submit" class="btn btn-primary">Search</button>
                         </div>
                     </div>
                 </div>
-            </form>
 
+            </form>
         </div>
     </div>
     <div class="row">
@@ -49,6 +58,8 @@ $activityId = Yii::$app->request->get('id');
             <div class="card card-table comman-shadow">
                 <div class="card-body">
 
+                    <!-- Button to trigger export -->
+                    <button onclick="exportToExcel()">Export to Excel</button>
                     <div class="table-responsive">
                         <table class="table table-striped mb-0">
                             <thead class="student-thread">
@@ -201,3 +212,39 @@ $activityId = Yii::$app->request->get('id');
 
 
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+<!-- <script>
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    async function exportToExcel() {
+        const activityId = getUrlParameter('activity_id');
+        if (!activityId) {
+            console.error("activity_id not found in URL");
+            return;
+        }
+
+        try {
+            const response = await fetch(`/dashboard/activity/export-data-json?id=${activityId}`);
+            if (!response.ok) {
+                throw new Error(`Server returned non-JSON response: ${await response.text()}`);
+            }
+
+            const data = await response.json();
+            const worksheet = XLSX.utils.json_to_sheet(data);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, 'Activity Reports');
+
+            const currentDate = new Date().toISOString().slice(0, 19).replace(/T|:/g, '-');
+            const filename = `Activity_Reports_${currentDate}.xlsx`;
+            XLSX.writeFile(workbook, filename);
+        } catch (error) {
+            console.error("Error exporting data to Excel:", error);
+        }
+    }
+</script> -->

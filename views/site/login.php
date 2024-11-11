@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row justify-content-center">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
                 <div class="mb-5">
-                    <h4 class="text-center mb-4">Welcome back you've been missed!</h4>
+                    <h4 class="text-center mb-4">Welcome back!</h4>
                 </div>
                 <div class="card border border-light-subtle rounded-4">
                     <div class="card-body p-3 p-md-4 p-xl-5">

@@ -76,14 +76,14 @@ class m240925_011459_create_app_tables extends Migration
 
         $this->createTable('{{%activity}}', [
             'id' => $this->string()->notNull()->unique(), // Custom string ID
-            'name' => $this->string()->notNull(),
-            'reference_no' => $this->string()->notNull(),
-            'start_date' => $this->string()->notNull(),
-            'end_date' => $this->string()->notNull(),
-            'description' => $this->string()->notNull(),
-            'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),
+            'name' => $this->string()->defaultValue(null),
+            'reference_no' => $this->string()->defaultValue(null),
+            'start_date' => $this->string()->defaultValue(null),
+            'end_date' => $this->string()->defaultValue(null),
+            'description' => $this->string()->defaultValue(null),
+            'status' => $this->smallInteger()->defaultValue(null)->defaultValue(10),
+            'created_at' => $this->integer()->defaultValue(null),
+            'updated_at' => $this->integer()->defaultValue(null),
             'created_by' => $this->string()->defaultValue(null),
             'updated_by' => $this->string()->defaultValue(null),
         ]);
@@ -257,6 +257,14 @@ class m240925_011459_create_app_tables extends Migration
             'FOREIGN KEY ([[item_name]]) REFERENCES {{%auth_item}} ([[name]])' .
                 $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
         ]);
+
+        $this->createTable('{{%user_activity}}', [
+            'user_id' => $this->string()->notNull()->unique(), // User ID as primary key
+            'activity_id' => $this->string()->defaultValue(null), // Activity ID that can be null
+            'updated_at' => $this->integer()->defaultValue(null),
+            'FOREIGN KEY ([[user_id]]) REFERENCES {{%user}} ([[id]])' .
+            $this->buildFkClause('ON DELETE CASCADE', 'ON UPDATE CASCADE'),
+        ]);
     }
 
     /**
@@ -264,6 +272,8 @@ class m240925_011459_create_app_tables extends Migration
      */
     public function safeDown()
     {
+        $this->dropTable('{{%user_activity}}');
+
         // Drop RBAC tables
         $this->dropTable('{{%auth_item_child}}');
         $this->dropTable('{{%permission}}');

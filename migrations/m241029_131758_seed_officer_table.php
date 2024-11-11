@@ -30,7 +30,7 @@ class m241029_131758_seed_officer_table extends Migration
 
         // Second pass to insert fieldOfficers
         foreach ($data as $index => $row) {
-            if ($index < 4) {
+            if ($index < 1) {
                 continue;
             }
 

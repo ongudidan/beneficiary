@@ -40,12 +40,17 @@ class ActivityReportSearch extends ActivityReport
      */
     public function search($params)
     {
+        ini_set('memory_limit', '5120M'); // Adjust this limit based on your system
+
         $query = ActivityReport::find()->orderBy(['created_at' => SORT_DESC]);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            // 'pagination' => [
+            //     'pageSize' => 50000, // Set default page size to 30
+            // ],
         ]);
 
         $this->load($params);
@@ -56,8 +61,8 @@ class ActivityReportSearch extends ActivityReport
             return $dataProvider;
         }
 
-        // $query->joinWith('activity');
-        // $query->joinWith('beneficiary');
+        $query->joinWith('activity');
+        $query->joinWith('beneficiary');
 
         // grid filtering conditions
         $query->andFilterWhere([
@@ -66,8 +71,8 @@ class ActivityReportSearch extends ActivityReport
         ]);
 
         $query->andFilterWhere(['like', 'id', $this->id])
-            ->andFilterWhere(['like', 'activity_id', $this->activity_id])
-            ->andFilterWhere(['like', 'beneficiary_id', $this->beneficiary_id])
+            ->andFilterWhere(['like', 'activity.name', $this->activity_id])
+            ->andFilterWhere(['like', 'beneficiary.name', $this->beneficiary_id])
             ->andFilterWhere(['like', 'usage', $this->usage])
             ->andFilterWhere(['like', 'condition', $this->condition])
             ->andFilterWhere(['like', 'recommendation', $this->recommendation])

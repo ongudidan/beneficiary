@@ -82,7 +82,7 @@ class Activity extends \yii\db\ActiveRecord
     public static function generateReferenceNo()
     {
         $year = date('Y');
-        $prefix = '#ACTIVITY-';
+        $prefix = '#';
         $yearPrefix = substr($year, -2);
 
         // Get the maximum card number from the database
